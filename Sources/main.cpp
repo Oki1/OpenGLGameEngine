@@ -24,7 +24,7 @@ void processInput(GLFWwindow* window) {
     }
 }
 
-int main(void) {
+int main() {
     swl::init();
 
     //COMPILE VERTEX SHADER
@@ -80,10 +80,6 @@ int main(void) {
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
-
-
-
-
 
     //RENDER LOOP
     while(!glfwWindowShouldClose(swl::window)) {
