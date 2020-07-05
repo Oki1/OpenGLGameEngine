@@ -4,11 +4,11 @@
 #include <iostream>
 
 const char *vertexShaderSource = "#version 330 core\n"
-                                    "layout (location = 0) in vec3 aPos;\n"
-                                    "void main()\n"
-                                    "{\n"
-                                    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-                                    "}\0";
+                                 "layout (location = 0) in vec3 aPos;\n"
+                                 "void main()\n"
+                                 "{\n"
+                                 "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+                                 "}\0";
 
 const char* fragmentShaderSource = "#version 330 core\n" //tells pixel colors
                                    "out vec4 FragColor;\n"
@@ -17,7 +17,7 @@ const char* fragmentShaderSource = "#version 330 core\n" //tells pixel colors
                                    "}";
 
 void framebuffer_size_callback(GLFWwindow* window, int height, int width) {
-    glViewport(0,0,width,height);
+    glViewport(0, 0, width, height);
 }
 
 void processInput(GLFWwindow* window) {
@@ -27,65 +27,51 @@ void processInput(GLFWwindow* window) {
 }
 
 int main(void) {
-    GLFWwindow* window = glfwCreateWindow(1920, 1080, "Test", NULL, NULL);
-    if (window == NULL) {
+    GLFWwindow* window = glfwCreateWindow(1920, 1080, "Test", nullptr, nullptr); // nullptr is for c++, NULL is for c
+    if(!window) { // window == 0
         std::cerr << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return-1;
+        //glfwTerminate(); // it gets terminated in initCloseScript
+        return -1;
     }
     glfwPollEvents();
     glfwSetWindowSize(window, 1920, 1080);
     glfwMakeContextCurrent(window);
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cerr << "Failed to initialize GLAD" << std::endl;
-        glfwTerminate();
         return -1;
     }
 
-
-
-    int success;
-    char infoLog[512];
-
     //COMPILE VERTEX SHADER
-    int vertexShader;
-    vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
     glCompileShader(vertexShader);
 
-    if (!success) {
-        glGetProgramInfoLog(vertexShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-
+    
     //COMPILE FRAGMENT SHADER
-    int fragmentShader;
-    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+    int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSource, nullptr);
     glCompileShader(fragmentShader);
     glGetProgramiv(fragmentShader, GL_LINK_STATUS, &fragmentShader);
 
-    if (!success) {
-        glGetProgramInfoLog(fragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-
+    
     //CREATE SHADER OBJECT
     unsigned int shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
 
+    int success;
+    char infoLog[512];
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
-        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+        glGetProgramInfoLog(shaderProgram, 512, nullptr, infoLog);
+        std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
     }
 
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)nullptr);
     glEnableVertexAttribArray(0);
 
 
@@ -118,7 +104,6 @@ int main(void) {
         //INPUT
         processInput(window);
 
-
         //RENDERING
         glClearColor(0.431f, 0.796f, 0.266f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -127,10 +112,10 @@ int main(void) {
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-
         //EVENTS AND BUFFERS
         glfwSwapBuffers(window);
         glfwPollEvents(); //checks event triggers, updates window state and calls callback functions
     }
+    
     return 0;
 }
