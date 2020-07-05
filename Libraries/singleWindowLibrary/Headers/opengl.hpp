@@ -1,10 +1,3 @@
-//
-//  opengl.hpp
-//  OpenGLGameEngine
-//
-//  Created by Jakob Zorz on 05/07/2020.
-//
-
 #ifndef opengl_hpp
 #define opengl_hpp
 
