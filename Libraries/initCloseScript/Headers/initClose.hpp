@@ -1,2 +1,3 @@
-void init();
-void close();
+#define main EngineMain
+int EngineMain();
+

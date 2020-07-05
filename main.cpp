@@ -1,5 +1,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "initClose.hpp"
 #include <iostream>
 
 const char* vertexShaderSource = "#version 330 core\n"  //tells point positions
@@ -25,25 +26,20 @@ void processInput(GLFWwindow* window) {
 }
 
 int main(void) {
-    glfwInit();
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     GLFWwindow* window = glfwCreateWindow(1920, 1080, "Test", NULL, NULL);
     if (window == NULL) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return-1;
     }
+    glfwPollEvents();
+    glfwSetWindowSize(window, 1920, 1080);
     glfwMakeContextCurrent(window);
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cerr << "Failed to initialize GLAD" << std::endl;
         glfwTerminate();
         return -1;
     }
-    glViewport(0,0,1920,1080);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
     //SAVES THE VERTEX POSITIONS IN GPU MEMORY FOR FAST ACCESS
@@ -108,7 +104,5 @@ int main(void) {
         glfwSwapBuffers(window);
         glfwPollEvents(); //checks event triggers, updates window state and calls callback functions
     }
-
-    glfwTerminate();
     return 0;
 }
