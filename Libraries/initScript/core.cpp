@@ -1,5 +1,5 @@
-#include "initClose.hpp"
-#include <GLFW/glfw3.h>
+#include "init.hpp"
+#include "opengl.hpp"
 #undef main
 
 int main() {

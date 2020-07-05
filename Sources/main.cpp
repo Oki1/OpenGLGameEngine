@@ -1,7 +1,5 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include "initClose.hpp"
-#include <iostream>
+#include "init.hpp"
+#include "singleWindowLibrary.hpp"
 
 const char *vertexShaderSource = "#version 330 core\n"
                                  "layout (location = 0) in vec3 aPos;\n"
@@ -27,19 +25,7 @@ void processInput(GLFWwindow* window) {
 }
 
 int main(void) {
-    GLFWwindow* window = glfwCreateWindow(1920, 1080, "Test", nullptr, nullptr); // nullptr is for c++, NULL is for c
-    if(!window) { // window == 0
-        std::cerr << "Failed to create GLFW window" << std::endl;
-        //glfwTerminate(); // it gets terminated in initCloseScript
-        return -1;
-    }
-    glfwPollEvents();
-    glfwSetWindowSize(window, 1920, 1080);
-    glfwMakeContextCurrent(window);
-    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        std::cerr << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
+    swl::init();
 
     //COMPILE VERTEX SHADER
     int vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -100,9 +86,9 @@ int main(void) {
 
 
     //RENDER LOOP
-    while(!glfwWindowShouldClose(window)) {
+    while(!glfwWindowShouldClose(swl::window)) {
         //INPUT
-        processInput(window);
+        processInput(swl::window);
 
         //RENDERING
         glClearColor(0.431f, 0.796f, 0.266f, 1.0f);
@@ -113,7 +99,7 @@ int main(void) {
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
         //EVENTS AND BUFFERS
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(swl::window);
         glfwPollEvents(); //checks event triggers, updates window state and calls callback functions
     }
     
