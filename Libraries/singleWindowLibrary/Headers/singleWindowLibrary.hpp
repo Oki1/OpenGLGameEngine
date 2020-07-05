@@ -14,6 +14,7 @@ inline color background_color;
 
 bool init();
 void clear();
+void updateScreen();
 void update();
 }
 

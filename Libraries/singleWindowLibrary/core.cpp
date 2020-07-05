@@ -5,6 +5,12 @@ void swl::clear() {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
+void swl::updateScreen() {
+    glfwSwapBuffers(swl::window);
+    glfwPollEvents();
+}
+
+
 void swl::update() {
     
 }
