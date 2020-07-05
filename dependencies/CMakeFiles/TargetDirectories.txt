@@ -1,0 +1,14 @@
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/install/strip.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/uninstall.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/install/local.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/install.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/edit_cache.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/rebuild_cache.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/CMakeFiles/list_install_components.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/rebuild_cache.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/glfw.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/install/local.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/install.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/edit_cache.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/list_install_components.dir
+C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependencies/src/CMakeFiles/install/strip.dir
