@@ -1,9 +1,5 @@
 "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine
-CMake Error at CMakeLists.txt:6 (target_link_libraries):
-  Cannot specify link libraries for target "OpenGLGameEngine" which is not
-  built by this project.
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeError.log".
+-- Using Win32 for window creation
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug

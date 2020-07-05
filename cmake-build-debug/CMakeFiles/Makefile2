@@ -52,19 +52,157 @@ CMAKE_BINARY_DIR = C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/OpenGLGameEngine.dir/all
+all: dependencies/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean:
+clean: CMakeFiles/OpenGLGameEngine.dir/clean
+clean: dependencies/clean
 
 .PHONY : clean
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: dependencies/preinstall
 
 .PHONY : preinstall
+
+#=============================================================================
+# Target rules for target CMakeFiles/OpenGLGameEngine.dir
+
+# All Build rule for target.
+CMakeFiles/OpenGLGameEngine.dir/all: dependencies/glfw/src/CMakeFiles/glfw.dir/all
+	$(MAKE) -f CMakeFiles\OpenGLGameEngine.dir\build.make CMakeFiles/OpenGLGameEngine.dir/depend
+	$(MAKE) -f CMakeFiles\OpenGLGameEngine.dir\build.make CMakeFiles/OpenGLGameEngine.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target OpenGLGameEngine"
+.PHONY : CMakeFiles/OpenGLGameEngine.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/OpenGLGameEngine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 18
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/OpenGLGameEngine.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/OpenGLGameEngine.dir/rule
+
+# Convenience name for target.
+OpenGLGameEngine: CMakeFiles/OpenGLGameEngine.dir/rule
+
+.PHONY : OpenGLGameEngine
+
+# clean rule for target.
+CMakeFiles/OpenGLGameEngine.dir/clean:
+	$(MAKE) -f CMakeFiles\OpenGLGameEngine.dir\build.make CMakeFiles/OpenGLGameEngine.dir/clean
+.PHONY : CMakeFiles/OpenGLGameEngine.dir/clean
+
+#=============================================================================
+# Directory level rules for directory dependencies
+
+# Recursive "all" directory target.
+dependencies/all: dependencies/glfw/all
+
+.PHONY : dependencies/all
+
+# Recursive "clean" directory target.
+dependencies/clean: dependencies/glfw/clean
+
+.PHONY : dependencies/clean
+
+# Recursive "preinstall" directory target.
+dependencies/preinstall: dependencies/glfw/preinstall
+
+.PHONY : dependencies/preinstall
+
+#=============================================================================
+# Directory level rules for directory dependencies/glfw
+
+# Recursive "all" directory target.
+dependencies/glfw/all: dependencies/glfw/src/all
+
+.PHONY : dependencies/glfw/all
+
+# Recursive "clean" directory target.
+dependencies/glfw/clean: dependencies/glfw/CMakeFiles/uninstall.dir/clean
+dependencies/glfw/clean: dependencies/glfw/src/clean
+
+.PHONY : dependencies/glfw/clean
+
+# Recursive "preinstall" directory target.
+dependencies/glfw/preinstall: dependencies/glfw/src/preinstall
+
+.PHONY : dependencies/glfw/preinstall
+
+#=============================================================================
+# Target rules for target dependencies/glfw/CMakeFiles/uninstall.dir
+
+# All Build rule for target.
+dependencies/glfw/CMakeFiles/uninstall.dir/all:
+	$(MAKE) -f dependencies\glfw\CMakeFiles\uninstall.dir\build.make dependencies/glfw/CMakeFiles/uninstall.dir/depend
+	$(MAKE) -f dependencies\glfw\CMakeFiles\uninstall.dir\build.make dependencies/glfw/CMakeFiles/uninstall.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles --progress-num= "Built target uninstall"
+.PHONY : dependencies/glfw/CMakeFiles/uninstall.dir/all
+
+# Build rule for subdir invocation for target.
+dependencies/glfw/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 0
+	$(MAKE) -f CMakeFiles\Makefile2 dependencies/glfw/CMakeFiles/uninstall.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 0
+.PHONY : dependencies/glfw/CMakeFiles/uninstall.dir/rule
+
+# Convenience name for target.
+uninstall: dependencies/glfw/CMakeFiles/uninstall.dir/rule
+
+.PHONY : uninstall
+
+# clean rule for target.
+dependencies/glfw/CMakeFiles/uninstall.dir/clean:
+	$(MAKE) -f dependencies\glfw\CMakeFiles\uninstall.dir\build.make dependencies/glfw/CMakeFiles/uninstall.dir/clean
+.PHONY : dependencies/glfw/CMakeFiles/uninstall.dir/clean
+
+#=============================================================================
+# Directory level rules for directory dependencies/glfw/src
+
+# Recursive "all" directory target.
+dependencies/glfw/src/all: dependencies/glfw/src/CMakeFiles/glfw.dir/all
+
+.PHONY : dependencies/glfw/src/all
+
+# Recursive "clean" directory target.
+dependencies/glfw/src/clean: dependencies/glfw/src/CMakeFiles/glfw.dir/clean
+
+.PHONY : dependencies/glfw/src/clean
+
+# Recursive "preinstall" directory target.
+dependencies/glfw/src/preinstall:
+
+.PHONY : dependencies/glfw/src/preinstall
+
+#=============================================================================
+# Target rules for target dependencies/glfw/src/CMakeFiles/glfw.dir
+
+# All Build rule for target.
+dependencies/glfw/src/CMakeFiles/glfw.dir/all:
+	$(MAKE) -f dependencies\glfw\src\CMakeFiles\glfw.dir\build.make dependencies/glfw/src/CMakeFiles/glfw.dir/depend
+	$(MAKE) -f dependencies\glfw\src\CMakeFiles\glfw.dir\build.make dependencies/glfw/src/CMakeFiles/glfw.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target glfw"
+.PHONY : dependencies/glfw/src/CMakeFiles/glfw.dir/all
+
+# Build rule for subdir invocation for target.
+dependencies/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 16
+	$(MAKE) -f CMakeFiles\Makefile2 dependencies/glfw/src/CMakeFiles/glfw.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 0
+.PHONY : dependencies/glfw/src/CMakeFiles/glfw.dir/rule
+
+# Convenience name for target.
+glfw: dependencies/glfw/src/CMakeFiles/glfw.dir/rule
+
+.PHONY : glfw
+
+# clean rule for target.
+dependencies/glfw/src/CMakeFiles/glfw.dir/clean:
+	$(MAKE) -f dependencies\glfw\src\CMakeFiles\glfw.dir\build.make dependencies/glfw/src/CMakeFiles/glfw.dir/clean
+.PHONY : dependencies/glfw/src/CMakeFiles/glfw.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

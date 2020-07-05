@@ -79,8 +79,7 @@ OpenGLGameEngine_EXTERNAL_OBJECTS =
 
 OpenGLGameEngine.exe: CMakeFiles/OpenGLGameEngine.dir/main.cpp.obj
 OpenGLGameEngine.exe: CMakeFiles/OpenGLGameEngine.dir/build.make
-OpenGLGameEngine.exe: ../../externallibs/glew/lib/Release/x64/glew32s.lib
-OpenGLGameEngine.exe: ../../externallibs/glfw/lib-mingw-w64/libglfw3.a
+OpenGLGameEngine.exe: dependencies/glfw/src/libglfw3.a
 OpenGLGameEngine.exe: CMakeFiles/OpenGLGameEngine.dir/linklibs.rsp
 OpenGLGameEngine.exe: CMakeFiles/OpenGLGameEngine.dir/objects1.rsp
 OpenGLGameEngine.exe: CMakeFiles/OpenGLGameEngine.dir/link.txt

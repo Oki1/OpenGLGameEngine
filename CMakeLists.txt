@@ -3,6 +3,9 @@ project(OpenGLGameEngine)
 
 set(CMAKE_CXX_STANDARD 14)
 
-target_link_libraries(OpenGLGameEngine glfw)
+add_subdirectory(dependencies)
+
 
 add_executable(OpenGLGameEngine main.cpp)
+
+target_link_libraries(OpenGLGameEngine glfw)

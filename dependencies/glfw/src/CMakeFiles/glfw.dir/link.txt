@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\glfw.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\glfw.dir/objects.a @CMakeFiles\glfw.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -shared -o glfw3.dll -Wl,--out-implib,libglfw3dll.a -Wl,--major-image-version,3,--minor-image-version,4 -Wl,--whole-archive CMakeFiles\glfw.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\glfw.dir\linklibs.rsp

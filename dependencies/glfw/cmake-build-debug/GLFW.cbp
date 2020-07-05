@@ -1,0 +1,1659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="GLFW"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\CMake\;CMake Files\src\;CMake Files\examples\;CMake Files\tests\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-D_UNICODE"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/mingw"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-D_UNICODE"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/mingw"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boing">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/boing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 boing"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boing/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/boing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 boing/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gears">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/gears.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 gears"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gears/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/gears.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 gears/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="particles">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/particles.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 particles"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="particles/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/particles.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 particles/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="heightmap">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/heightmap.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 heightmap"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="heightmap/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/heightmap.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 heightmap/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="splitview">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/splitview.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 splitview"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="splitview/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/splitview.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 splitview/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="offscreen">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/offscreen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 offscreen"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="offscreen/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/offscreen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 offscreen/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triangle-opengl">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/triangle-opengl.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 triangle-opengl"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triangle-opengl/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/triangle-opengl.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 triangle-opengl/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sharing">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/sharing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 sharing"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sharing/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/sharing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 sharing/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wave">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/wave.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 wave"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wave/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/wave.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 wave/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clipboard">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/clipboard.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clipboard"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clipboard/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/clipboard.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clipboard/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="events">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/events.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 events"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="events/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/events.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 events/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="msaa">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/msaa.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 msaa"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="msaa/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/msaa.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 msaa/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfwinfo">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/glfwinfo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 glfwinfo"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfwinfo/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/glfwinfo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 glfwinfo/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="iconify">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/iconify.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 iconify"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="iconify/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/iconify.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 iconify/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monitors">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/monitors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 monitors"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monitors/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/monitors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 monitors/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reopen">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/reopen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 reopen"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reopen/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/reopen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 reopen/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cursor">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/cursor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 cursor"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cursor/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/cursor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 cursor/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="empty">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/empty.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 empty"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="empty/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/empty.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 empty/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamma">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/gamma.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 gamma"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamma/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/gamma.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 gamma/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="icon">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/icon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 icon"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="icon/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/icon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 icon/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inputlag">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/inputlag.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 inputlag"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inputlag/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/inputlag.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 inputlag/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="joysticks">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/joysticks.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 joysticks"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="joysticks/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/joysticks.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 joysticks/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="threads">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/threads.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 threads"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="threads/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/threads.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 threads/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opacity">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/opacity.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 opacity"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opacity/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/opacity.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 opacity/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tearing">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/tearing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 tearing"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tearing/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/tearing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 tearing/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timeout">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/timeout.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 timeout"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timeout/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/timeout.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 timeout/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="title">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/title.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 title"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="title/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/title.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 title/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triangle-vulkan">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/triangle-vulkan.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 triangle-vulkan"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triangle-vulkan/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/triangle-vulkan.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 triangle-vulkan/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="windows">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/windows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 windows"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="windows/fast">
+				<Option output="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/windows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps"/>
+					<Add directory="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 windows/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/cmake-build-debug/src/glfw_config.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/getopt.c">
+			<Option target="particles"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="inputlag"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/getopt.h">
+			<Option target="particles"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="inputlag"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/glad/gl.h">
+			<Option target="boing"/>
+			<Option target="gears"/>
+			<Option target="particles"/>
+			<Option target="heightmap"/>
+			<Option target="splitview"/>
+			<Option target="offscreen"/>
+			<Option target="triangle-opengl"/>
+			<Option target="sharing"/>
+			<Option target="wave"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="reopen"/>
+			<Option target="cursor"/>
+			<Option target="empty"/>
+			<Option target="gamma"/>
+			<Option target="icon"/>
+			<Option target="inputlag"/>
+			<Option target="joysticks"/>
+			<Option target="threads"/>
+			<Option target="opacity"/>
+			<Option target="tearing"/>
+			<Option target="timeout"/>
+			<Option target="title"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/glad/vulkan.h">
+			<Option target="glfwinfo"/>
+			<Option target="triangle-vulkan"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/glad_gl.c">
+			<Option target="boing"/>
+			<Option target="gears"/>
+			<Option target="particles"/>
+			<Option target="heightmap"/>
+			<Option target="splitview"/>
+			<Option target="offscreen"/>
+			<Option target="triangle-opengl"/>
+			<Option target="sharing"/>
+			<Option target="wave"/>
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="reopen"/>
+			<Option target="cursor"/>
+			<Option target="empty"/>
+			<Option target="gamma"/>
+			<Option target="icon"/>
+			<Option target="inputlag"/>
+			<Option target="joysticks"/>
+			<Option target="threads"/>
+			<Option target="opacity"/>
+			<Option target="tearing"/>
+			<Option target="timeout"/>
+			<Option target="title"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/glad_vulkan.c">
+			<Option target="glfwinfo"/>
+			<Option target="triangle-vulkan"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/tinycthread.c">
+			<Option target="particles"/>
+			<Option target="empty"/>
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/deps/tinycthread.h">
+			<Option target="particles"/>
+			<Option target="empty"/>
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/boing.c">
+			<Option target="boing"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/gears.c">
+			<Option target="gears"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/glfw.rc">
+			<Option target="boing"/>
+			<Option target="gears"/>
+			<Option target="particles"/>
+			<Option target="heightmap"/>
+			<Option target="splitview"/>
+			<Option target="offscreen"/>
+			<Option target="triangle-opengl"/>
+			<Option target="sharing"/>
+			<Option target="wave"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/heightmap.c">
+			<Option target="heightmap"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/offscreen.c">
+			<Option target="offscreen"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/particles.c">
+			<Option target="particles"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/sharing.c">
+			<Option target="sharing"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/splitview.c">
+			<Option target="splitview"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/triangle-opengl.c">
+			<Option target="triangle-opengl"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/wave.c">
+			<Option target="wave"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/wgl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/wgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_joystick.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/win32_window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/clipboard.c">
+			<Option target="clipboard"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/cursor.c">
+			<Option target="cursor"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/empty.c">
+			<Option target="empty"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/events.c">
+			<Option target="events"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/gamma.c">
+			<Option target="gamma"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/glfwinfo.c">
+			<Option target="glfwinfo"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/icon.c">
+			<Option target="icon"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/iconify.c">
+			<Option target="iconify"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/inputlag.c">
+			<Option target="inputlag"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/joysticks.c">
+			<Option target="joysticks"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/monitors.c">
+			<Option target="monitors"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/msaa.c">
+			<Option target="msaa"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/opacity.c">
+			<Option target="opacity"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/reopen.c">
+			<Option target="reopen"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/tearing.c">
+			<Option target="tearing"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/threads.c">
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/timeout.c">
+			<Option target="timeout"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/title.c">
+			<Option target="title"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/triangle-vulkan.c">
+			<Option target="triangle-vulkan"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/windows.c">
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/CMake/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\CMake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/CMake/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\CMake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/CMake/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\CMake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\examples\"/>
+		</Unit>
+		<Unit filename="C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/dependenciesraw/glfw/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tests\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
