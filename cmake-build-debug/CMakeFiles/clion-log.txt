@@ -1,37 +1,5 @@
 "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine
--- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
--- Using Win32 for window creation
-CMake Error: File C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMake/glfw3Config.cmake.in does not exist.
-CMake Error at C:/Program Files/JetBrains/CLion 2019.2.5/bin/cmake/win/share/cmake-3.15/Modules/CMakePackageConfigHelpers.cmake:330 (configure_file):
-  configure_file Problem configuring file
-Call Stack (most recent call first):
-  C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMakeLists.txt:252 (configure_package_config_file)
-
-
-CMake Error: File C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMake/glfw3.pc.in does not exist.
-CMake Error at C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMakeLists.txt:261 (configure_file):
-  configure_file Problem configuring file
-
-
-CMake Error at C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMakeLists.txt:266 (add_subdirectory):
-  add_subdirectory given source "src" which is not an existing directory.
-
-
-CMake Error at C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMakeLists.txt:269 (add_subdirectory):
-  add_subdirectory given source "examples" which is not an existing
-  directory.
-
-
-CMake Error at C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMakeLists.txt:273 (add_subdirectory):
-  add_subdirectory given source "tests" which is not an existing directory.
-
-
-CMake Error: File C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMake/cmake_uninstall.cmake.in does not exist.
-CMake Error at C:/Users/Castor/Documents/projects/cpp/externallibs/glfw/CMakeLists.txt:305 (configure_file):
-  configure_file Problem configuring file
-
-
-CMake Error at CMakeLists.txt:8 (target_link_libraries):
+CMake Error at CMakeLists.txt:6 (target_link_libraries):
   Cannot specify link libraries for target "OpenGLGameEngine" which is not
   built by this project.
 

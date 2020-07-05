@@ -52,12 +52,12 @@ CMAKE_BINARY_DIR = C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/OpenGLGameEngine.dir/all
+all:
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/OpenGLGameEngine.dir/clean
+clean:
 
 .PHONY : clean
 
@@ -65,33 +65,6 @@ clean: CMakeFiles/OpenGLGameEngine.dir/clean
 preinstall:
 
 .PHONY : preinstall
-
-#=============================================================================
-# Target rules for target CMakeFiles/OpenGLGameEngine.dir
-
-# All Build rule for target.
-CMakeFiles/OpenGLGameEngine.dir/all:
-	$(MAKE) -f CMakeFiles\OpenGLGameEngine.dir\build.make CMakeFiles/OpenGLGameEngine.dir/depend
-	$(MAKE) -f CMakeFiles\OpenGLGameEngine.dir\build.make CMakeFiles/OpenGLGameEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target OpenGLGameEngine"
-.PHONY : CMakeFiles/OpenGLGameEngine.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/OpenGLGameEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/OpenGLGameEngine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/OpenGLGameEngine.dir/rule
-
-# Convenience name for target.
-OpenGLGameEngine: CMakeFiles/OpenGLGameEngine.dir/rule
-
-.PHONY : OpenGLGameEngine
-
-# clean rule for target.
-CMakeFiles/OpenGLGameEngine.dir/clean:
-	$(MAKE) -f CMakeFiles\OpenGLGameEngine.dir\build.make CMakeFiles/OpenGLGameEngine.dir/clean
-.PHONY : CMakeFiles/OpenGLGameEngine.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

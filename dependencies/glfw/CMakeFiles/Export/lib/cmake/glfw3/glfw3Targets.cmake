@@ -42,11 +42,11 @@ unset(_expectedTargets)
 
 
 # Compute the installation prefix relative to this file.
-get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(_IMPORT_PREFIX "glfw3Targets.cmake" PATH)
 get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
 get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
 get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
-if(_IMPORT_PREFIX STREQUAL "/")
+if(_IMPORT_PREFIX STREQUAL ".")
   set(_IMPORT_PREFIX "")
 endif()
 
@@ -59,7 +59,7 @@ set_target_properties(glfw PROPERTIES
 )
 
 # Load information for each installed configuration.
-get_filename_component(_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(_DIR "glfw3Targets.cmake" PATH)
 file(GLOB CONFIG_FILES "${_DIR}/glfw3Targets-*.cmake")
 foreach(f ${CONFIG_FILES})
   include(${f})
