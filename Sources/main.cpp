@@ -18,13 +18,13 @@ void framebuffer_size_callback(GLFWwindow* window, int height, int width) {
     glViewport(0, 0, width, height);
 }
 
-void processInput(GLFWwindow* window) {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, true);
+void processInput() {
+    if (glfwGetKey(swl::window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(swl::window, true);
     }
 }
 
-int main(void) {
+int main() {
     swl::init();
 
     //COMPILE VERTEX SHADER
@@ -81,18 +81,15 @@ int main(void) {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-
-
-
-
+    swl::background_color = {143, 215, 63, 255};
+    
     //RENDER LOOP
     while(!glfwWindowShouldClose(swl::window)) {
         //INPUT
-        processInput(swl::window);
-
+        processInput();
+        
         //RENDERING
-        glClearColor(0.431f, 0.796f, 0.266f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        swl::clear();
 
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
