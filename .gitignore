@@ -1,5 +1,5 @@
-/cmake-build-debug/
-/GLAD/
-CMakeLists.txt
-/.idea
-/dependencies
+./cmake-build-debug/
+./GLAD/
+./CMakeLists.txt/
+./.idea/
+./dependencies/
