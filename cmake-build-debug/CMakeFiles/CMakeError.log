@@ -1,0 +1,89 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_3a452/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_3a452.dir\build.make CMakeFiles/cmTC_3a452.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a452.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_3a452.dir\CheckIncludeFile.c.obj   -c C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:21: fatal error: pthread.h: No such file or directory
+ #include <pthread.h>
+                     ^
+compilation terminated.
+CMakeFiles\cmTC_3a452.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_3a452.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[2]: *** [CMakeFiles/cmTC_3a452.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[2]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_3a452/fast' failed
+mingw32-make.exe[1]: *** [cmTC_3a452/fast] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file dinput.h exists failed with the following output:
+Change Dir: C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_f3bf3/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f3bf3.dir\build.make CMakeFiles/cmTC_f3bf3.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f3bf3.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_f3bf3.dir\CheckIncludeFile.c.obj   -c C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:20: fatal error: dinput.h: No such file or directory
+ #include <dinput.h>
+                    ^
+compilation terminated.
+CMakeFiles\cmTC_f3bf3.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f3bf3.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[2]: *** [CMakeFiles/cmTC_f3bf3.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[2]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_f3bf3/fast' failed
+mingw32-make.exe[1]: *** [cmTC_f3bf3/fast] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file xinput.h exists failed with the following output:
+Change Dir: C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_b855d/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_b855d.dir\build.make CMakeFiles/cmTC_b855d.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b855d.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_b855d.dir\CheckIncludeFile.c.obj   -c C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:20: fatal error: xinput.h: No such file or directory
+ #include <xinput.h>
+                    ^
+compilation terminated.
+CMakeFiles\cmTC_b855d.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_b855d.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[2]: *** [CMakeFiles/cmTC_b855d.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[2]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_b855d/fast' failed
+mingw32-make.exe[1]: *** [cmTC_b855d/fast] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test _GLFW_HAS_64ASLR failed with the following output:
+Change Dir: C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_2768a/fast && mingw32-make.exe[1]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_2768a.dir\build.make CMakeFiles/cmTC_2768a.dir/build
+mingw32-make.exe[2]: Entering directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2768a.dir/src.c.obj
+C:\MinGW\bin\gcc.exe   -D_GLFW_HAS_64ASLR -Wl,--high-entropy-va   -o CMakeFiles\cmTC_2768a.dir\src.c.obj   -c C:\Users\Castor\Documents\projects\cpp\OpenGLGameEngine\cmake-build-debug\CMakeFiles\CMakeTmp\src.c
+Linking C executable cmTC_2768a.exe
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_2768a.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_2768a.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_2768a.dir/objects.a @CMakeFiles\cmTC_2768a.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe  -D_GLFW_HAS_64ASLR -Wl,--high-entropy-va    -Wl,--whole-archive CMakeFiles\cmTC_2768a.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2768a.exe -Wl,--out-implib,libcmTC_2768a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_2768a.dir\linklibs.rsp
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: unrecognized option '--high-entropy-va'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: use the --help option for usage information
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_2768a.dir\build.make:87: recipe for target 'cmTC_2768a.exe' failed
+mingw32-make.exe[2]: *** [cmTC_2768a.exe] Error 1
+mingw32-make.exe[2]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_2768a/fast' failed
+mingw32-make.exe[1]: *** [cmTC_2768a/fast] Error 2
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
