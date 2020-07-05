@@ -6,23 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../../externallibs/glew/include/GL/glew.h
-stddef.h
--
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-Availability.h
--
-OpenGL/glu.h
--
-GL/glu.h
--
-
-../../externallibs/glfw/include/GLFW/glfw3.h
+../dependencies/glfw/include/GLFW/glfw3.h
 stddef.h
 -
 stdint.h
@@ -55,20 +39,20 @@ OpenGL/gl3ext.h
 -
 GL/glcorearb.h
 -
-OpenGL/gl.h
--
 OpenGL/glu.h
+-
+GL/glu.h
+-
+OpenGL/gl.h
 -
 GL/gl.h
 -
 GL/glext.h
 -
-GL/glu.h
--
 
 C:/Users/Castor/Documents/projects/cpp/OpenGLGameEngine/main.cpp
-GL/glew.h
--
 GLFW/glfw3.h
+-
+iostream
 -
 
