@@ -1,6 +1,6 @@
 #include "init.hpp"
 #include "singleWindowLibrary.hpp"
-#include <string>
+//#include <string>
 
 const char *vertexShaderSource = "#version 330 core\n"
                                  "layout (location = 0) in vec3 aPos;\n"
@@ -26,7 +26,6 @@ int main() {
 
 
     //COMPILE VERTEX SHADER
-
     int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
     glCompileShader(vertexShader);
@@ -57,7 +56,7 @@ int main() {
     float vertices[] = {
             -0.5f, -0.5f, 0.0f,
             0.5f, -0.5f, 0.0f,
-            0.0f,  0.5f, 0.0f
+            0.0f,  0.5f, 0.0f,
     };
     unsigned int VBO, VAO; //VERTEX BUFFER OBJECT
     glGenVertexArrays(1, &VAO);
