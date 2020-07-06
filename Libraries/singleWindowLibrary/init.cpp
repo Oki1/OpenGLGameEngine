@@ -2,7 +2,7 @@
 #include "singleWindowLibrary.hpp"
 
 bool swl::init() {
-    window = glfwCreateWindow(initial_window_width, initial_window_width, initial_window_title.c_str(), nullptr, nullptr); // nullptr is for c++, NULL is for c
+    window = glfwCreateWindow(initial_window_width, initial_window_height, initial_window_title.c_str(), nullptr, nullptr); // nullptr is for c++, NULL is for c
     if(!window) { // window == 0
         std::cerr << "Failed to create GLFW window" << std::endl;
         //glfwTerminate(); // it gets terminated in initScript
