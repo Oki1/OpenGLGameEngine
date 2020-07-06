@@ -16,6 +16,6 @@ void swl::checkShader(int target_shader, std::string shader_type, std::string er
     glGetProgramiv(target_shader, GL_LINK_STATUS, &success);
     if (!success) {
         glGetProgramInfoLog(target_shader, 512, nullptr, info_log);
-        std::cerr << "ERROR::SHADER::" << shader_type << "::COMPILATION_FAILED\n" << info_log << std::endl;
+        std::cerr << "ERROR::SHADER::" << shader_type << "::" << error_type << "\n" << info_log << std::endl;
     }
 }
