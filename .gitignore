@@ -1,5 +1,6 @@
 cmake-build-debug/
 dependencies/CMakeLists.txt
+CMakeLists.txt
 .idea/
 dependencies/
 Base.lproj
