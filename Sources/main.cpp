@@ -31,13 +31,25 @@ int main() {
     int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
     glCompileShader(vertexShader);
-    swl::checkShader(vertexShader, "VERTEX", "COMPILATION_FAILED");
+
+    int success;
+    char info_log[512];
+    glGetProgramiv(vertexShader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(vertexShader, 512, nullptr, info_log);
+        std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED" << info_log << std::endl;
+    }
 
     //COMPILE FRAGMENT SHADER
     int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, nullptr);
     glCompileShader(fragmentShader);
-    swl::checkShader(fragmentShader, "FRAGMENT", "COMPILATION_FAILED");
+
+    glGetProgramiv(fragmentShader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(fragmentShader, 512, nullptr, info_log);
+        std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED" << info_log << std::endl;
+    }
 
 
     //CREATE SHADER OBJECT
@@ -45,7 +57,14 @@ int main() {
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
-    swl::checkShader(shaderProgram, "PROGRAM", "LINKING_FAILED");
+
+
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(shaderProgram, 512, nullptr, info_log);
+        std::cout <<"ERROR::SHADER::PROGRAM ::LINKING_FAILED\n"<<info_log << std::endl;
+    }
+
 
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
@@ -96,7 +115,9 @@ int main() {
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-
+    int nrAttributes;
+    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+    std::cout << "Maximum nr of vertex attributes supported: "<< nrAttributes<< std::endl;
     //RENDER LOOP
     while(!glfwWindowShouldClose(swl::window)) {
         //INPUT

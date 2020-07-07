@@ -10,12 +10,3 @@ void swl::updateScreen() {
     glfwPollEvents();
 }
 
-void swl::checkShader(int target_shader, std::string shader_type, std::string error_type) {
-    int success;
-    char info_log[512];
-    glGetProgramiv(target_shader, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(target_shader, 512, nullptr, info_log);
-        std::cerr << "ERROR::SHADER::" << shader_type << "::" << error_type << "\n" << info_log << std::endl;
-    }
-}
