@@ -16,6 +16,5 @@ bool init();
 void clear();
 void updateScreen();
 inline bool buttonPressed(int button) { return glfwGetKey(window, button) == GLFW_PRESS; };
-void checkShader(int target_shader, std::string shader_type, std::string error_type);
 }
 
