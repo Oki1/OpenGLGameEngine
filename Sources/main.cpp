@@ -95,7 +95,7 @@ int main() {
             -0.5f, 0.5f, -0.5f, 0.0f, 1.0f
     };
 
-
+    //buffer data
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -116,24 +116,31 @@ int main() {
 
 //    uncomment this call to draw in wireframe polygons.
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-//    int nrAttributes;x
-//    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
-//    std::cout << "Maximum nr of vertex attributes supported: "<< nrAttributes<< std::endl;
 
+    //store cube positions in vectors
+    glm::vec3 cubePositions[] = {
+            glm::vec3( 0.0f, 0.0f, 0.0f),
+            glm::vec3( 2.0f, 5.0f, -15.0f),
+            glm::vec3(-1.5f, -2.2f, -2.5f),
+            glm::vec3(-3.8f, -2.0f, -12.3f),
+            glm::vec3( 2.4f, -0.4f, -3.5f),
+            glm::vec3(-1.7f, 3.0f, -7.5f),
+            glm::vec3( 1.3f, -2.0f, -2.5f),
+            glm::vec3( 1.5f, 2.0f, -2.5f),
+            glm::vec3( 1.5f, 0.2f, -1.5f),
+            glm::vec3(-1.3f, 1.0f, -1.5f)
+    };
 
-    //creates projection uniform (projection uniforms rarely change therefore im setting it outside the main loop)
-
-
-
-
-    //RENDER LOOP
+    //creates projection uniform
     shaderProgram.use();
     shaderProgram.setInt("texture1", 0);
     shaderProgram.setInt("texture2", 1);
 
+    //PROJECTION SHADER
     glm::mat4 projection = glm::mat4(1.0f);
     projection = glm::perspective(glm::radians(45.0f), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
     shaderProgram.setMat4("projection", projection);
+
 
     //enable depth testing
     glEnable(GL_DEPTH_TEST);
@@ -145,8 +152,6 @@ int main() {
         //RENDERING
         swl::clear();
 
-
-
         //adds textures
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture1);
@@ -157,17 +162,23 @@ int main() {
         shaderProgram.use();
 
         //creates matrices
-        glm::mat4 model = glm::mat4(1.0f);
+        //glm::mat4 model = glm::mat4(1.0f);
         glm::mat4 view = glm::mat4(1.0f);
-        model = glm::rotate(model, (float)glfwGetTime()*glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+        //model = glm::rotate(model, (float)glfwGetTime()*glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
         view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
         //sets matrix uniforms
-        shaderProgram.setMat4("model", model);
+        //shaderProgram.setMat4("model", model);
         shaderProgram.setMat4("view", view);
 
-        //render the square
+        //render the cubes
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        for(unsigned int i = 0; i < 10; i++) {
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, cubePositions[i]);
+            model = glm::rotate(model, (float)glfwGetTime() + glm::radians(20.0f * i), glm::vec3(1.0f, 0.3f, 0.5f));
+            shaderProgram.setMat4("model", model);
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
 
         //EVENTS AND BUFFERS
         swl::updateScreen(); //checks event triggers, updates window state and calls callback functions
