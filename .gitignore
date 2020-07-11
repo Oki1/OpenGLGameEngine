@@ -5,3 +5,5 @@ dependencies/
 Base.lproj
 Info.plist
 OpenGLGameEngine.entitlements
+libraries/glm
+libraries/stbImage
