@@ -98,17 +98,14 @@ int main() {
 //    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
 //    std::cout << "Maximum nr of vertex attributes supported: "<< nrAttributes<< std::endl;
 
-    //creates transformation matrix for scaling by .5 and  rotating 90 degrees around the z axis
-    glm::mat4 trans = glm::mat4(1.0f);
-    trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-    trans = glm::scale(trans, glm::vec3(0.5, 0.5,0.5));
+
+
 
     //RENDER LOOP
     shaderProgram.use();
     shaderProgram.setInt("texture2", 1);
 
     unsigned int transformLoc = glGetUniformLocation(shaderProgram.ID, "transform");
-    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
     while(!glfwWindowShouldClose(swl::window)) {
         //INPUT
         if (swl::buttonPressed(GLFW_KEY_ESCAPE))
@@ -116,15 +113,19 @@ int main() {
         
         //RENDERING
         swl::clear();
-
         shaderProgram.use();
-
+        //creates transformation matrix
+        //ROTATION HAS TO BE FIRST DUE TO HOW MATRICES ARE MULTIPLIED
+        glm::mat4 trans = glm::mat4(1.0f);
+        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        //adds transform uniform
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        //adds textures
         glActiveTexture(GL_TEXTURE0);
-
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
-
         //render the square
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
