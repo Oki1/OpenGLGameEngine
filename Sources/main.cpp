@@ -138,7 +138,7 @@ int main() {
 
     //PROJECTION SHADER
     glm::mat4 projection = glm::mat4(1.0f);
-    projection = glm::perspective(glm::radians(45.0f), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
+    projection = glm::perspective(glm::radians(70.0f), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
     shaderProgram.setMat4("projection", projection);
 
 
@@ -175,7 +175,7 @@ int main() {
         for(unsigned int i = 0; i < 10; i++) {
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, cubePositions[i]);
-            model = glm::rotate(model, (float)glfwGetTime() + glm::radians(20.0f * i), glm::vec3(1.0f, 0.3f, 0.5f));
+            model = glm::rotate(model, glm::radians(20.0f * i), glm::vec3(1.0f, 0.3f, 0.5f));
             shaderProgram.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
