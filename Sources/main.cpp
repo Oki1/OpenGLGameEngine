@@ -68,6 +68,7 @@ int main() {
             1, 2, 3  // second triangle
     };
 
+
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -99,13 +100,18 @@ int main() {
 //    std::cout << "Maximum nr of vertex attributes supported: "<< nrAttributes<< std::endl;
 
 
+    //creates projection uniform (projection uniforms rarely change therefore im setting it outside the main loop)
+
+
 
 
     //RENDER LOOP
     shaderProgram.use();
     shaderProgram.setInt("texture2", 1);
 
-    unsigned int transformLoc = glGetUniformLocation(shaderProgram.ID, "transform");
+    glm::mat4 projection = glm::mat4(1.0f);
+    projection = glm::perspective(glm::radians(45.0f), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
+    shaderProgram.setMat4("projection", projection);
     while(!glfwWindowShouldClose(swl::window)) {
         //INPUT
         if (swl::buttonPressed(GLFW_KEY_ESCAPE))
@@ -114,13 +120,15 @@ int main() {
         //RENDERING
         swl::clear();
         shaderProgram.use();
-        //creates transformation matrix
-        //ROTATION HAS TO BE FIRST DUE TO HOW MATRICES ARE MULTIPLIED
-        glm::mat4 trans = glm::mat4(1.0f);
-        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-        //adds transform uniform
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
+        //creates matrices
+        glm::mat4 model = glm::mat4(1.0f);
+        glm::mat4 view = glm::mat4(1.0f);
+        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        //sets matrix uniforms
+        shaderProgram.setMat4("model", model);
+        shaderProgram.setMat4("view", view);
         //adds textures
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture1);

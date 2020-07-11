@@ -6,6 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
+#include <gtc/type_ptr.hpp>
 
 namespace shd{
     class Shader{
@@ -19,6 +22,7 @@ namespace shd{
         void setBool(const std::string &name,bool value)const;
         void setInt(const std::string &name,int value)const;
         void setFloat(const std::string &name,float value)const;
+        void setMat4(const std::string &name, glm::mat4 value) const;
     };
 }
 #endif
