@@ -11,6 +11,9 @@ glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
+float lastTime = 0.0f;
+float deltaTime;
+
 void framebuffer_size_callback(GLFWwindow* window, int height, int width);
 void processInput(GLFWwindow* window);
 
@@ -129,6 +132,11 @@ int main() {
     projection = glm::perspective(glm::radians(70.0f), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
     shaderProgram.setMat4("projection", projection);
     while(!glfwWindowShouldClose(swl::window)) {
+        //calc delta time
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastTime;
+        lastTime = currentFrame;
+
         //INPUT
         processInput(swl::window);
         
@@ -168,13 +176,14 @@ int main() {
     glDeleteBuffers(1, &VBO);
     shaderProgram.del();
     return 0;
+    
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int height, int width) {
     glViewport(0, 0, width, height);
 }
 void processInput(GLFWwindow* window) {
-    const float cameraSpeed = 0.005f;
+    const float cameraSpeed = 2.5f * deltaTime;
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(swl::window, true);
     }
