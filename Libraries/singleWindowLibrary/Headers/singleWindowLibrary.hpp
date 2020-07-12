@@ -15,6 +15,5 @@ inline color background_color;
 bool init();
 void clear();
 void updateScreen();
-inline bool buttonPressed(int button) { return glfwGetKey(window, button) == GLFW_PRESS; };
 }
 

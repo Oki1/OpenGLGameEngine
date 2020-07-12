@@ -11,6 +11,7 @@ bool swl::init() {
     //glfwPollEvents();
     //glfwSetWindowSize(window, 1920, 1080);
     glfwMakeContextCurrent(window);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cerr << "Failed to initialize GLAD" << std::endl;
         return false;
