@@ -15,5 +15,6 @@ bool swl::init() {
         std::cerr << "Failed to initialize GLAD" << std::endl;
         return false;
     }
+    glEnable(GL_DEPTH_TEST); //enable depth testing
     return true;
 }

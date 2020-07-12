@@ -3,121 +3,70 @@
 #include "shader.h"
 #include <cmath>
 #include "stbImage.h"
-
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
 
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
-void framebuffer_size_callback(GLFWwindow* window, int height, int width) {
-    glViewport(0, 0, width, height);
-}
-
+void framebuffer_size_callback(GLFWwindow* window, int height, int width);
+void processInput(GLFWwindow* window);
 
 int main() {
+    //initialization
     swl::initial_window_height = 600;
     swl::initial_window_width = 800;
     swl::initial_window_title = "Test";
     swl::background_color = {200, 200, 100, 255};
     swl::init();
-
+    //generate shader program
     shd::Shader shaderProgram("../resources/shaders/vertex.vert", "../resources/shaders/fragment.frag");
-
-    unsigned int texture1;
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1); //create texture object and bind it
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); //set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    int width, height, nrChannels; //load and generate the texture
-    unsigned char *data = stbi_load("../resources/textures/container.jpg", &width, &height, &nrChannels, 0);
-
-    if(data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    } else {
-        std::cerr << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
-
-    unsigned int texture2;
-    glGenTextures(1, &texture2);
-    glBindTexture(GL_TEXTURE_2D, texture2);
-    stbi_set_flip_vertically_on_load(true);
-    data = stbi_load("../resources/textures/awesomeface.png", &width, &height,&nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA,
-                     GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    stbi_image_free(data);
-
-    float vertices[] = {
-            -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
-            0.5f, -0.5f, -0.5f, 1.0f, 0.0f,
-            0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-            0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-            -0.5f, 0.5f, -0.5f, 0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
-            -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-            0.5f, -0.5f, 0.5f, 1.0f, 0.0f,
-            0.5f, 0.5f, 0.5f, 1.0f, 1.0f,
-            0.5f, 0.5f, 0.5f, 1.0f, 1.0f,
-            -0.5f, 0.5f, 0.5f, 0.0f, 1.0f,
-            -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-            -0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-            -0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-            -0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-            0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-            0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-            0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-            0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
-            0.5f, -0.5f, 0.5f, 1.0f, 0.0f,
-            0.5f, -0.5f, 0.5f, 1.0f, 0.0f,
-            -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-            -0.5f, 0.5f, -0.5f, 0.0f, 1.0f,
-            0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-            0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-            0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-            -0.5f, 0.5f, 0.5f, 0.0f, 0.0f,
-            -0.5f, 0.5f, -0.5f, 0.0f, 1.0f
-    };
-
     //buffer data
-    unsigned int VBO, VAO;
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
+    float vertices[] = {
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+            0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 
-    glBindVertexArray(VAO);
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
 
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
 
-    // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // texture coord attribute
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
 
-
-//    uncomment this call to draw in wireframe polygons.
-//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
-    //store cube positions in vectors
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+    };
     glm::vec3 cubePositions[] = {
             glm::vec3( 0.0f, 0.0f, 0.0f),
             glm::vec3( 2.0f, 5.0f, -15.0f),
@@ -130,24 +79,58 @@ int main() {
             glm::vec3( 1.5f, 0.2f, -1.5f),
             glm::vec3(-1.3f, 1.0f, -1.5f)
     };
+    unsigned int VBO, VAO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0); // position attribute
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));// texture coord attribute
+    glEnableVertexAttribArray(1);
 
-    //creates projection uniform
+    //load textures
+    unsigned int texture1;
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1); //create texture object and bind it
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); //set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    int width, height, nrChannels; //load and generate the texture
+    unsigned char *data = stbi_load("../resources/textures/container.jpg", &width, &height, &nrChannels, 0);
+    if(data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    } else {
+        std::cerr << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+    unsigned int texture2;
+    glGenTextures(1, &texture2);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+    stbi_set_flip_vertically_on_load(true);
+    data = stbi_load("../resources/textures/awesomeface.png", &width, &height,&nrChannels, 0);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA,
+                     GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    stbi_image_free(data);
+//    uncomment this call to draw in wireframe polygons.
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     shaderProgram.use();
     shaderProgram.setInt("texture1", 0);
     shaderProgram.setInt("texture2", 1);
-
     //PROJECTION SHADER
     glm::mat4 projection = glm::mat4(1.0f);
     projection = glm::perspective(glm::radians(70.0f), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
     shaderProgram.setMat4("projection", projection);
-
-
-    //enable depth testing
-    glEnable(GL_DEPTH_TEST);
     while(!glfwWindowShouldClose(swl::window)) {
         //INPUT
-        if (swl::buttonPressed(GLFW_KEY_ESCAPE))
-            glfwSetWindowShouldClose(swl::window, true);
+        processInput(swl::window);
         
         //RENDERING
         swl::clear();
@@ -162,12 +145,9 @@ int main() {
         shaderProgram.use();
 
         //creates matrices
-        //glm::mat4 model = glm::mat4(1.0f);
         glm::mat4 view = glm::mat4(1.0f);
-        //model = glm::rotate(model, (float)glfwGetTime()*glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
-        view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-        //sets matrix uniforms
-        //shaderProgram.setMat4("model", model);
+        view  = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp); //keeps camera always looking forward even when moved
+
         shaderProgram.setMat4("view", view);
 
         //render the cubes
@@ -188,4 +168,27 @@ int main() {
     glDeleteBuffers(1, &VBO);
     shaderProgram.del();
     return 0;
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int height, int width) {
+    glViewport(0, 0, width, height);
+}
+void processInput(GLFWwindow* window) {
+    const float cameraSpeed = 0.005f;
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(swl::window, true);
+    }
+    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+        cameraPos += cameraSpeed * cameraFront;
+    }
+    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        cameraPos -= cameraSpeed * cameraFront;
+    }
+    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    }
+    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    }
+
 }
