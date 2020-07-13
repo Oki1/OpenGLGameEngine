@@ -26,7 +26,7 @@ int main() {
     swl::initial_window_height = 600;
     swl::initial_window_width = 800;
     swl::initial_window_title = "Test";
-    swl::background_color = {100, 100, 100, 255};
+    swl::background_color = {0,0,0, 255};
     swl::init();
     glfwSetFramebufferSizeCallback(swl::window, framebuffer_size_callback);
     glfwSetCursorPosCallback(swl::window, mouse_callback);
@@ -130,6 +130,14 @@ int main() {
     lightShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
     lightShader.setVec3("lightPos", lightPos);
     lightShader.setVec3("viewPos", camera.Position);
+    lightShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+    lightShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+    lightShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+    lightShader.setFloat("material.shininess", 32.0f);
+
+    lightShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+    lightShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f); // darkened
+    lightShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
 
 
@@ -173,8 +181,8 @@ int main() {
         lightShader.use();
         glBindVertexArray(VAO);
         model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.5f, 1.0f, 0.0f));
         model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
         lightShader.setMat4("model", model);
         lightShader.setMat4("view", view);
         lightShader.setMat4("projection", projection);
@@ -206,6 +214,12 @@ void processInput(GLFWwindow* window) {
     }
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    }
+    if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
+        camera.ProcessKeyboard(UP, deltaTime);
+    }
+    if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
+        camera.ProcessKeyboard(DOWN, deltaTime);
     }
 
 }
