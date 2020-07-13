@@ -129,7 +129,7 @@ int main() {
     lightShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
     lightShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
     lightShader.setVec3("lightPos", lightPos);
-
+    lightShader.setVec3("viewPos", camera.Position);
 
 
 
@@ -173,6 +173,7 @@ int main() {
         lightShader.use();
         glBindVertexArray(VAO);
         model = glm::mat4(1.0f);
+        model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
         lightShader.setMat4("model", model);
         lightShader.setMat4("view", view);
