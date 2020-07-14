@@ -21,6 +21,7 @@ bool firstMouse = true;
 float lastTime = 0.0f;
 float deltaTime;
 
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 int main() {
     //initialization
     swl::initial_window_height = 600;
@@ -30,9 +31,6 @@ int main() {
     swl::init();
     glfwSetFramebufferSizeCallback(swl::window, framebuffer_size_callback);
     glfwSetCursorPosCallback(swl::window, mouse_callback);
-    //generate shader program
-    shd::Shader lightShader("../resources/shaders/container.vert", "../resources/shaders/container.frag");
-    shd::Shader lightCubeShader("../resources/shaders/light.vert", "../resources/shaders/light.frag");
     //buffer data
     float vertices[] = {
 // positions // normals // texture coords
@@ -73,129 +71,67 @@ int main() {
             -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
             -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f
     };
-    glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
-    unsigned int VBO, VAO; //VAO CONTAINER
-    glGenVertexArrays(1, &VAO);
+
+    unsigned int VBO, containerVAO; //VAO CONTAINER
+    glGenVertexArrays(1, &containerVAO);
+    glBindVertexArray(containerVAO);
     glGenBuffers(1, &VBO);
-    glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0); // position attribute
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE, 8*sizeof(float), (void*) (sizeof(float) * 3));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*) (3*sizeof(float)));
     glEnableVertexAttribArray(1);
-
-    unsigned int lightVAO; //LIGHT VAO
+    unsigned int lightVAO;
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glVertexAttribPointer(0,3,GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*) 0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    /*glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));// texture coord attribute
-    glEnableVertexAttribArray(1);
-
-    //load textures
-    unsigned int texture1;
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1); //create texture object and bind it
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); //set texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    int width, height, nrChannels; //load and generate the texture
-    unsigned char *data = stbi_load("../resources/textures/container.jpg", &width, &height, &nrChannels, 0);
-    if(data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    } else {
-        std::cerr << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
-    unsigned int texture2;
-    glGenTextures(1, &texture2);
-    glBindTexture(GL_TEXTURE_2D, texture2);
-    stbi_set_flip_vertically_on_load(true);
-    data = stbi_load("../resources/textures/awesomeface.png", &width, &height,&nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA,
-                     GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    stbi_image_free(data); */
-//    uncomment this call to draw in wireframe polygons.
-//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    lightShader.use();
-    lightShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-    lightShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-    lightShader.setVec3("lightPos", lightPos);
-    lightShader.setVec3("viewPos", camera.Position);
-    lightShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-    lightShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-    lightShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-    lightShader.setFloat("material.shininess", 32.0f);
-
-    lightShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-    lightShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f); // darkened
-    lightShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
 
+    //generate shader program
+    shd::Shader lighting("../resources/shaders/lighting.vert", "../resources/shaders/lighting.frag");
+    shd::Shader lightObject("../resources/shaders/lightObject.vert", "../resources/shaders/lightObject.frag");
 
     while(!glfwWindowShouldClose(swl::window)) {
         //calc delta time
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastTime;
         lastTime = currentFrame;
-
         //INPUT
         processInput(swl::window);
-        
         //RENDERING
         swl::clear();
-
-        //adds textures
-        /*
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);*/
-
-
-
         //creates matrices
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)swl::initial_window_width / (float)swl::initial_window_height, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
-
-        //use the shader program
-        lightCubeShader.use();
-        //render the cube
-        glBindVertexArray(lightVAO);
-        glm::mat4 model = glm::mat4(1.0f);
+        //light object
+        glm::mat4 model(1.0f);
         model = glm::translate(model, lightPos);
         model = glm::scale(model, glm::vec3(0.2f));
-        lightCubeShader.setMat4("model", model);
-        lightCubeShader.setMat4("view", view);
-        lightCubeShader.setMat4("projection", projection);
+        lightObject.use();
+        lightObject.setTransformations(model, view, projection);
+        glBindVertexArray(lightVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
-
-        lightShader.use();
-        glBindVertexArray(VAO);
+        //cube
         model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.5f, 1.0f, 0.0f));
-        model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-        lightShader.setMat4("model", model);
-        lightShader.setMat4("view", view);
-        lightShader.setMat4("projection", projection);
-        glDrawArrays(GL_TRIANGLES,0,36);
-
+        glm::mat4 transposeModel = glm::transpose(glm::inverse(view * model));
+        lighting.use();
+        lighting.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        lighting.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+        lighting.setVec3("lightPosV", glm::vec3(view * glm::vec4(lightPos, 1.0)));
+        lighting.setMat4("transposeModel", transposeModel);
+        lighting.setTransformations(model, view, projection);
+        glBindVertexArray(containerVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 
         //EVENTS AND BUFFERS
         swl::updateScreen(); //checks event triggers, updates window state and calls callback functions
     }
-    glDeleteVertexArrays(1, &VAO);
+    glDeleteVertexArrays(1, &containerVAO);
+    glDeleteVertexArrays(1, &lightVAO);
     glDeleteBuffers(1, &VBO);
-    lightShader.del();
-    lightCubeShader.del();
     return 0;
 }
 

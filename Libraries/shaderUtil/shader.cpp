@@ -104,3 +104,13 @@ void Shader::setVec3(const std::string &name, glm::vec3 value) const {
 void Shader::setVec3(const std::string &name, float x, float y, float z) const {
     glUniform3f(glGetUniformLocation(ID, name.c_str()), x,y,z);
 }
+
+void Shader::setTransformations(glm::mat4 model, glm::mat4 view, glm::mat4 projection) const {
+    Shader::setMat4("model", model);
+    Shader::setMat4("view", view);
+    Shader::setMat4("projection", projection);
+}
+
+void Shader::setMat3(const std::string &name, glm::mat3 value) const {
+    Shader::setMat3(name, value);
+}
