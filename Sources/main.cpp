@@ -12,6 +12,7 @@ void processInput(GLFWwindow* window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void framebuffer_size_callback(GLFWwindow* window, int height, int width);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+unsigned int generateTexture(std::string path);
 
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = swl::initial_window_width / 2.0f;
@@ -84,7 +85,6 @@ int main() {
             -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
             -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f
     };
-
     unsigned int VBO, containerVAO; //VAO CONTAINER
     glGenVertexArrays(1, &containerVAO);
     glBindVertexArray(containerVAO);
@@ -105,43 +105,9 @@ int main() {
     glEnableVertexAttribArray(0);
 
     //textures
+    unsigned int containerDifTex = generateTexture("../resources/textures/container2.png");
+    unsigned int containerSpecTex = generateTexture("../resources/textures/container2_specular.png");
 
-    int width, height, nrChannels;
-    unsigned char* data = stbi_load("../resources/textures/container2.png", &width, &height, &nrChannels, 0);
-    unsigned int containerDifTex;
-    glGenTextures(1, &containerDifTex);
-    glBindTexture(GL_TEXTURE_2D,containerDifTex);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    if(data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else {
-        std::cerr << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
-
-    data = stbi_load("../resources/textures/container2_specular.png", &width, &height, &nrChannels, 0);
-    unsigned int containerSpecTex;
-    glGenTextures(1, &containerSpecTex);
-    glBindTexture(GL_TEXTURE_2D,containerSpecTex);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    if(data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else {
-        std::cerr << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
     //generate shader program
     shd::Shader lighting("../resources/shaders/lighting.vert", "../resources/shaders/lighting.frag");
     shd::Shader lightObject("../resources/shaders/lightObject.vert", "../resources/shaders/lightObject.frag");
@@ -154,11 +120,15 @@ int main() {
     lighting.use();
     lighting.setInt("material.diffuse", 0);
     lighting.setInt("material.specular", 1);
-    lighting.setFloat("material.shininess", 64.0f);
+    lighting.setFloat("material.shininess", 32.0f);
 
-    lighting.setVec3("light.ambient", glm::vec3(0.2f));
-    lighting.setVec3("light.diffuse", glm::vec3(0.8f));
-    lighting.setVec3("light.specular", glm::vec3(1.0f));
+    lighting.setVec3("pointLight.ambient", glm::vec3(0.2f));
+    lighting.setVec3("pointLight.diffuse", glm::vec3(0.8f));
+    lighting.setVec3("pointLight.specular", glm::vec3(1.0f));
+    lighting.setFloat("pointLight.constant", 1.0f);
+    lighting.setFloat("pointLight.linear", 0.09f);
+    lighting.setFloat("pointLight.quadratic", 0.032f);
+
 
 
     while(!glfwWindowShouldClose(swl::window)) {
@@ -184,11 +154,19 @@ int main() {
         //cube
         model = glm::mat4(1.0f);
         lighting.use();
-        lighting.setVec3("light.position", glm::vec3(view * glm::vec4(lightPos, 1.0)));
+        lighting.setMat4("view", view);
+        lighting.setMat4("projection", projection);
+        lighting.setVec3("pointLight.position", glm::vec3(view * glm::vec4(lightPos, 1.0)));
         lighting.setMat3("transposeModel", glm::mat3(glm::transpose(glm::inverse(view * model))));
-        lighting.setTransformations(model, view, projection);
-        glBindVertexArray(containerVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        for(unsigned int i = 0; i < 10; i++) {
+            model = glm::mat4(1.0f);
+            model = glm::translate(model, cubePositions[i]);
+            float angle = 20.0f * i;
+            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            lighting.setMat4("model", model);
+            glBindVertexArray(containerVAO);
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
 
         //EVENTS AND BUFFERS
         swl::updateScreen(); //checks event triggers, updates window state and calls callback functions
@@ -226,7 +204,6 @@ void processInput(GLFWwindow* window) {
 void framebuffer_size_callback(GLFWwindow* window, int height, int width) {
     glViewport(0, 0, width, height);
 }
-
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
     if (firstMouse)
@@ -244,8 +221,35 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 
     camera.ProcessMouseMovement(xoffset, yoffset);
 }
-
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
     camera.ProcessMouseScroll(yoffset);
+}
+unsigned int generateTexture(std::string path) {
+    int width, height, nrChannels;
+    unsigned char *data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
+    unsigned int ret;
+    GLenum format;
+    if (nrChannels == 1)
+        format = GL_RED;
+    else if (nrChannels == 3)
+        format = GL_RGB;
+    else if (nrChannels == 4)
+        format = GL_RGBA;
+    glGenTextures(1, &ret);
+    glBindTexture(GL_TEXTURE_2D, ret);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    if(data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else {
+        std::cerr << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+    return ret;
 }
