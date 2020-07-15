@@ -119,7 +119,7 @@ int main() {
     lighting.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
     lighting.setInt("material.diffuse", 0);
     lighting.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-    lighting.setLight(0.2f, 0.2f, 0.2f, 0.5f, 0.5f, 0.5f, 1.0f, 1.0f, 1.0f, lightPos);
+    lighting.setLight(0.2f, 0.2f, 0.2f, 0.8f, 0.8f, 0.8f, 1.0f, 1.0f, 1.0f, lightPos);
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, container);
