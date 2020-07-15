@@ -1,27 +1,36 @@
 #version 330 core
 // ALL OF THE LIGHTING CALCULATIONS ARE MADE IN VIEW SPACE
+struct Material {
+    sampler2D diffuse;
+    vec3 specular;
+    float shininess;
+};
+struct Light {
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+    vec3 position;
+};
 out vec4 fragColor;
 
+in vec2 texCoords;
 in vec3 fragPos;
 in vec3 normal;
-uniform vec3 objectColor;
-uniform vec3 lightColor;
-uniform vec3 lightPos;
+uniform Material material;
+uniform Light light;
 void main() {
-    float ambientStrength = 0.1;
-    vec3 ambient = ambientStrength * lightColor;
+    vec3 ambient = vec3(texture(material.diffuse, texCoords)) * light.ambient;
 
     vec3 norm = normalize(normal);
-    vec3 lightDir = normalize(lightPos - fragPos);
+    vec3 lightDir = normalize(light.position - fragPos);
     float diff = max(dot(norm, lightDir), 0.0);
-    vec3 diffuse = diff * lightColor;
+    vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, texCoords));
 
-    float specularStrength = 0.5;
     vec3 viewDir = normalize(-fragPos);
     vec3 reflectDir = reflect(-lightDir, norm);
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), 64);
-    vec3 specular = specularStrength * spec * lightColor;
+    vec3 specular = material.specular * spec * light.specular;
 
-    vec3 result = (ambient + diffuse + specular) * objectColor;
+    vec3 result = ambient + diffuse + specular;
     fragColor = vec4(result, 1.0);
 }

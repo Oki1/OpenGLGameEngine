@@ -27,6 +27,9 @@ namespace shd{
         void setVec3(const std::string &name, glm::vec3 value) const;
         void setVec3(const std::string &name, float x, float y, float z) const;
         void setTransformations(glm::mat4 model, glm::mat4 view, glm::mat4 projection) const;
+        //void setMaterial(glm::vec3 ambient, glm::vec3 diffuse, glm::vec3 specular, float shininess) const;
+        //void setMaterial(float ambientx, float ambienty, float ambientz, float diffusex, float diffusey, float diffusez, float specularx, float speculary, float specularz, float shininess) const;
+        void setLight(float ambientx, float ambienty, float ambientz, float diffusex, float diffusey, float diffusez, float specularx, float speculary, float specularz, glm::vec3 position) const;
     };
 }
 #endif

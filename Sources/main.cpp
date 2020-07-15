@@ -80,8 +80,10 @@ int main() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0); // position attribute
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*) (3*sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*) (3*sizeof(float))); //normal
     glEnableVertexAttribArray(1);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*) (6*sizeof(float))); //texture coordinate
+    glEnableVertexAttribArray(2);
     unsigned int lightVAO;
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
@@ -89,17 +91,44 @@ int main() {
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
+    //textures
 
+    int width, height, nrChannels;
+    unsigned char* data = stbi_load("../resources/textures/container2.png", &width, &height, &nrChannels, 0);
+    unsigned int container;
+    glGenTextures(1, &container);
+    glBindTexture(GL_TEXTURE_2D,container);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    if(data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else {
+        std::cerr << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
     //generate shader program
     shd::Shader lighting("../resources/shaders/lighting.vert", "../resources/shaders/lighting.frag");
     shd::Shader lightObject("../resources/shaders/lightObject.vert", "../resources/shaders/lightObject.frag");
 
+    lighting.use();
+    lighting.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+    lighting.setInt("material.diffuse", 0);
+    lighting.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+    lighting.setLight(0.2f, 0.2f, 0.2f, 0.5f, 0.5f, 0.5f, 1.0f, 1.0f, 1.0f, lightPos);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, container);
     while(!glfwWindowShouldClose(swl::window)) {
         //calc delta time
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastTime;
         lastTime = currentFrame;
-        //INPUT
+        //INPUT1
         processInput(swl::window);
         //RENDERING
         swl::clear();
@@ -116,12 +145,9 @@ int main() {
         glDrawArrays(GL_TRIANGLES, 0, 36);
         //cube
         model = glm::mat4(1.0f);
-        glm::mat4 transposeModel = glm::transpose(glm::inverse(view * model));
         lighting.use();
-        lighting.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-        lighting.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-        lighting.setVec3("lightPosV", glm::vec3(view * glm::vec4(lightPos, 1.0)));
-        lighting.setMat4("transposeModel", transposeModel);
+        lighting.setVec3("light.position", glm::vec3(view * glm::vec4(lightPos, 1.0)));
+        lighting.setMat3("transposeModel", glm::mat3(glm::transpose(glm::inverse(view * model))));
         lighting.setTransformations(model, view, projection);
         glBindVertexArray(containerVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
