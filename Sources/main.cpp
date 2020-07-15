@@ -32,6 +32,19 @@ int main() {
     glfwSetFramebufferSizeCallback(swl::window, framebuffer_size_callback);
     glfwSetCursorPosCallback(swl::window, mouse_callback);
     //buffer data
+    glm::vec3 cubePositions[] = {
+            glm::vec3( 0.0f, 0.0f, 0.0f),
+            glm::vec3( 2.0f, 5.0f, -15.0f),
+            glm::vec3(-1.5f, -2.2f, -2.5f),
+            glm::vec3(-3.8f, -2.0f, -12.3f),
+            glm::vec3( 2.4f, -0.4f, -3.5f),
+            glm::vec3(-1.7f, 3.0f, -7.5f),
+            glm::vec3( 1.3f, -2.0f, -2.5f),
+            glm::vec3( 1.5f, 2.0f, -2.5f),
+            glm::vec3( 1.5f, 0.2f, -1.5f),
+            glm::vec3(-1.3f, 1.0f, -1.5f)
+    };
+
     float vertices[] = {
 // positions // normals // texture coords
             -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
@@ -95,9 +108,27 @@ int main() {
 
     int width, height, nrChannels;
     unsigned char* data = stbi_load("../resources/textures/container2.png", &width, &height, &nrChannels, 0);
-    unsigned int container;
-    glGenTextures(1, &container);
-    glBindTexture(GL_TEXTURE_2D,container);
+    unsigned int containerDifTex;
+    glGenTextures(1, &containerDifTex);
+    glBindTexture(GL_TEXTURE_2D,containerDifTex);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    if(data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else {
+        std::cerr << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+
+    data = stbi_load("../resources/textures/container2_specular.png", &width, &height, &nrChannels, 0);
+    unsigned int containerSpecTex;
+    glGenTextures(1, &containerSpecTex);
+    glBindTexture(GL_TEXTURE_2D,containerSpecTex);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -115,14 +146,21 @@ int main() {
     shd::Shader lighting("../resources/shaders/lighting.vert", "../resources/shaders/lighting.frag");
     shd::Shader lightObject("../resources/shaders/lightObject.vert", "../resources/shaders/lightObject.frag");
 
-    lighting.use();
-    lighting.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-    lighting.setInt("material.diffuse", 0);
-    lighting.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-    lighting.setLight(0.2f, 0.2f, 0.2f, 0.8f, 0.8f, 0.8f, 1.0f, 1.0f, 1.0f, lightPos);
-
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, container);
+    glBindTexture(GL_TEXTURE_2D, containerDifTex);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, containerSpecTex);
+
+    lighting.use();
+    lighting.setInt("material.diffuse", 0);
+    lighting.setInt("material.specular", 1);
+    lighting.setFloat("material.shininess", 64.0f);
+
+    lighting.setVec3("light.ambient", glm::vec3(0.2f));
+    lighting.setVec3("light.diffuse", glm::vec3(0.8f));
+    lighting.setVec3("light.specular", glm::vec3(1.0f));
+
+
     while(!glfwWindowShouldClose(swl::window)) {
         //calc delta time
         float currentFrame = glfwGetTime();

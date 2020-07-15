@@ -114,22 +114,3 @@ void Shader::setTransformations(glm::mat4 model, glm::mat4 view, glm::mat4 proje
 void Shader::setMat3(const std::string &name, glm::mat3 value) const {
     glUniformMatrix3fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 }
-
-
-/*void Shader::setMaterial(float ambientx, float ambienty, float ambientz, float diffusex, float diffusey, float diffusez,
-                         float specularx, float speculary, float specularz, float shininess) const {
-    Shader::setVec3("material.ambient", ambientx, ambienty, ambientz);
-    Shader::setVec3("material.diffuse", diffusex, diffusey, diffusez);
-    Shader::setVec3("material.specular", specularx, speculary, specularz);
-    Shader::setFloat("material.shininess", shininess);
-
-}*/
-
-void Shader::setLight(float ambientx, float ambienty, float ambientz, float diffusex, float diffusey, float diffusez,
-                      float specularx, float speculary, float specularz, glm::vec3 position) const {
-    Shader::setVec3("light.ambient", ambientx, ambienty, ambientz);
-    Shader::setVec3("light.diffuse", diffusex, diffusey, diffusez);
-    Shader::setVec3("light.specular", specularx, speculary, specularz);
-    Shader::setVec3("light.shininess", position);
-
-}
