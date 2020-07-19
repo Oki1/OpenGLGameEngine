@@ -1,25 +1,14 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include "glad.h"
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
-#ifdef __APPLE__
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#else
 #include <glm.hpp>
-#include <gtc/matrix_transform.hpp>
-#include <gtc/type_ptr.hpp>
-#endif
+
 namespace shd {
     class Shader {
     public:
         unsigned int ID;
-        Shader(const char*vertexPath,const char*fragmentPath);
+        Shader(const char* vertexPath, const char* fragmentPath);
 
         void use();
         void del();
