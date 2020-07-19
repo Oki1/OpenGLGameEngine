@@ -1,9 +1,14 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <glad.h>
+#include "glad.h"
+#ifdef __APPLE__
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#else
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
+#endif
 
 #include <vector>
 

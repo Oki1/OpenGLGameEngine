@@ -3,9 +3,15 @@
 #include "shader.h"
 #include <cmath>
 #include "stbImage.h"
+#ifdef __APPLE__
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#else
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
+#endif
 #include "camera.hpp"
 
 void processInput(GLFWwindow* window);
