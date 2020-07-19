@@ -15,7 +15,7 @@ void framebuffer_size_callback(GLFWwindow* window, int height, int width);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 unsigned int generateTexture(std::string path);
 
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 4.0f));
 float last_x = swl::initial_window_width / 2.0f;
 float last_y = swl::initial_window_height / 2.0f;
 bool first_mouse = true;
@@ -33,6 +33,7 @@ int main() {
     swl::init();
     glfwSetFramebufferSizeCallback(swl::window, framebuffer_size_callback);
     glfwSetCursorPosCallback(swl::window, mouse_callback);
+    
     //buffer data
     glm::vec3 cube_positions[] = {
             glm::vec3( 0.0f, 0.0f, 0.0f),

@@ -1,20 +1,12 @@
 #include "camera.hpp"
 
-//#include <vector>
-
-Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch) : front(glm::vec3(0.0f, 0.0f, -1.0f)), movement_speed(SPEED), mouse_sensitivity(SENSITIVITY), zoom(ZOOM) {
-    position = position;
-    world_up = up;
-    yaw = yaw;
-    pitch = pitch;
+Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch) : front(glm::vec3(0.0f, 0.0f, -1.0f)), movement_speed(SPEED), mouse_sensitivity(SENSITIVITY), zoom(ZOOM), position(position), world_up(up), yaw(yaw), pitch(pitch)
+    // you can do that
+{
     updateCameraVectors();
 }
 
-Camera::Camera(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch) : front(glm::vec3(0.0f, 0.0f, -1.0f)), movement_speed(SPEED), mouse_sensitivity(SENSITIVITY), zoom(ZOOM) {
-    position = glm::vec3(pos_x, pos_y, pos_z);
-    world_up = glm::vec3(up_x, up_y, up_z);
-    yaw = yaw;
-    pitch = pitch;
+Camera::Camera(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch) : front(glm::vec3(0.0f, 0.0f, -1.0f)), movement_speed(SPEED), mouse_sensitivity(SENSITIVITY), zoom(ZOOM), position(glm::vec3(pos_x, pos_y, pos_z)), world_up(glm::vec3(up_x, up_y, up_z)), yaw(yaw), pitch(pitch) {
     updateCameraVectors();
 }
 
