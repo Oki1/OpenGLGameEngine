@@ -116,8 +116,8 @@ int main() {
     unsigned int container_spec_tex = generateTexture("../Resources/Textures/container2_specular.png");
 
     //generate shader program
-    shd::Shader lighting("../Resources/Shaders/lighting.vert", "../Resources/Shaders/lighting.frag");
-    shd::Shader light_object("../Resources/Shaders/lightObject.vert", "../Resources/Shaders/lightObject.frag");
+    shd::Shader lighting("lighting", "lighting");
+    shd::Shader light_object("lightObject", "lightObject");
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, container_dif_tex);
@@ -304,9 +304,8 @@ unsigned int generateTexture(std::string path) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
-    else {
+    else
         std::cerr << "Failed to load texture" << std::endl;
-    }
     stbi_image_free(data);
     return ret;
 }
