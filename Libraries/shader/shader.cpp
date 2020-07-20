@@ -8,34 +8,40 @@
 #include <fstream>
 #include <streambuf>
 
+#include "path.hpp"
 
 using namespace shd;
 
-Shader::Shader(const char* vertex_path, const char* fragment_path) {
+Shader::Shader(std::string vertex_path, std::string fragment_path) {
+    vertex_path = shaderPath + vertex_path + ".vert"; // apply path prefix to files
+    fragment_path = shaderPath + fragment_path + ".frag";
+    
     std::ifstream vertex_file(vertex_path);
     std::string vertex_code;
 
     if(!vertex_file.is_open())
-        std::cerr <<"ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ\n"<< std::endl;
-    
-    vertex_file.seekg(0, std::ios::end);
-    vertex_code.reserve(vertex_file.tellg());
-    vertex_file.seekg(0, std::ios::beg);
-    
-    vertex_code.assign((std::istreambuf_iterator<char>(vertex_file)), std::istreambuf_iterator<char>());
+        std::cerr <<"ERROR::SHADER::VERTEX::FILE_NOT_SUCCESFULLY_READ\n"<< std::endl;
+    else {
+        vertex_file.seekg(0, std::ios::end);
+        vertex_code.reserve(vertex_file.tellg());
+        vertex_file.seekg(0, std::ios::beg);
+        
+        vertex_code.assign((std::istreambuf_iterator<char>(vertex_file)), std::istreambuf_iterator<char>());
+    }
     vertex_file.close();
     
     std::ifstream fragment_file(fragment_path);
     std::string fragment_code;
     
     if(!fragment_file.is_open())
-        std::cerr <<"ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ\n"<< std::endl;
-    
-    fragment_file.seekg(0, std::ios::end);
-    fragment_code.reserve(fragment_file.tellg());
-    fragment_file.seekg(0, std::ios::beg);
-    
-    fragment_code.assign((std::istreambuf_iterator<char>(fragment_file)), std::istreambuf_iterator<char>());
+        std::cerr <<"ERROR::SHADER::FRAGMENT::FILE_NOT_SUCCESFULLY_READ\n"<< std::endl;
+    else {
+        fragment_file.seekg(0, std::ios::end);
+        fragment_code.reserve(fragment_file.tellg());
+        fragment_file.seekg(0, std::ios::beg);
+        
+        fragment_code.assign((std::istreambuf_iterator<char>(fragment_file)), std::istreambuf_iterator<char>());
+    }
     fragment_file.close();
     
     const char* v_shader_code = vertex_code.c_str();
@@ -43,14 +49,13 @@ Shader::Shader(const char* vertex_path, const char* fragment_path) {
     
     unsigned int vertex, fragment;
     int success;
-    char* info_log = nullptr;
+    char info_log[512];
 
     vertex = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertex, 1, &v_shader_code, nullptr);
     glCompileShader(vertex);
     glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
     if(!success) {
-        info_log = new char[512];
         glGetShaderInfoLog(vertex, 512, NULL, info_log);
         std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << info_log << std::endl;
     }
@@ -60,8 +65,6 @@ Shader::Shader(const char* vertex_path, const char* fragment_path) {
     glCompileShader(fragment);
     glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
     if(!success) {
-        if(!info_log)
-            info_log = new char[512];
         glGetShaderInfoLog(fragment, 512, NULL, info_log);
         std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n"<<info_log << std::endl;
     }
@@ -74,8 +77,6 @@ Shader::Shader(const char* vertex_path, const char* fragment_path) {
 
     glGetProgramiv(ID, GL_LINK_STATUS, &success);
     if (!success) {
-        if(!info_log)
-            info_log = new char[512];
         glGetProgramInfoLog(ID, 512, nullptr, info_log);
         std::cout <<"ERROR::SHADER::PROGRAM::LINKING_FAILED\n"<<  info_log << std::endl;
     }

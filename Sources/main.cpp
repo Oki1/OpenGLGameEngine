@@ -112,12 +112,12 @@ int main() {
     glEnableVertexAttribArray(0);
 
     //textures
-    unsigned int container_dif_tex = generateTexture("../resources/textures/container2.png");
-    unsigned int container_spec_tex = generateTexture("../resources/textures/container2_specular.png");
+    unsigned int container_dif_tex = generateTexture("../Resources/Textures/container2.png");
+    unsigned int container_spec_tex = generateTexture("../Resources/Textures/container2_specular.png");
 
     //generate shader program
-    shd::Shader lighting("../resources/shaders/lighting.vert", "../resources/shaders/lighting.frag");
-    shd::Shader light_object("../resources/shaders/lightObject.vert", "../resources/shaders/lightObject.frag");
+    shd::Shader lighting("lighting", "lighting");
+    shd::Shader light_object("lightObject", "lightObject");
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, container_dif_tex);
@@ -132,8 +132,8 @@ int main() {
     float quadratic = 0.017f;
     float linear = 0.07f;
     float constant = 1.0f;
-    float specular = 0.0f;//1.0f;
-    float diffuse = 0.8f;//0.8f;
+    float specular = 0.0f; //1.0f;
+    float diffuse = 0.8f; //0.8f;
     float ambient = 0.0f; //0.2f;
     lighting.setVec3("pointLight[0].ambient", glm::vec3(ambient));
     lighting.setVec3("pointLight[0].diffuse", glm::vec3(diffuse));
@@ -304,9 +304,8 @@ unsigned int generateTexture(std::string path) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
-    else {
+    else
         std::cerr << "Failed to load texture" << std::endl;
-    }
     stbi_image_free(data);
     return ret;
 }
