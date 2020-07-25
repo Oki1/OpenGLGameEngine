@@ -1,5 +1,5 @@
-#include "init.hpp"
 #include "opengl.hpp"
+#include "init.hpp"
 #undef main
 
 int main() {
@@ -11,5 +11,4 @@ int main() {
     int return_ = EngineMain();
     glfwTerminate();
     return return_;
-
 }

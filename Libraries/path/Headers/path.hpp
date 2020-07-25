@@ -3,8 +3,14 @@
 
 #include <string>
 
-inline std::string resourcePath = "../Resources/";
-inline std::string shaderPath = resourcePath + "Shaders/";
-inline std::string texturePath = resourcePath + "Textures/";
+#ifdef __APPLE__
+	inline std::string resourcePath = "../Resources/";
+	#else
+		inline std::string resourcePath = "Resources/";
+#endif
+
+	inline std::string shaderPath = resourcePath + "Shaders/";
+	inline std::string texturePath = resourcePath + "Textures/";
+
 
 #endif /* path_hpp */
