@@ -1,9 +1,7 @@
 #pragma once
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
+#include <iostream>
 namespace ipt {
-	void inputInit(
-		static void mouse_callback(GLFWwindow* window, double xpos, double ypos),
-		static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset),
-		static void key_callback(GLFWwindow* window, int key, int scanode, int action, int mods));
+	void inputinit(GLFWcursorposfun mcall, GLFWscrollfun scall, GLFWkeyfun kcall, GLFWwindow* wd);
 }

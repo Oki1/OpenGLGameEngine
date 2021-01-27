@@ -1,11 +1,7 @@
-#include "Headers/input.hpp";
-#include "window/Headers/window.hpp"
-
-void ipt::inputInit(
-static void mouse_callback(GLFWwindow* window, double xpos, double ypos),
-static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset),
-static void key_callback(GLFWwindow* window, int key, int scanode, int action, int mods)) {
-	glfwSetCursorPosCallback(wnd::window, mouse_callback);
-	glfwSetKeyCallback(wnd::window, key_callback);
-	glfwSetScrollCallback(wnd::window, scroll_callback);
+#include "Headers/input.hpp"
+void ipt::inputinit(GLFWcursorposfun mcall, GLFWscrollfun scall, GLFWkeyfun kcall, GLFWwindow* wd) {
+    glfwSetInputMode(wd, GLFW_CURSOR, GLFW_CURSOR_NORMAL);// set input mode(i know :O)
+    glfwSetCursorPosCallback(wd, mcall);
+    glfwSetKeyCallback(wd, kcall);
+    glfwSetScrollCallback(wd, scall);
 }

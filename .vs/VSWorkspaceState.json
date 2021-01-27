@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\OpenGLGameEngine",
+    "\\OpenGLGameEngine\\ExternalLibraries\\glad\\Headers",
+    "\\OpenGLGameEngine\\Libraries\\singleWindowLibrary\\Headers",
+    "\\OpenGLGameEngine\\Libraries\\window\\Headers",
+    "\\OpenGLGameEngine\\Sources"
+  ],
+  "SelectedNode": "\\OpenGLGameEngine\\Sources\\main.cpp",
+  "PreviewInSolutionExplorer": false
+}
