@@ -1,16 +1,14 @@
 #include "Headers/window.hpp"
 
 void wnd::clear() {
-    glClearColor((float)background_color.r / 255, (float)background_color.g / 255, (float)background_color.b / 255, (float)background_color.a / 255);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor((float)background_color.r / 255, (float)background_color.g / 255, (float)background_color.b / 255, (float)background_color.a / 255);//sets background color
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //clears depth(z) buffer and color buffer
 }
 
 void wnd::updateScreen() {
     glfwSwapBuffers(wnd::window);
     glfwPollEvents();
 }
-
-
 
 
 
@@ -29,6 +27,10 @@ bool wnd::init() {
         return false;
     }
     glfwMakeContextCurrent(window);
+    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); //<- cursor go poof  
+    if (glfwRawMouseMotionSupported())
+        glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
+
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -43,6 +45,5 @@ bool wnd::init() {
             std::cerr << "window has been resized to " << width << "x" << height << std::endl;
             glViewport(0, 0, width, height);
         });
-
     return true;
 }

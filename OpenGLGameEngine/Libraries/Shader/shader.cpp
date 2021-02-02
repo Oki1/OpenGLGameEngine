@@ -1,4 +1,4 @@
-#include "Headers/shader.hpp"
+#include "Headers/Shader.hpp"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -7,6 +7,11 @@
 void Shader::setInt(std::string name, int value) {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
+
+void Shader::setMat4(std::string name, glm::mat4 value) {
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, false, glm::value_ptr(value));    
+}
+
 Shader::Shader(std::string vertexName, std::string fragmentName) {
 
 	std::string vertexPath = shaderPath + vertexName;

@@ -1,6 +1,8 @@
-#ifndef SHADER_H
-#define SHADER_H
+#pragma once
 #include <string>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 class Shader {
 public:
@@ -11,5 +13,5 @@ public:
     void use();
     void del();
     void setInt(std::string name, int value);
+    void setMat4(std::string name, glm::mat4 mat);
 };
-#endif
