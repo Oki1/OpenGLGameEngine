@@ -143,10 +143,9 @@ int main(void) {
         shader.use();
         shader.setVec3("objectColor", 1.0f, 0.0f, 0.0f);
         shader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-        shader.setVec3("lightPos", lightPos);
+        shader.setVec3("lightPos", glm::vec3(view * glm::vec4(lightPos, 1.0f)));
         shader.setVec3("viewPos", camera.camPos);
-
-        shader.setMat3("transposeMatrix", glm::mat3(glm::transpose(glm::inverse(model))));
+        shader.setMat3("transposeMatrix", glm::mat3(glm::transpose(glm::inverse(view * model))));
 
         shader.setMat4("model", model);
         shader.setMat4("view", view);
