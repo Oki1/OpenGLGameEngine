@@ -27,7 +27,7 @@ bool wnd::init() {
         return false;
     }
     glfwMakeContextCurrent(window);
-    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); //<- cursor go poof  
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); //<- cursor go poof  
     if (glfwRawMouseMotionSupported())
         glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 

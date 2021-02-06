@@ -17,7 +17,6 @@ private:
 
 	//cam vectors
 	//-------------------
-	glm::vec3 camPos;
 	glm::vec3 camFront;
 	glm::vec3 camUp;
 	glm::vec3 camRight;
@@ -33,4 +32,5 @@ public:
 	}
 	void processKeyboard(movementDirections dir, float deltaTime);
 	void processMouse(double xpos, double ypos);
+	glm::vec3 camPos;
 };

@@ -9,49 +9,48 @@
 #include "Camera/Headers/Camera.hpp"
 
 float vertices[] = {
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+     0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+     0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
 
-    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+    -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+    -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
 
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
 
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
 
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+     0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+     0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+     0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
 };
-
 
 int main(void) {
     const float fov = 75.0f;
@@ -59,32 +58,38 @@ int main(void) {
     //glfw, glew, input initiation
     //-------------------------------------------\ 
     wnd::initial_title = "<3 u :3";//             \ 
-    wnd::background_color = { 219, 144, 125 };//   \ 
+    wnd::background_color = { 0,0,0 };//           \ 
     wnd::init(); //initiates glew and a glfw window \ 
     GLFWwindow* window = wnd::window;//              \
     //------------------------------------------------\ 
     Shader shader("triangle.vert", "triangle.frag");
+    Shader lightShader("lightObject.vert", "lightObject.frag");
 
-    //Camera camera(glm::vec3(0.0f, 0.0f, 4.0f));
+
+    glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+    glm::vec3 obPos(1.0f, 1.0f, 1.0f);
 
     // GENERATE VAO
     //----------------------------------------------------------------------------
     AttrArray VAA;
     VAA.loadVAO();
     VAA.loadVBO(vertices, sizeof(vertices));
-    VAA.addData(0, 3, GL_FLOAT, GL_FALSE, 5* sizeof(float), (void*)0);
-    VAA.enableVAA(0);
-    // texture coord attribute
-    VAA.addData(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    VAA.addData(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    VAA.enableVAA(0);// configure attribute
+    VAA.addData(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
     VAA.enableVAA(1);
+
+
+    //light vao
+    AttrArray lightOb;
+    lightOb.loadVAO();
+    glBindBuffer(GL_ARRAY_BUFFER, VAA.VBO);
+    lightOb.addData(0, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)0);
+    VAA.enableVAA(0);
 
     // load and create a texture 
 // -------------------------------------------------------------------------------
-    Texture texture1("container.jpg");
-    Texture texture2("awesomeface.png", true);
-    shader.use();
-    shader.setInt("texture1", 0); //connects variable name in fragment shader to right texture units
-    shader.setInt("texture2", 1);
+    
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //<=wireframe modes
 
     // different matrices i need
@@ -127,16 +132,37 @@ int main(void) {
         glfwGetWindowSize(window, &width, &height);
         float lastAr = aspectRatio;
         aspectRatio = width / (float)height;
+        if (aspectRatio != lastAr) {
+            projection = glm::perspective(glm::radians(fov), aspectRatio, 0.1f, 100.0f);
+        }
 
+        //send other shit to gpu
+
+
+        //send matrices to gpu
+        shader.use();
+        shader.setVec3("objectColor", 1.0f, 0.0f, 0.0f);
+        shader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+        shader.setVec3("lightPos", lightPos);
+        shader.setVec3("viewPos", camera.camPos);
         shader.setMat4("model", model);
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
-        shader.use();
-        VAA.bindVAO();
-        texture1.bindTex(GL_TEXTURE0);
-        texture2.bindTex(GL_TEXTURE1);
         VAA.bindVAO();
         glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+
+        lightShader.use();
+        glm::mat4 lMod = glm::mat4(1.0f);
+        lMod = glm::translate(lMod, lightPos);
+        lMod = glm::scale(lMod, glm::vec3(0.2f));
+        lightShader.setMat4("model", lMod);
+        lightShader.setMat4("view", view);
+        lightShader.setMat4("projection", projection);
+        lightOb.bindVAO();
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+
         //checks event triggers, updates window state and calls callback functions
         wnd::updateScreen();
     }
