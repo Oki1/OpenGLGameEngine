@@ -14,6 +14,7 @@ public:
     void del();
     void setInt(std::string name, int value);
     void setMat4(std::string name, glm::mat4 mat);
+    void setMat3(std::string name, glm::mat3 mat);
     void setVec3(std::string name, glm::vec3 vec);
     void setVec3(std::string name, float a, float b, float c);
 };

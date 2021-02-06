@@ -145,6 +145,9 @@ int main(void) {
         shader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
         shader.setVec3("lightPos", lightPos);
         shader.setVec3("viewPos", camera.camPos);
+
+        shader.setMat3("transposeMatrix", glm::mat3(glm::transpose(glm::inverse(model))));
+
         shader.setMat4("model", model);
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
