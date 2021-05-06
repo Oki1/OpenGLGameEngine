@@ -1,7 +1,6 @@
 cmake-build-debug/
 CMakeLists.txt
 .idea/
-dependencies/
 Base.lproj
 Info.plist
 OpenGLGameEngine.entitlements
@@ -11,5 +10,7 @@ OpenGLGameEngine.entitlements
 **/*.vcxproj.filters
 **/*.vcxproj.user
 x64/
-externalLibraries/glfw/
+externalLibraries/
 .vs/
+**/*.log
+**/*.pdb
