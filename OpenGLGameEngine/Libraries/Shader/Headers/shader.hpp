@@ -12,6 +12,7 @@ public:
 
     void use();
     void del();
+    void setFloat(std::string name, float value);
     void setInt(std::string name, int value);
     void setMat4(std::string name, glm::mat4 mat);
     void setMat3(std::string name, glm::mat3 mat);

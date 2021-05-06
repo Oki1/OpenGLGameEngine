@@ -14,9 +14,9 @@ void wnd::updateScreen() {
 
 bool wnd::init() {
     glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);// version 4.6
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);// choose core or immediet mode of opengl
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);// version 4.5
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);// choose core or immidiate mode of opengl
     //glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);// whether the window will be resizable
     glfwWindowHint(GLFW_FOCUSED, GL_TRUE);
 

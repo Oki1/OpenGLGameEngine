@@ -141,7 +141,12 @@ int main(void) {
 
         //send matrices to gpu
         shader.use();
-        shader.setVec3("objectColor", 1.0f, 0.0f, 0.0f);
+        //shader.setVec3("objectColor", 1.0f, 0.0f, 0.0f);
+        shader.setVec3("material.ambient", 0.19125f, 0.0735f, 0.0225f);
+        shader.setVec3("material.diffuse", 0.7038f, 0.27048f, 0.0828f);
+        shader.setVec3("material.specular", 0.256777f, 0.137622f, 0.086014f);
+        shader.setFloat("material.shininess", 12.8f);
+
         shader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
         shader.setVec3("lightPos", glm::vec3(view * glm::vec4(lightPos, 1.0f)));
         shader.setVec3("viewPos", camera.camPos);

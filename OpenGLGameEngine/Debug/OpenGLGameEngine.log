@@ -1,3 +1,2 @@
-﻿  main.cpp
-main.obj : error LNK2019: unresolved external symbol "bool __cdecl wnd::init(void)" (?init@wnd@@YA_NXZ) referenced in function _main
-C:\Users\43per\Documents\Programming\gameEngine\OpenGLGameEngine\Debug\OpenGLGameEngine.exe : fatal error LNK1120: 1 unresolved externals
+﻿  glad.c
+C:\Users\43per\Documents\Programming\gameEngine\OpenGLGameEngine\dependencies\glad\src\glad.c(25,10): fatal error C1083: Cannot open include file: 'glad/glad.h': No such file or directory
