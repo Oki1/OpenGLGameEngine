@@ -1,6 +1,6 @@
 #include "Header/vertexAttributeArray.hpp"
 #include <iostream>
-//i <3 u
+
 void AttrArray::bindVAO() {
 	glBindVertexArray(VAO);
 }
@@ -8,6 +8,9 @@ void AttrArray::bindVAO() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 }*/
 
+void AttrArray::unloadVAO() {
+	glBindVertexArray(0);
+}
 void AttrArray::loadVAO() {
 	// generate VAO=> vertex attribute array. stores many VBOS allowing us to render them all with binding and calling ti
 	glGenVertexArrays(1, &VAO);

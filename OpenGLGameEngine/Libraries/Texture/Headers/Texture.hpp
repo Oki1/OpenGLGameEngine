@@ -3,7 +3,7 @@
 #define TEXTURE_H
 #include <string>
 #include <glad/glad.h>
-
+enum texType { DIFFUSE, SPECULAR};
 class Texture {
 public:
 	Texture(std::string name, bool flip = false);
@@ -15,6 +15,7 @@ public:
 		return width;
 	}
 	unsigned int id;
+	texType type;
 	std::string texturePath = "Resources/Textures/";
 	std::string path;
 private:
