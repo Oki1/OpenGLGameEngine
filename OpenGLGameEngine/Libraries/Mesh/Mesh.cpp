@@ -8,6 +8,7 @@ Mesh::Mesh(std::vector<s_Vertex> vertices, std::vector<unsigned int> indices, st
 }
 
 void Mesh::setupMesh() {
+	//generate VAO
 	aa.loadVAO();
 	aa.loadVBO(&vertices[0], vertices.size() * sizeof(s_Vertex));
 	aa.loadEBO(&indices[0], indices.size() * sizeof(unsigned int));

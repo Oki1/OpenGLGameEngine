@@ -12,5 +12,5 @@ public:
 	void loadVAO();
 	//void bindEBO();
 	void bindVAO();
-	void unloadVAO();
+	void unbindVAO();
 };

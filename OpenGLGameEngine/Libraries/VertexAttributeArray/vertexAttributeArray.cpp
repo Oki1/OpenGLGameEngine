@@ -8,7 +8,7 @@ void AttrArray::bindVAO() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 }*/
 
-void AttrArray::unloadVAO() {
+void AttrArray::unbindVAO() {
 	glBindVertexArray(0);
 }
 void AttrArray::loadVAO() {
