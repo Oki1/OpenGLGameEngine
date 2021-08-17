@@ -57,7 +57,7 @@ int main(void) {
 
     //glfw, glew, input initiation
     //-------------------------------------------\ 
-    wnd::initial_title = "<3 u :3";//             \ 
+    wnd::initial_title = "jebeš";  //             \ 
     wnd::background_color = { 0,0,0 };//           \ 
     wnd::init(); //initiates glew and a glfw window \ 
     GLFWwindow* window = wnd::window;//              \

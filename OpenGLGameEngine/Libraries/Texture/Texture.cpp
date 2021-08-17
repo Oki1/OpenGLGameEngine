@@ -1,3 +1,4 @@
+#define STB_IMAGE_IMPLEMENTATION   
 #include "Headers/Texture.hpp"
 #include "stbImage.h"
 #include <iostream>
