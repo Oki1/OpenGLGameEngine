@@ -3,20 +3,25 @@
 #include "Texture/Headers/Texture.hpp"
 #include "Shader/Headers/shader.hpp"
 #include "VertexAttributeArray/Header/vertexAttributeArray.hpp"
-struct s_Vertex {
+struct s_vertices {
 	float* pos;
 	float* nor;
 	float* tex;
+	unsigned int nVerts;
+};
+struct s_indices {
+	uint16_t* indices;
+	unsigned int nIndices;
 };
 
 
 class Mesh {
 public:
-	//std::vector<s_Vertex> vertices;
-	std::vector<unsigned int> indices;
+	s_vertices vertices;
+	s_indices indices;
 	std::vector<Texture> textures;
 
-	Mesh(std::vector<s_Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
+	Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures);
 	~Mesh();
 	void Draw(Shader& shader); //idk if im gonna need this we'll see
 private:

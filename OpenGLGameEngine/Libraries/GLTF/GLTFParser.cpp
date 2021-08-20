@@ -3,15 +3,6 @@
 #include <bit>
 using json = nlohmann::json;
 
-bool is_big_endian(void)
-{
-	union {
-		uint32_t i;
-		char c[4];
-	} bint = { 0x01020304 };
-
-	return bint.c[0] == 1;
-}
 GLTF::GLTF(std::string filename, std::string path) : path{ path }, filename{ filename } {
 	file = std::ifstream(path + filename,	std::ifstream::binary);
 	//HEADER
@@ -41,7 +32,7 @@ GLTF::GLTF(std::string filename, std::string path) : path{ path }, filename{ fil
 	}
 }
 
-GLTF::arr GLTF::readBufferData(std::string attribute, json mesh) {
+GLTF::arr GLTF::readPointData(std::string attribute, json mesh) {
 	json accessor = jsonObject["accessors"][(int)mesh["primitives"][0]["attributes"][attribute]];
 	json bufferView = jsonObject["bufferViews"][(int)accessor["bufferView"]];
 	arr ar;
@@ -56,22 +47,23 @@ GLTF::arr GLTF::readBufferData(std::string attribute, json mesh) {
 std::vector<Mesh> GLTF::getMeshes() {
 	for (auto x : jsonObject["meshes"]) {
 		//position vector
+		s_vertices verts;
+		arr pos = readPointData("POSITION", x);
+		verts.nVerts = pos.size;
+		verts.pos = pos.arr;
+		delete& pos;
+		verts.nor = readPointData("NORMAL", x).arr;
+		verts.tex = readPointData("TEXCOORD_0", x).arr;
 
-		arr pos = readBufferData("POSITION", x);
-		arr nor = readBufferData("NORMAL", x);
-		arr tex = readBufferData("TEXCOORD_0", x);
- 
-		for (int x = 0; x < tex.size * 2; x++) {
-			std::cout << tex.arr[x] << std::endl;
-		}
+		//indices
+		s_indices ind;
+		json accessor = jsonObject["accessors"][(int)x["primitives"][0]["indices"]];
+		json bufferView = jsonObject["bufferViews"][(int)accessor["bufferView"]];
+		ind.nIndices = accessor["count"];
+		ind.indices = new uint16_t[ind.nIndices];
+		file.seekg(chunks[bufferView["buffer"]].offset + bufferView["byteOffset"], file.beg);
+		file.read((char*)ind.indices, bufferView["byteLength"]);
 
-		file.clear();
-
-		
-
-		delete[] pos.arr;
-		delete[] nor.arr;
-		delete[] tex.arr;
 	}
 	return std::vector<Mesh>();
 }

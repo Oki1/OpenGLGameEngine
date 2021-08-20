@@ -1,10 +1,15 @@
 #include "Headers/Mesh.hpp"
 #include <string>
 
-Mesh::Mesh(std::vector<s_Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures) :vertices(vertices), indices(indices), textures(textures) {
+Mesh:: Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures):vertices(vertices), indices(indices), textures(textures) {
 	setupMesh();
 }
-
+Mesh::~Mesh() {
+	delete[] vertices.pos;
+	delete[] vertices.nor;
+	delete[] vertices.tex;
+	delete[] indices.indices;
+}
 void Mesh::setupMesh() {
 	//generate VAO
 	aa.loadVAO();
@@ -43,3 +48,4 @@ void Mesh::Draw(Shader& shader) {
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 	aa.unbindVAO();
 }
+

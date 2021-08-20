@@ -37,6 +37,6 @@ private:
 
 	std::vector<chunk> chunks;
 
-	arr readBufferData(std::string attribute, json mesh);
+	arr readPointData(std::string attribute, json mesh);
 
 };
