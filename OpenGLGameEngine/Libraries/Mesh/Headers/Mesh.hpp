@@ -4,19 +4,20 @@
 #include "Shader/Headers/shader.hpp"
 #include "VertexAttributeArray/Header/vertexAttributeArray.hpp"
 struct s_Vertex {
-	glm::vec3 Position;
-	glm::vec3 Normal;
-	glm::vec3 TexCoords;
+	float* pos;
+	float* nor;
+	float* tex;
 };
 
 
 class Mesh {
 public:
-	std::vector<s_Vertex> vertices;
+	//std::vector<s_Vertex> vertices;
 	std::vector<unsigned int> indices;
 	std::vector<Texture> textures;
 
 	Mesh(std::vector<s_Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
+	~Mesh();
 	void Draw(Shader& shader); //idk if im gonna need this we'll see
 private:
 	AttrArray aa;
