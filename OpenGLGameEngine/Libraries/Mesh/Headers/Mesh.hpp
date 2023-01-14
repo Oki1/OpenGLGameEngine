@@ -14,6 +14,7 @@ struct s_vertices {
 struct s_indices {
 	uint16_t* indices;
 	unsigned int nIndices;
+};
 
 class Mesh {
 public:
@@ -24,6 +25,9 @@ public:
 	Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures);
 	~Mesh();
 	void Draw(Shader& shader); //idk if im gonna need this we'll see
+
+
+
 private:
 	AttrArray aa;
 

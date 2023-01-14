@@ -1,4 +1,60 @@
+#include <fstream>
+#include <iostream>
+
+
 #include "Headers/GLTFParser.hpp"
+
+void parseNode(rapidjson::Value &nodes, int index) {
+	rapidjson::Value& node = nodes[index];
+	if(node.HasMember("children")) {
+		for(auto& x : node["children"].GetArray()) {
+			parseNode(nodes, x.GetInt());
+		}
+	}
+	if(node.HasMember("mesh")) {
+		
+	}
+}
+
+GLTFParser::GLTFParser(std::string filename) {
+	std::cout << "Parsing begin" << std::endl;
+
+	std::ifstream file(filename, std::ios::binary | std::ios::ate);
+	uint size = file.tellg();
+	file.seekg(0, std::ios::beg);
+	buffer = new char[size+1];
+	if (file.read(buffer, size))
+	{
+		std::cout << "Reading " << filename << " successful!"<<std::endl;
+	} else {
+		std::cout << "Failed to read from file "<<filename <<std::endl;
+	}
+
+	buffer[size] = 0x0;
+
+	
+	doc.ParseInsitu(buffer);
+	std::cout << "Parsing end" << std::endl;
+}
+GLTFParser::~GLTFParser() {
+	delete[] buffer;
+}
+
+
+std::vector<Mesh> GLTFParser::getMeshes() {
+	std::vector<Mesh> meshesVec;
+	for(auto& mesh : doc["meshes"].GetArray()) {
+		rapidjson::Value& data = mesh["primitives"][0];
+		int indicesAccessor = data["indices"].GetInt();
+		int positionsAccessor = data["attributes"]["POSITION"].GetInt();
+		//int positionsAccessor = data["attributes"]["NORMAL"].GetInt();
+	}
+	return meshesVec;
+}
+
+
+/*
+GLTF::GLTF
 #include <iostream>
 #include <bit>
 using json = nlohmann::json;
@@ -70,4 +126,4 @@ std::vector<Mesh> GLTF::getMeshes() {
 GLTF::~GLTF() {
 	file.clear();
 	file.close();
-}
+}*/

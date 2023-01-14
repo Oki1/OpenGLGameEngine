@@ -1,5 +1,22 @@
 #pragma once
-#include <cstdint>
+typedef unsigned int uint;
+#include <Mesh.hpp>
+
+#include <rapidjson/document.h>
+
+#include <string>
+#include <vector>
+
+class GLTFParser {
+public:
+	GLTFParser(std::string filename);
+	~GLTFParser();
+	std::vector<Mesh> getMeshes();
+private:
+	char* buffer;
+	rapidjson::Document doc;
+};
+/*#include <cstdint>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -39,4 +56,4 @@ private:
 
 	arr readPointData(std::string attribute, json mesh);
 
-};
+};*/

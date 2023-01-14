@@ -5,7 +5,11 @@ set (CMAKE_CXX_STANDARD 20)
 if (WIN32)
   set(CMAKE_SHARED_LIBRARY_PREFIX "")
 endif ()
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+#file(COPY ${CMAKE_BINARY_DIR}/Resources DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 # Add external dependencies
 add_subdirectory(Sources/)
@@ -21,3 +25,4 @@ add_subdirectory(ExternalLibraries/)
 add_subdirectory(Libraries/)
 
 #target_link_libraries(${PROJECT_NAME} ${LIBRARIES} ${EXTERNAL_LIBRARIES})
+

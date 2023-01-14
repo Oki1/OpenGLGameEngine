@@ -1,5 +1,5 @@
 
-set(LIBRARIES Camera Texture Input Shader Window VertexAttributeArray Mesh )
+set(LIBRARIES Camera Texture Input Shader Window VertexAttributeArray Mesh GLTFParser)
 
 foreach(LIBNAME ${LIBRARIES})
     add_subdirectory(${LIBNAME})

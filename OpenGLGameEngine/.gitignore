@@ -1,3 +1,5 @@
+lib/
+bin/
 *.vcxproj
 *CMakeCache.txt
 *.vcxproj.filters
@@ -57,6 +59,7 @@ _deps
 
 ### VisualStudioCode ###
 .vscode/*
+.vscode
 
 # Local History for Visual Studio Code
 .history/

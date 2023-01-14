@@ -1,9 +1,4 @@
-#include <Window.hpp>
-#include <input.hpp>
-#include <Shader.hpp>
-#include <vertexAttributeArray.hpp>
-#include <Texture.hpp>
-#include <Camera.hpp>
+#include <GLTFParser.hpp>
 
 float vertices[] = {
     -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -50,6 +45,9 @@ float vertices[] = {
 };
 
 int main(void) {
+    GLTFParser parser("Resources/Models/cube/cube.gltf");
+    parser.getMeshes();
+    /*
     const float fov = 75.0f;
 
     //glfw, glew, input initiation
@@ -175,4 +173,6 @@ int main(void) {
     std::cout << "Main render loop over, window terminated" << std::endl;
     //glDeleteProgram(shaderProgram);
     return 0;
+    */
+    
 }
