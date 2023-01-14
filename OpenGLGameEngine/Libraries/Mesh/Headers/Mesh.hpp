@@ -1,8 +1,10 @@
 #pragma once
 #include <vector>
-#include "Texture/Headers/Texture.hpp"
-#include "Shader/Headers/shader.hpp"
-#include "VertexAttributeArray/Header/vertexAttributeArray.hpp"
+
+#include <shader.hpp>
+#include <vertexAttributeArray.hpp>
+#include <Texture.hpp>
+
 struct s_vertices {
 	float* pos;
 	float* nor;
@@ -12,8 +14,6 @@ struct s_vertices {
 struct s_indices {
 	uint16_t* indices;
 	unsigned int nIndices;
-};
-
 
 class Mesh {
 public:

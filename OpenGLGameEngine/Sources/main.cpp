@@ -1,12 +1,9 @@
-#include "Window/Headers/window.hpp"
-#include "Input/Headers/input.hpp"
-#include "Shader/Headers/shader.hpp"
-#include "VertexAttributeArray/Header/vertexAttributeArray.hpp"
-#include "Texture/Headers/Texture.hpp"
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#include "Camera/Headers/Camera.hpp"
+#include <Window.hpp>
+#include <input.hpp>
+#include <Shader.hpp>
+#include <vertexAttributeArray.hpp>
+#include <Texture.hpp>
+#include <Camera.hpp>
 
 float vertices[] = {
     -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -57,7 +54,7 @@ int main(void) {
 
     //glfw, glew, input initiation
     //-------------------------------------------\ 
-    wnd::initial_title = "jebeš";  //             \ 
+    wnd::initial_title = "KYS";//             \ 
     wnd::background_color = { 0,0,0 };//           \ 
     wnd::init(); //initiates glew and a glfw window \ 
     GLFWwindow* window = wnd::window;//              \

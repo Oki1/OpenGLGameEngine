@@ -1,7 +1,9 @@
-#include <glad/glad.h>
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
+
+#include <camera.hpp>
+
 #include <iostream>
-#include "Camera/Headers/camera.hpp"
 
 namespace ipt {
 	static bool firstMouse = true;

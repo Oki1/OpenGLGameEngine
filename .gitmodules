@@ -1,0 +1,6 @@
+[submodule "OpenGLGameEngine/ExternalLibraries/glfw"]
+	path = OpenGLGameEngine/ExternalLibraries/glfw
+	url = https://github.com/glfw/glfw
+[submodule "OpenGLGameEngine/ExternalLibraries/glm"]
+	path = OpenGLGameEngine/ExternalLibraries/glm
+	url = https://github.com/g-truc/glm
