@@ -1,2 +1,0 @@
-C:\Users\43per\Documents\Programming\gameEngine\OpenGLGameEngine\Debug\OpenGLGameEngine.exe
-C:\Users\43per\Documents\Programming\gameEngine\OpenGLGameEngine\Debug\OpenGLGameEngine.pdb

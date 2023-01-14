@@ -1,4 +1,5 @@
-#include "Header/vertexAttributeArray.hpp"
+#include "Headers/vertexAttributeArray.hpp"
+
 #include <iostream>
 
 void AttrArray::bindVAO() {

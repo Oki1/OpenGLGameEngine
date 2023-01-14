@@ -1,8 +1,10 @@
 #include "Headers/Shader.hpp"
+
+#include <glad/gl.h>
+
 #include <fstream>
 #include <string>
 #include <iostream>
-#include <glad/glad.h>
 
 void Shader::setInt(std::string name, int value) {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);

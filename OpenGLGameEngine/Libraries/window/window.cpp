@@ -32,11 +32,13 @@ bool wnd::init() {
         glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cerr << "Failed to initialize GLAD" << std::endl;
+    int version = gladLoadGL(glfwGetProcAddress);
+    if (version == 0) {
+        std::cerr << "Failed to initialize GLAD2" << std::endl;
         return false;
     }
+
+
     glEnable(GL_DEPTH_TEST);// enable depth testing (dont render pixels which are covered by others
 
     glViewport(0, 0, initial_width, initial_height);

@@ -1,5 +1,5 @@
 #include "Headers/Texture.hpp"
-#include "stbImage.h"
+
 #include <iostream>
 void Texture::bindTex(GLenum textureUnit) {
     glActiveTexture(textureUnit);
@@ -7,9 +7,11 @@ void Texture::bindTex(GLenum textureUnit) {
 }
 Texture::Texture(std::string name, bool flip) {
     path = texturePath + name;
-    stbi_set_flip_vertically_on_load(flip);
+    //stbi_set_flip_vertically_on_load(flip);
     //std::cout << flip << std::endl;
-    data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
+    //data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
+    std::cout << "REMOVED STBIMAGE SUPPORT, MUST MUST CHANGE LIBRARY" << std::endl;
+
     GLenum format;
     if (nrChannels == 1)
         format = GL_RED;
@@ -30,5 +32,5 @@ Texture::Texture(std::string name, bool flip) {
     }
     else
         std::cerr << "Failed to load texture" << std::endl;
-    stbi_image_free(data);
+    //stbi_image_free(data);
 }

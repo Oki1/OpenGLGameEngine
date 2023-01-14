@@ -1,10 +1,14 @@
 #pragma once
 #include <glm/glm.hpp>
+
+
+#include <shader.hpp>
+#include <vertexAttributeArray.hpp>
+#include <Texture.hpp>
+
 #include <string>
 #include <vector>
-#include <Shader/Headers/shader.hpp>
-#include "VertexAttributeArray/Header/vertexAttributeArray.hpp"
-#include "Texture/Headers/Texture.hpp"
+
 struct s_Vertex {
 	glm::vec3 Position;
 	glm::vec3 Normal;

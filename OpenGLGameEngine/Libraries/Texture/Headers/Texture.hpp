@@ -1,8 +1,11 @@
 #pragma once
 #ifndef TEXTURE_H
 #define TEXTURE_H
+
+#include <glad/gl.h>
+
 #include <string>
-#include <glad/glad.h>
+
 enum texType { DIFFUSE, SPECULAR};
 class Texture {
 public:

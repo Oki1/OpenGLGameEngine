@@ -1,7 +1,5 @@
 #include "Headers/Mesh.hpp"
-#include "VertexAttributeArray/Header/vertexAttributeArray.hpp"
-#include <string>
-#include <vector>
+
 
 Mesh::Mesh(std::vector<s_Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures) :vertices(vertices), indices(indices), textures(textures) {
 	setupMesh();
@@ -15,9 +13,9 @@ void Mesh::setupMesh() {
 	aa.enableVAA(0);
 	aa.addData(0, 3, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)0);
 	aa.enableVAA(1);
-	aa.addData(1, 3, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(Vertex, Normal));
+	aa.addData(1, 3, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(s_Vertex, Normal));
 	aa.enableVAA(2);
-	aa.addData(2, 2, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(Vertex, TexCoords));
+	aa.addData(2, 2, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(s_Vertex, TexCoords));
 	aa.bindVAO();
 }
 void Mesh::Draw(Shader& shader) {
