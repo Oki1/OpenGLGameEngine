@@ -12,6 +12,7 @@ Mesh::~Mesh() {
 }
 void Mesh::setupMesh() {
 	//generate VAO
+	/*
 	aa.loadVAO();
 	aa.loadVBO(&vertices[0], vertices.size() * sizeof(s_Vertex));
 	aa.loadEBO(&indices[0], indices.size() * sizeof(unsigned int));
@@ -21,10 +22,11 @@ void Mesh::setupMesh() {
 	aa.addData(1, 3, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(Vertex, Normal));
 	aa.enableVAA(2);
 	aa.addData(2, 2, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(Vertex, TexCoords));
-	aa.bindVAO();
+	aa.bindVAO();*/
 }
 void Mesh::Draw(Shader& shader) {
 	//textures
+	/*
 	unsigned int diffuse = 1;
 	unsigned int specular = 1;
 	for (unsigned int i = 0, n = textures.size(); i < n; i++) {
@@ -46,6 +48,6 @@ void Mesh::Draw(Shader& shader) {
 	//rendering
 	aa.bindVAO();
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
-	aa.unbindVAO();
+	aa.unbindVAO();*/
 }
 

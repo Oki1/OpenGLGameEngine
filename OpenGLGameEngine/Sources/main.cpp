@@ -45,7 +45,7 @@ float vertices[] = {
 };
 
 int main(void) {
-    GLTFParser parser("Resources/Models/cube/cube.gltf");
+    GLTFParser parser("Resources/Models/cube", "cube.gltf");
     parser.getMeshes();
     /*
     const float fov = 75.0f;

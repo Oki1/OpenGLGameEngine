@@ -1,6 +1,6 @@
 #include <fstream>
 #include <iostream>
-
+#include <cstring>
 
 #include "Headers/GLTFParser.hpp"
 
@@ -16,28 +16,85 @@ void parseNode(rapidjson::Value &nodes, int index) {
 	}
 }
 
-GLTFParser::GLTFParser(std::string filename) {
-	std::cout << "Parsing begin" << std::endl;
 
-	std::ifstream file(filename, std::ios::binary | std::ios::ate);
+GLTFParser::GLTFParser(std::string path, std::string filename) {
+	std::cout << "Parsing begin" << std::endl;
+	//load json file and parse json
+	std::string fullPath = path+"/"+filename;
+	std::ifstream file(fullPath, std::ios::binary | std::ios::ate);
 	uint size = file.tellg();
 	file.seekg(0, std::ios::beg);
-	buffer = new char[size+1];
-	if (file.read(buffer, size))
-	{
+	jsonBuffer = new char[size+1];
+	if (file.read(jsonBuffer, size)) {
 		std::cout << "Reading " << filename << " successful!"<<std::endl;
 	} else {
 		std::cout << "Failed to read from file "<<filename <<std::endl;
 	}
-
-	buffer[size] = 0x0;
-
-	
-	doc.ParseInsitu(buffer);
+	jsonBuffer[size] = 0x0;
+	doc.ParseInsitu(jsonBuffer);
 	std::cout << "Parsing end" << std::endl;
+
+	// prepare space for buffers. not loading all into memory for performance
+	nBuffers = doc["buffers"].GetArray().Size();
+	dataBuffers = new char*[nBuffers];
+	memset(dataBuffers, NULL, nBuffers);
+	// load accessor and bufferView data in
+	for (auto& accessor : doc["accessors"].GetArray()) {
+		accessors.push_back({});
+		saccessor& back = accessors.back();
+		
+		back.BVOffset = accessor["byteOffset"].GetUint();
+		std::string typeS = accessor["type"].GetString();
+		if(typeS == "SCALAR") {
+			back.type = 0;
+		} else if(typeS.rfind("VEC", 0)) {
+			back.type = 1;
+			back.typen = typeS[3]-'0';
+		}
+		back.componentType = accessor["componentType"].GetUint();
+		back.count = accessor["count"].GetUint();
+		
+		rapidjson::Value& BV = doc["bufferViews"][accessor["bufferView"].GetInt()];
+
+		if(BV.HasMember("byteOffset")) {
+			back.byteOffset = BV["byteOffset"].GetUint();
+		} else {
+			back.byteOffset = 0;
+		}
+		
+		back.byteLength = BV["byteLength"].GetUint();
+		if(BV.HasMember("byteStride")) {
+			back.byteOffset = BV["byteStride"].GetUint();
+		} else {
+			back.byteOffset = 0;
+		}
+		int buffern = BV["buffer"].GetInt();
+		//read buffer data if needed
+		if(dataBuffers[buffern] == NULL) {
+			rapidjson::Value& buff = doc["buffers"][buffern];
+			int len = buff["byteLength"].GetInt();
+			std::string URI = buff["uri"].GetString();
+			std::string URIPath = path + URI;
+			dataBuffers[buffern] = new char[len];
+
+			std::ifstream file(URIPath, std::ios::binary);
+			if (file.read(dataBuffers[buffern], len)) {
+				std::cout << "Reading " << URI << " successful!"<<std::endl;
+			} else {
+				std::cout << "Failed to read from file " << URI <<std::endl;
+			}
+
+		}
+		back.buffer = dataBuffers[buffern];
+	}
+
 }
 GLTFParser::~GLTFParser() {
-	delete[] buffer;
+	delete[] jsonBuffer;
+	for(int x = 0; x < nBuffers; x++) {
+		delete dataBuffers[x];
+	}
+	delete[] dataBuffers;
 }
 
 
@@ -48,6 +105,7 @@ std::vector<Mesh> GLTFParser::getMeshes() {
 		int indicesAccessor = data["indices"].GetInt();
 		int positionsAccessor = data["attributes"]["POSITION"].GetInt();
 		//int positionsAccessor = data["attributes"]["NORMAL"].GetInt();
+		
 	}
 	return meshesVec;
 }

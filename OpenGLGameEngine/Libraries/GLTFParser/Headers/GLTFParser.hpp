@@ -9,11 +9,25 @@ typedef unsigned int uint;
 
 class GLTFParser {
 public:
-	GLTFParser(std::string filename);
+	GLTFParser(std::string path, std::string filename);
 	~GLTFParser();
 	std::vector<Mesh> getMeshes();
 private:
-	char* buffer;
+	struct saccessor {
+		uint BVOffset; //buffer view byte offset
+		uint type; // 0 for SCALAR 1 for VEC
+		uint typen; // dim of vector. undefined for SCALAR
+		uint componentType;
+		uint count;
+		uint byteOffset;
+		uint byteLength;
+		uint byteStride;
+		char* buffer;
+	};
+	std::vector<saccessor> accessors;
+	char* jsonBuffer;
+	char** dataBuffers;
+	int nBuffers;
 	rapidjson::Document doc;
 };
 /*#include <cstdint>
