@@ -46,7 +46,10 @@ float vertices[] = {
 
 int main(void) {
     GLTFParser parser("Resources/Models/cube", "cube.gltf");
-    parser.getMeshes();
+    std::vector<Mesh> meshes = parser.getMeshes();
+    std::cout << meshes.size() << std::endl;
+    //meshes[0].debugPrint();
+
     /*
     const float fov = 75.0f;
 

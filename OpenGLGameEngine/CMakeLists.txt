@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.22)
 project(OpenGlGameEngine)
-set (CMAKE_CXX_STANDARD 20)
+set_target_properties(myTarget PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+    CXX_EXTENSIONS OFF
+) 
 # Tweak information common to subcomponents
+
+set(CMAKE_BUILD_TYPE Debug)
+
+
 if (WIN32)
   set(CMAKE_SHARED_LIBRARY_PREFIX "")
 endif ()

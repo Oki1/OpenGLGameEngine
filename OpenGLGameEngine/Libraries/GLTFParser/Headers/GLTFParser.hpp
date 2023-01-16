@@ -13,6 +13,8 @@ public:
 	~GLTFParser();
 	std::vector<Mesh> getMeshes();
 private:
+	std::string path, filename;
+
 	struct saccessor {
 		uint BVOffset; //buffer view byte offset
 		uint type; // 0 for SCALAR 1 for VEC
@@ -22,13 +24,16 @@ private:
 		uint byteOffset;
 		uint byteLength;
 		uint byteStride;
-		char* buffer;
+		uint buffer;
+		uint componentByteSize;
 	};
 	std::vector<saccessor> accessors;
 	char* jsonBuffer;
 	char** dataBuffers;
+	char* returnDataBuffer(uint index);
 	int nBuffers;
 	rapidjson::Document doc;
+
 };
 /*#include <cstdint>
 #include <fstream>

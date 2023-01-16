@@ -1,15 +1,40 @@
 #include "Headers/Mesh.hpp"
 #include <string>
 
-Mesh:: Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures):vertices(vertices), indices(indices), textures(textures) {
+/*Mesh::Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures) {
 	setupMesh();
-}
+}*/
+
+
+
+
 Mesh::~Mesh() {
-	delete[] vertices.pos;
-	delete[] vertices.nor;
-	delete[] vertices.tex;
-	delete[] indices.indices;
+	delete[] vertexBuffer;
 }
+
+char* Mesh::allocateVertexBuffer(int nVertices, int vertexByteSize) {
+	vertexBuffer = new char[nVertices*vertexByteSize];
+	numVertices = nVertices;
+	return vertexBuffer;
+}
+void Mesh::debugPrint() {
+	std::cout<<"vertices" << numVertices << std::endl;
+	for(int x = 0; x < 8*3; x++) {
+		std::cout << *(float*)(vertexBuffer+x*sizeof(float)) << std::endl;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 void Mesh::setupMesh() {
 	//generate VAO
 	/*
