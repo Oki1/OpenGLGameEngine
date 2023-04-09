@@ -6,16 +6,7 @@
 #include <vertexAttributeArray.hpp>
 #include <Texture.hpp>
 
-struct s_vertices {
-	float* pos;
-	float* nor;
-	float* tex;
-	unsigned int nVerts;
-};
-struct s_indices {
-	uint16_t* indices;
-	unsigned int nIndices;
-};
+
 
 class Mesh {
 public:
@@ -23,32 +14,19 @@ public:
 	
 	void debugPrint();
 
-
-
-
-	/*s_vertices vertices;
-	s_indices indices;
-	std::vector<Texture> textures;*/
-	char* vertices;
-	char* indices;
-
 	//Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures);
+	Mesh(std::string path);
 	~Mesh();
 	void Draw(Shader& shader); //idk if im gonna need this we'll see
 
 
 
 private:
-	char* vertexBuffer; // BUFFER IS INTERLACED
+	float* vertexBuffer; // BUFFER IS INTERLACED
+	unsigned int* indicesBuffer;
+	unsigned int* indices;
 	int numVertices;
-
-
-
-
-
-
-
-
+	int numFaces;
 
 	AttrArray aa;
 

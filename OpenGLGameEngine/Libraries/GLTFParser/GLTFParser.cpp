@@ -127,6 +127,7 @@ std::vector<Mesh> GLTFParser::getMeshes() {
 		
 		rapidjson::Value& data = meshJson["primitives"][0];
 		int indicesAccessor = data["indices"].GetInt();
+		
 		saccessor& positionsAccessor = accessors[data["attributes"]["POSITION"].GetInt()];
 		
 		//for multiple accessors check if buffer is the same. otherwise add logic

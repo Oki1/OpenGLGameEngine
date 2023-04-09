@@ -1,3 +1,6 @@
+CMakeDoxygenDefaults.cmake
+CMakeDoxyfile.in
+
 lib/
 bin/
 *.vcxproj

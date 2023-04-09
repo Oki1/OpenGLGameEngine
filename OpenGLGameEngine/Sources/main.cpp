@@ -45,9 +45,12 @@ float vertices[] = {
 };
 
 int main(void) {
-    GLTFParser parser("Resources/Models/cube", "cube.gltf");
+    /*GLTFParser parser("Resources/Models/cube", "cube.gltf");
     std::vector<Mesh> meshes = parser.getMeshes();
-    std::cout << meshes.size() << std::endl;
+    std::cout << meshes.size() << std::endl;*/
+    Mesh mesh("resources/models/cube.bin");
+    printf("Done\n");
+    return 0;
     //meshes[0].debugPrint();
 
     /*

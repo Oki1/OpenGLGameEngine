@@ -1,18 +1,42 @@
 #include "Headers/Mesh.hpp"
 #include <string>
+#include <fstream>
 
 /*Mesh::Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures) {
 	setupMesh();
 }*/
 
+Mesh::Mesh(std::string path) {
+	std::ifstream in(path, std::ifstream::binary);
+	in.read((char*)&numVertices, sizeof(unsigned int));
+	in.read((char*)&numFaces, sizeof(unsigned int));
+
+	unsigned int vertexBufferSize = 8*numVertices;
+	unsigned int indexBufferSize = 3*numFaces;
+
+	vertexBuffer = new float[vertexBufferSize];
+	indicesBuffer = new unsigned int[indexBufferSize];
+	in.read((char*)vertexBuffer, vertexBufferSize*sizeof(float));
+	in.read((char*)indicesBuffer, indexBufferSize*sizeof(unsigned int));
+
+	in.close();
+	for(int xx = 0; xx < vertexBufferSize/8; xx++) {
+		printf("%i %f %f %f %f %f %f %f %f\n",xx, vertexBuffer[xx*8], vertexBuffer[xx*8+1], vertexBuffer[xx*8+2], vertexBuffer[xx*8+3], vertexBuffer[xx*8+4], vertexBuffer[xx*8+5], vertexBuffer[xx*8+6], vertexBuffer[xx*8+7]);
+	}
+
+	for(int xx = 0; xx < numFaces; xx++) {
+		printf("%u %u %u\n", indicesBuffer[xx*3], indicesBuffer[xx*3+1], indicesBuffer[xx*3+2]);
+	}
+}
 
 
 
 Mesh::~Mesh() {
 	delete[] vertexBuffer;
+	delete[] indicesBuffer;
 }
 
-char* Mesh::allocateVertexBuffer(int nVertices, int vertexByteSize) {
+/*char* Mesh::allocateVertexBuffer(int nVertices, int vertexByteSize) {
 	vertexBuffer = new char[nVertices*vertexByteSize];
 	numVertices = nVertices;
 	return vertexBuffer;
@@ -23,16 +47,6 @@ void Mesh::debugPrint() {
 		std::cout << *(float*)(vertexBuffer+x*sizeof(float)) << std::endl;
 	}
 }
-
-
-
-
-
-
-
-
-
-
 
 
 void Mesh::setupMesh() {
@@ -47,11 +61,11 @@ void Mesh::setupMesh() {
 	aa.addData(1, 3, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(Vertex, Normal));
 	aa.enableVAA(2);
 	aa.addData(2, 2, GL_FLOAT, GL_FALSE, sizeof(s_Vertex), (void*)offsetof(Vertex, TexCoords));
-	aa.bindVAO();*/
+	aa.bindVAO();
 }
 void Mesh::Draw(Shader& shader) {
 	//textures
-	/*
+	
 	unsigned int diffuse = 1;
 	unsigned int specular = 1;
 	for (unsigned int i = 0, n = textures.size(); i < n; i++) {
@@ -73,6 +87,7 @@ void Mesh::Draw(Shader& shader) {
 	//rendering
 	aa.bindVAO();
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
-	aa.unbindVAO();*/
+	aa.unbindVAO();
 }
 
+*/
