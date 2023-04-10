@@ -1,7 +1,4 @@
-#include "Headers/Mesh.hpp"
-#include <string>
-#include <fstream>
-
+#include "Headers/mesh.hpp"
 /*Mesh::Mesh(s_vertices vertices, s_indices indices, std::vector<Texture> textures) {
 	setupMesh();
 }*/

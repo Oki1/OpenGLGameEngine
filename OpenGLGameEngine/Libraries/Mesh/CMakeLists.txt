@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-set(SOURCE_FILES Mesh.cpp)
+set(SOURCE_FILES mesh.cpp)
 project(Mesh)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})

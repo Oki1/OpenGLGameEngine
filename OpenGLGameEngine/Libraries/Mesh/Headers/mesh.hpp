@@ -4,7 +4,7 @@
 
 #include <shader.hpp>
 #include <vertexAttributeArray.hpp>
-#include <Texture.hpp>
+#include <texture.hpp>
 
 
 
