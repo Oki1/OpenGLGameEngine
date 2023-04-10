@@ -1,9 +1,9 @@
-#include <Window.hpp>
+#include <window.hpp>
 #include <input.hpp>
-#include <Shader.hpp>
+#include <shader.hpp>
 #include <vertexAttributeArray.hpp>
-#include <Texture.hpp>
-#include <Camera.hpp>
+#include <texture.hpp>
+#include <camera.hpp>
 
 float vertices[] = {
     -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -57,7 +57,7 @@ int main(void) {
     wnd::initial_title = "KYS";//             \ 
     wnd::background_color = { 0,0,0 };//           \ 
     wnd::init(); //initiates glew and a glfw window \ 
-    GLFWwindow* window = wnd::window;//              \
+    GLFWwindow* windoww = wnd::window;//              \
     //------------------------------------------------\ 
     Shader shader("triangle.vert", "triangle.frag");
     Shader lightShader("lightObject.vert", "lightObject.frag");
@@ -110,10 +110,10 @@ int main(void) {
     double newTime = 0;
     double lastTime = 0;
     double deltaTime = 0;
-    while (!glfwWindowShouldClose(window)) {// main render loop
+    while (!glfwWindowShouldClose(windoww)) {// main render loop
         //update input
         //---------------------
-        ipt::updateInput(window, camera, deltaTime);
+        ipt::updateInput(windoww, camera, deltaTime);
         // Calculates DeltaTime(difference in time in seconds between this and last frame)
         // ----------------------------------------
         newTime = glfwGetTime();
@@ -126,7 +126,7 @@ int main(void) {
         view = camera.getViewMatrix();
         //regen projection matrix if needed
         int width, height;
-        glfwGetWindowSize(window, &width, &height);
+        glfwGetWindowSize(windoww, &width, &height);
         float lastAr = aspectRatio;
         aspectRatio = width / (float)height;
         if (aspectRatio != lastAr) {

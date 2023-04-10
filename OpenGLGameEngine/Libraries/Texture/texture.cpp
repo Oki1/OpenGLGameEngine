@@ -1,4 +1,4 @@
-#include "Headers/Texture.hpp"
+#include "Headers/texture.hpp"
 
 #include <iostream>
 void Texture::bindTex(GLenum textureUnit) {
