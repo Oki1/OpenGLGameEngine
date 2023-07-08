@@ -1,5 +1,7 @@
-/*
-/*/
-!/OpenGLGameEngine/
-!.gitignore
-!.gitmodules
+
+debug/
+target/
+
+**/*.rs.bk
+
+*.pdb
