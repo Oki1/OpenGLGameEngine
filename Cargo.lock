@@ -7,6 +7,8 @@ name = "OpenGLGameEngine"
 version = "0.1.0"
 dependencies = [
  "glutin",
+ "glutin-winit",
+ "raw-window-handle",
  "winit",
 ]
 
@@ -297,6 +299,18 @@ dependencies = [
  "wayland-sys 0.30.1",
  "windows-sys 0.45.0",
  "x11-dl",
+]
+
+[[package]]
+name = "glutin-winit"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "629a873fc04062830bfe8f97c03773bcd7b371e23bcc465d0a61448cd1588fa4"
+dependencies = [
+ "cfg_aliases",
+ "glutin",
+ "raw-window-handle",
+ "winit",
 ]
 
 [[package]]
