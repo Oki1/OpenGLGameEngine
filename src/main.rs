@@ -11,10 +11,12 @@ use winit::{
 use glutin::{
     context::{ContextAttributesBuilder, ContextAttributes, ContextApi, Version},
     config::{ConfigTemplateBuilder, GlConfig, Config},
-    display::{GetGlDisplay, GlDisplay}
+    display::{GetGlDisplay, GlDisplay}, prelude::NotCurrentGlContextSurfaceAccessor
 };
-use glutin_winit::DisplayBuilder;
+use glutin_winit::{DisplayBuilder, GlWindow};
 
+
+// ANDROID WILL CURRENTLY PROBABLY CRASH. NOT SURE ABOUT IOS
 
 
 fn main() {
@@ -50,14 +52,16 @@ fn main() {
                 })
                 .unwrap()
         }).unwrap();
+
+        //will panic if window is not created yet (on some platforms ex. Android)
         window = tmp.unwrap();
     }
     let raw_window_handle = window.raw_window_handle();
     let display = gl_config.display();
-    let not_current_gl_context;
+    let mut not_current_gl_context;
     {
         let context_attribs = ContextAttributesBuilder::new().build(Some(raw_window_handle));
-        not_current_gl_context = unsafe { //unsafe because raw_window_handle MUST be safe
+        not_current_gl_context = unsafe {Some(//unsafe because raw_window_handle MUST be safe
             display.create_context(&gl_config, &context_attribs).unwrap_or_else(|_| { // try modern opengl
                 let context_attribs_fallback =  ContextAttributesBuilder::new().with_context_api(ContextApi::Gles(None)).build(Some(raw_window_handle)); // try gles 
                 display.create_context(&gl_config, &context_attribs_fallback).unwrap_or_else(|_| { // try old compatibility mode
@@ -65,7 +69,7 @@ fn main() {
                     display.create_context(&gl_config, &context_attribs_legacy).expect("Failed to create context")
                 })
             })
-        };
+        )};
     }
 
 
@@ -77,34 +81,54 @@ fn main() {
 
         // control_flow.set_wait(); // can be used for menu
     
-        match event {
-            Event::WindowEvent {
-                event: WindowEvent::CloseRequested,
-                ..
-            } => {
-                println!("The close button was pressed; stopping");
-                control_flow.set_exit();
-            },
-            Event::WindowEvent {
-                event: WindowEvent::KeyboardInput {
-                    input: ref x,
-                    ..
-                },
-                ..
-            } => {
-                match x.virtual_keycode {
-                    Some(y) => {
-                        match y{ 
-                            VirtualKeyCode::Escape => {
-                                println!("Escaped!");
-                                control_flow.set_exit();
-                            },
-                            _ => {}
-                        }
-                    },
-                    _ => {}
+        match event {        
+            Event::Resumed => {
+                #[cfg(android_platform)]
+                println!("Android window is just now available");
+
+                // Logic for creating window on platforms where it cannot be created before first resumed call goes here
+
+                // Create window surface
+                let window_surface;
+                {
+                    let window_surface_attribs = window.build_surface_attributes(<_>::default());
+                    unsafe {
+                        window_surface = display.create_window_surface(&gl_config, &window_surface_attribs).expect("Surface creation failed!");
+                    }
                 }
-            }
+                
+                // create context
+
+                // make context current and set not_current_gl_context as None
+                let context = not_current_gl_context.take().unwrap().make_current(&window_surface); 
+
+                // setup renderer
+            },
+            Event::Suspended => {
+                //only called in android.
+            },
+
+            Event::WindowEvent {event, ..} => match event {
+                WindowEvent::CloseRequested => {
+                    control_flow.set_exit();
+                }
+                WindowEvent::Resized(size) => {
+                    if size.width != 0 && size.height != 0 { // resize by hand, EGL requires it
+                        // TO IMPLEMENT
+                    }
+                },
+                WindowEvent::KeyboardInput {input: ref x,..} => match x.virtual_keycode {
+                    Some(x) => match x {
+                        VirtualKeyCode::Escape => {
+                            println!("Exiting!");
+                            control_flow.set_exit();
+                        },
+                        _ => {}
+                    },
+                    _=>{}
+                }
+                _=>{}
+            },
             Event::MainEventsCleared => {
                 // Application update code.
                 window.request_redraw();
