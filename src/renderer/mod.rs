@@ -97,8 +97,8 @@ impl Renderer {
             shader_program = gl::CreateProgram();
             gl::AttachShader(shader_program, vertex_shader);
             gl::AttachShader(shader_program, fragment_shader);
-            //gl::DeleteShader(vertexShader);
-            //gl::DeleteShader(fragmentShader);
+            gl::DeleteShader(fragment_shader);
+            gl::DeleteShader(vertex_shader);
             gl::LinkProgram(shader_program);
         
         }
@@ -117,6 +117,17 @@ impl Renderer {
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
 
             window_surface.swap_buffers(&context).expect("Swapping buffers failed!");
+        }
+    }
+}
+
+impl Drop for Renderer {
+    fn drop(&mut self) {
+        unsafe {
+            gl::DeleteProgram(self.shader_program);
+            gl::DeleteBuffers(1, &self.vbo);
+            gl::DeleteBuffers(1, &self.ebo);
+            gl::DeleteVertexArrays(1, &self.vao);
         }
     }
 }
