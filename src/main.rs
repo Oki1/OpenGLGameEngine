@@ -1,6 +1,7 @@
-use std::task::Context;
-
 use raw_window_handle::HasRawWindowHandle;
+use std::ptr;
+
+use std::ffi::{CStr, CString};
 
 use winit::{
     event::{Event, WindowEvent, VirtualKeyCode},
@@ -9,11 +10,21 @@ use winit::{
 };
 
 use glutin::{
-    context::{ContextAttributesBuilder, ContextAttributes, ContextApi, Version},
-    config::{ConfigTemplateBuilder, GlConfig, Config},
+    context::{ContextAttributesBuilder, ContextApi, Version},
+    config::{ConfigTemplateBuilder, GlConfig},
     display::{GetGlDisplay, GlDisplay}, prelude::NotCurrentGlContextSurfaceAccessor
 };
+use glutin::prelude::GlSurface;
+
 use glutin_winit::{DisplayBuilder, GlWindow};
+
+extern crate gl;
+// include the OpenGL type aliases
+use gl::{types::*, RenderbufferStorage};
+
+
+mod renderer;
+use renderer::Renderer;
 
 
 // ANDROID WILL CURRENTLY PROBABLY CRASH. NOT SURE ABOUT IOS
@@ -71,11 +82,13 @@ fn main() {
             })
         )};
     }
-
-
+    
+    
     println!("Picked a config with {} samples", gl_config.num_samples());
     
-
+    
+    let mut state = None; 
+    let mut renderer = None;
     event_loop.run(move |event, _, control_flow| {
         control_flow.set_poll();
 
@@ -98,11 +111,12 @@ fn main() {
                 }
                 
                 // create context
-
                 // make context current and set not_current_gl_context as None
-                let context = not_current_gl_context.take().unwrap().make_current(&window_surface); 
+                let context = not_current_gl_context.take().unwrap().make_current(&window_surface).expect("Making context current has failed!"); 
+                renderer.get_or_insert_with(|| Renderer::new(&display));
 
-                // setup renderer
+                
+                assert!(state.replace((context, window_surface)).is_none());
             },
             Event::Suspended => {
                 //only called in android.
@@ -129,14 +143,21 @@ fn main() {
                 }
                 _=>{}
             },
+            Event::RedrawEventsCleared => {
+                
+            },
             Event::MainEventsCleared => {
                 // Application update code.
                 window.request_redraw();
+                // queue redraw
             },
             Event::RedrawRequested(_) => {
-                // can be used for menu
+                if let Some((context, window_surface)) = &state {
+                    renderer.as_ref().unwrap().draw(&window_surface, &context);
+                }
             },
             _ => ()
         }
     });
 }
+
