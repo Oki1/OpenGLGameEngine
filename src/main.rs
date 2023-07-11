@@ -153,7 +153,8 @@ fn main() {
             },
             Event::RedrawRequested(_) => {
                 if let Some((context, window_surface)) = &state {
-                    renderer.as_ref().unwrap().draw(&window_surface, &context);
+                    renderer.as_mut().unwrap().draw(&window_surface, &context);
+                    //renderer.as_ref().unwrap().draw(&window_surface, &context);
                 }
             },
             _ => ()
