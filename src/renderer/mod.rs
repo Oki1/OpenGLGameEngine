@@ -135,8 +135,8 @@ impl Renderer {
         let time_since_last_frame = time::Instant::now();
 
         let model = glm::identity::<f32, 4>();
-        let view = glm::translation::<f32>(glm::vec3(0.0f, 0.0f, -10.0f));
-        let projection = glm::perspective::<f32>(1920/1080.0, glm::radians(45.0f), 0.1f, 100.0f);
+        let view = glm::translation::<f32>(&glm::vec3(0.0f32, 0.0f32, -3.0f32));
+        let projection = glm::perspective::<f32>(1920.0/1080.0, 45.0f32.to_radians(), 0.1f32, 100.0f32);
         
 
         Self {
