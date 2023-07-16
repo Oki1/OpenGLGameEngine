@@ -137,6 +137,24 @@ fn main() {
                             println!("Exiting!");
                             control_flow.set_exit();
                         },
+                        VirtualKeyCode::W => {
+                            renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, 1.0);
+                        },
+                        VirtualKeyCode::S => {
+                            renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, -1.0);
+                        }
+                        VirtualKeyCode::D => {
+                            renderer.as_mut().unwrap().ChangeCamPos(-1.0, 0.0, 0.0);
+                        },
+                        VirtualKeyCode::A => {
+                            renderer.as_mut().unwrap().ChangeCamPos(1.0, 0.0, 0.0);
+                        }
+                        VirtualKeyCode::LShift => {
+                            renderer.as_mut().unwrap().ChangeCamPos(0.0, 1.0, 0.0);
+                        },  
+                        VirtualKeyCode::Space => {
+                            renderer.as_mut().unwrap().ChangeCamPos(0.0, -1.0, 0.0);
+                        }
                         _ => {}
                     },
                     _=>{}
