@@ -25,39 +25,56 @@ pub struct Renderer {
 
 impl Renderer {
     pub fn new(display: &glutin::display::Display) -> Self {
-        const VERTS: [f32;12] = [-0.5, -0.5, 0.0,
-                                0.5, -0.5, 0.0,
-                                -0.5, 0.5 , 0.0,
-                                0.5, 0.5, 0.0
-                                ];
-
-        const INDEXES: [u32;6] = [0,1,2,
-                                1,2,3];
-
+        const VERTS: [f32;24] = [-1.0,  1.0, -1.0,
+        1.0,  1.0, -1.0,
+       -1.0, -1.0, -1.0,
+        1.0, -1.0, -1.0,
+       -1.0,  1.0,  1.0,
+       1.0,  1.0,  1.0,
+       -1.0, -1.0,  1.0,
+       1.0, -1.0,  1.0];
+       
+       const INDEXES: [u32;36] = [0, 1, 2, // Side 0
+       2, 1, 3,
+       4, 0, 6, // Side 1
+       6, 0, 2,
+       7, 5, 6, // Side 2
+       6, 5, 4,
+       3, 1, 7, // Side 3 
+       7, 1, 5,
+        4, 5, 0, // Side 4 
+        0, 5, 1,
+        3, 7, 2, // Side 5 
+        2, 7, 6];
+        
         const VERTEX_SHADER_SOURCE: &[u8] = b"#version 330 core\n
-                                        layout (location = 0) in vec3 aPos;\n
-                                        uniform mat4 model;\n
-                                        uniform mat4 view;\n
+        layout (location = 0) in vec3 aPos;\n
+        uniform mat4 model;\n
+        uniform mat4 view;\n
                                         uniform mat4 projection;\n
+                                        out vec3 vert_pos;
                                         void main() {\n;
+                                            vert_pos = aPos;
                                             gl_Position = projection * view * model * vec4(aPos, 1.0f);\n
                                         }\n
-                                 \0";
+                                        \0";
+                                        
+                                        const FRAGMENT_SHADER_SOURCE: &[u8] = b"#version 330 core //tells pixel colors
+                                        in vec3 vert_pos;
 
-        const FRAGMENT_SHADER_SOURCE: &[u8] = b"#version 330 core //tells pixel colors
-                                   out vec4 FragColor;
-                                   void main() {
-                                       FragColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);
+                                        out vec4 FragColor;
+                                        void main() {
+                                       FragColor = vec4(vert_pos, 1.0f);
                                     }
                                     \0";
                                     // setup renderer
                                     //put vertext positions into vbo
-        let shader_program: gl::types::GLuint;
-        let mut vao: gl::types::GLuint;
-        let mut vbo: gl::types::GLuint;
-        let mut ebo: gl::types::GLuint;
-        
-        let mut model_uniform: gl::types::GLuint = 0;
+                                    let shader_program: gl::types::GLuint;
+                                    let mut vao: gl::types::GLuint;
+                                    let mut vbo: gl::types::GLuint;
+                                    let mut ebo: gl::types::GLuint;
+                                    
+                                    let mut model_uniform: gl::types::GLuint = 0;
         let mut view_uniform: gl::types::GLuint = 0;
         let mut projection_uniform: gl::types::GLuint = 0;
         
@@ -70,8 +87,14 @@ impl Renderer {
                 let symbol = CString::new(symbol).unwrap();
                 display.get_proc_address(symbol.as_c_str()).cast()
             });
-            //let intsize: gl::types::GLsizeiptr = ;
 
+            //MAKE THIS DYNAMIC
+            gl::Viewport(0,0, 1920, 1080); // set viewport, currently fixed
+
+
+            gl::Enable(gl::DEPTH_TEST);
+            //let intsize: gl::types::GLsizeiptr = ;
+            
             // GPU STUFF
             {
                 // gen vbo ebo vao
@@ -101,17 +124,17 @@ impl Renderer {
             gl::ShaderSource(vertex_shader, 1, [VERTEX_SHADER_SOURCE.as_ptr().cast()].as_ptr(), std::ptr::null());
             gl::CompileShader(vertex_shader);
             
-            let mut log: [u8; 512] = [0;512];
-            
-            gl::GetShaderInfoLog(vertex_shader, 512, ptr::null::<i32>() as *mut i32, (&mut log as *mut u8) as *mut i8);
-            
-            println!("{}", std::str::from_utf8(&log as &[u8]).unwrap());
             
             //compile fragment shader
             let fragment_shader = gl::CreateShader(gl::FRAGMENT_SHADER);
             gl::ShaderSource(fragment_shader, 1, [FRAGMENT_SHADER_SOURCE.as_ptr().cast()].as_ptr(), std::ptr::null());
             gl::CompileShader(fragment_shader);
-
+            
+            let mut log: [u8; 512] = [0;512];
+            
+            gl::GetShaderInfoLog(fragment_shader, 512, ptr::null::<i32>() as *mut i32, (&mut log as *mut u8) as *mut i8);
+            
+            println!("{}", std::str::from_utf8(&log as &[u8]).unwrap());
             
             
             // create shader ob
@@ -136,7 +159,7 @@ impl Renderer {
 
         let model = glm::identity::<f32, 4>();
         let view = glm::translation::<f32>(&glm::vec3(0.0f32, 0.0f32, -3.0f32));
-        let projection = glm::perspective::<f32>(1920.0/1080.0, 45.0f32.to_radians(), 0.1f32, 100.0f32);
+        let projection = glm::perspective::<f32>(16f32/9f32, 70.0f32.to_radians(), 0.1f32, 100.0f32);
         
 
         Self {
@@ -146,7 +169,7 @@ impl Renderer {
     pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext) {
         unsafe {
             gl::ClearColor(1.0f32, 0f32, 0f32, 1.0f32);
-            gl::Clear(gl::COLOR_BUFFER_BIT);
+            gl::Clear(gl::COLOR_BUFFER_BIT|gl::DEPTH_BUFFER_BIT);
         }
         let now = time::Instant::now();
         //self.time_since_last_frame = now;
@@ -154,7 +177,7 @@ impl Renderer {
         unsafe{
             gl::UseProgram(self.shader_program);
             gl::BindVertexArray(self.vao);
-            gl::DrawElements(gl::TRIANGLES, 6, gl::UNSIGNED_INT, 0 as *const _);
+            gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
             gl::UniformMatrix4fv(self.model_uniform as i32, 1, gl::FALSE, self.model.as_ptr());
             gl::UniformMatrix4fv(self.view_uniform as i32, 1, gl::FALSE, self.view.as_ptr());

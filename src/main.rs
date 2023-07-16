@@ -6,7 +6,7 @@ use std::ffi::{CStr, CString};
 use winit::{
     event::{Event, WindowEvent, VirtualKeyCode},
     event_loop::EventLoop,
-    window::{WindowBuilder},
+    window::{WindowBuilder, Fullscreen},
 };
 
 use glutin::{
@@ -37,7 +37,7 @@ fn main() {
     {
         // window builder
         let mut builder = WindowBuilder::new();
-        builder = builder.with_title("Starting title");
+        builder = builder.with_title("Starting title").with_fullscreen(Some(Fullscreen::Borderless(None)));
         
         //context template builder -> configuration for the context
         let context_builder = ConfigTemplateBuilder::new();
