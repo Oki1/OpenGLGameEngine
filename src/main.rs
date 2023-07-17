@@ -26,6 +26,9 @@ use gl::{types::*, RenderbufferStorage};
 mod renderer;
 use renderer::Renderer;
 
+mod camera;
+use camera::Camera;
+
 
 // ANDROID WILL CURRENTLY PROBABLY CRASH. NOT SURE ABOUT IOS
 
@@ -89,6 +92,9 @@ fn main() {
     
     let mut state = None; 
     let mut renderer = None;
+
+    //create camera
+    let mut camera = Camera::new_from_position(0.0, 0.0, -3.0);
     event_loop.run(move |event, _, control_flow| {
         control_flow.set_poll();
 
@@ -117,6 +123,7 @@ fn main() {
 
                 
                 assert!(state.replace((context, window_surface)).is_none());
+
             },
             Event::Suspended => {
                 //only called in android.
@@ -144,21 +151,27 @@ fn main() {
                 DeviceEvent::Key(winit::event::KeyboardInput{state, virtual_keycode, ..}) => {
                     match virtual_keycode.unwrap() {
                         VirtualKeyCode::W => {
+                            camera.move_cam(0.0, 0.0, 1.0);
                             renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, 1.0);
                         },
                         VirtualKeyCode::S => {
+                            camera.move_cam(0.0, 0.0, -1.0);
                             renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, -1.0);
                         }
                         VirtualKeyCode::D => {
+                            camera.move_cam(-1.0, 0.0, 0.0);
                             renderer.as_mut().unwrap().ChangeCamPos(-1.0, 0.0, 0.0);
                         },
                         VirtualKeyCode::A => {
+                            camera.move_cam(1.0, 0.0, 0.0);
                             renderer.as_mut().unwrap().ChangeCamPos(1.0, 0.0, 0.0);
                         }
                         VirtualKeyCode::LShift => {
+                            camera.move_cam(0.0, 1.0, 0.0);
                             renderer.as_mut().unwrap().ChangeCamPos(0.0, 1.0, 0.0);
                         },  
                         VirtualKeyCode::Space => {
+                            camera.move_cam(0.0, -1.0, 0.0);
                             renderer.as_mut().unwrap().ChangeCamPos(0.0, -1.0, 0.0);
                         },
                         _ => {}
@@ -176,8 +189,7 @@ fn main() {
             },
             Event::RedrawRequested(_) => {
                 if let Some((context, window_surface)) = &state {
-                    renderer.as_mut().unwrap().draw(&window_surface, &context);
-                    //renderer.as_ref().unwrap().draw(&window_surface, &context);
+                    renderer.as_mut().unwrap().draw(&window_surface, &context, &mut camera);
                 }
             },
             _ => ()

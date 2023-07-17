@@ -7,6 +7,8 @@ use gl::Viewport;
 use glutin::{display::GlDisplay,
     prelude::GlSurface};
 
+use super::camera::Camera;
+
 extern crate nalgebra_glm as glm;
 
 pub struct Renderer {
@@ -168,7 +170,7 @@ impl Renderer {
             shader_program, vao, vbo, ebo, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, view
         }
     }
-    pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext) {
+    pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext, camera: &mut Camera) {
         unsafe {
             gl::ClearColor(1.0f32, 0f32, 0f32, 1.0f32);
             gl::Clear(gl::COLOR_BUFFER_BIT|gl::DEPTH_BUFFER_BIT);
@@ -182,7 +184,7 @@ impl Renderer {
             gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
             gl::UniformMatrix4fv(self.model_uniform as i32, 1, gl::FALSE, self.model.as_ptr());
-            gl::UniformMatrix4fv(self.view_uniform as i32, 1, gl::FALSE, self.view.as_ptr());
+            gl::UniformMatrix4fv(self.view_uniform as i32, 1, gl::FALSE, camera.get_view_matrix().as_ptr());
             gl::UniformMatrix4fv(self.projection_uniform as i32, 1, gl::FALSE, self.projection.as_ptr());
 
             window_surface.swap_buffers(&context).expect("Swapping buffers failed!");
