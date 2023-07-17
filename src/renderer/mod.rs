@@ -90,7 +90,7 @@ impl Renderer {
             });
 
             //MAKE THIS DYNAMIC
-            gl::Viewport(0,0, 1920, 1080); // set viewport, currently fixed
+            gl::Viewport(0,0, 2560, 1440); // set viewport, currently fixed
 
 
             gl::Enable(gl::DEPTH_TEST);

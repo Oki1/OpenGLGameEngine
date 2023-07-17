@@ -4,7 +4,7 @@ use std::ptr;
 use std::ffi::{CStr, CString};
 
 use winit::{
-    event::{Event, WindowEvent, VirtualKeyCode},
+    event::{Event, WindowEvent, DeviceEvent, VirtualKeyCode},
     event_loop::EventLoop,
     window::{WindowBuilder, Fullscreen},
 };
@@ -131,12 +131,18 @@ fn main() {
                         // TO IMPLEMENT
                     }
                 },
-                WindowEvent::KeyboardInput {input: ref x,..} => match x.virtual_keycode {
-                    Some(x) => match x {
-                        VirtualKeyCode::Escape => {
-                            println!("Exiting!");
-                            control_flow.set_exit();
-                        },
+                WindowEvent::KeyboardInput{input, ..} => match input.virtual_keycode.unwrap() {
+                    VirtualKeyCode::Escape => {
+                        println!("Exiting!");
+                        control_flow.set_exit();
+                    },
+                    _ => {}
+                },
+                _=>{}
+            },
+            Event::DeviceEvent {event, ..} => match event {
+                DeviceEvent::Key(winit::event::KeyboardInput{state, virtual_keycode, ..}) => {
+                    match virtual_keycode.unwrap() {
                         VirtualKeyCode::W => {
                             renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, 1.0);
                         },
@@ -154,13 +160,12 @@ fn main() {
                         },  
                         VirtualKeyCode::Space => {
                             renderer.as_mut().unwrap().ChangeCamPos(0.0, -1.0, 0.0);
-                        }
+                        },
                         _ => {}
-                    },
-                    _=>{}
-                }
+                    }
+                },
                 _=>{}
-            },
+            }
             Event::RedrawEventsCleared => {
                 
             },
