@@ -4,7 +4,7 @@ use std::ptr;
 use std::ffi::{CStr, CString};
 
 use winit::{
-    event::{Event, WindowEvent, DeviceEvent, VirtualKeyCode},
+    event::{Event, WindowEvent, DeviceEvent, VirtualKeyCode, ElementState},
     event_loop::EventLoop,
     window::{WindowBuilder, Fullscreen},
 };
@@ -150,29 +150,23 @@ fn main() {
             Event::DeviceEvent {event, ..} => match event {
                 DeviceEvent::Key(winit::event::KeyboardInput{state, virtual_keycode, ..}) => {
                     match virtual_keycode.unwrap() {
-                        VirtualKeyCode::W => {
-                            camera.move_cam(0.0, 0.0, 1.0);
-                            renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, 1.0);
+                        VirtualKeyCode::W  => {
+                            camera.forward = state == ElementState::Pressed;
                         },
                         VirtualKeyCode::S => {
-                            camera.move_cam(0.0, 0.0, -1.0);
-                            renderer.as_mut().unwrap().ChangeCamPos(0.0, 0.0, -1.0);
+                            camera.back = state == ElementState::Pressed;
                         }
-                        VirtualKeyCode::D => {
-                            camera.move_cam(-1.0, 0.0, 0.0);
-                            renderer.as_mut().unwrap().ChangeCamPos(-1.0, 0.0, 0.0);
-                        },
                         VirtualKeyCode::A => {
-                            camera.move_cam(1.0, 0.0, 0.0);
-                            renderer.as_mut().unwrap().ChangeCamPos(1.0, 0.0, 0.0);
+                            camera.right = state == ElementState::Pressed;
+                        },
+                        VirtualKeyCode::D => {
+                            camera.left = state == ElementState::Pressed;
                         }
-                        VirtualKeyCode::LShift => {
-                            camera.move_cam(0.0, 1.0, 0.0);
-                            renderer.as_mut().unwrap().ChangeCamPos(0.0, 1.0, 0.0);
+                        VirtualKeyCode::LControl => {
+                            camera.up = state == ElementState::Pressed;
                         },  
                         VirtualKeyCode::Space => {
-                            camera.move_cam(0.0, -1.0, 0.0);
-                            renderer.as_mut().unwrap().ChangeCamPos(0.0, -1.0, 0.0);
+                            camera.down = state == ElementState::Pressed;
                         },
                         _ => {}
                     }
@@ -189,7 +183,9 @@ fn main() {
             },
             Event::RedrawRequested(_) => {
                 if let Some((context, window_surface)) = &state {
+                    camera.update_queued_move(); // update queued camera movement
                     renderer.as_mut().unwrap().draw(&window_surface, &context, &mut camera);
+                    
                 }
             },
             _ => ()

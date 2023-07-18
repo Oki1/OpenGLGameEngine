@@ -18,7 +18,6 @@ pub struct Renderer {
     ebo: gl::types::GLuint,
     time_since_last_frame: time::Instant,
     model: glm::Mat4,
-    view: glm::Mat4,
     projection: glm::Mat4,
     model_uniform: gl::types::GLuint,
     view_uniform: gl::types::GLuint,
@@ -161,13 +160,12 @@ impl Renderer {
         let time_since_last_frame = time::Instant::now();
 
         let model = glm::identity::<f32, 4>();
-        let view = glm::translation::<f32>(&glm::vec3(0.0f32, 0.0f32, -3.0f32));
         let projection = glm::perspective::<f32>(16f32/9f32, 70.0f32.to_radians(), 0.1f32, 100.0f32);
         
         //let cam_pos = glm::vec3(0.0f32, 0.0f32, 0.0f32);
 
         Self {
-            shader_program, vao, vbo, ebo, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, view
+            shader_program, vao, vbo, ebo, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection
         }
     }
     pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext, camera: &mut Camera) {
@@ -190,18 +188,11 @@ impl Renderer {
             window_surface.swap_buffers(&context).expect("Swapping buffers failed!");
         }
     }
-
-    pub fn ChangeCamPos(&mut self, x:f32, y:f32, z:f32) {
-        const MOVE_SPEED: f32 = 0.1f32;
-        //self.cam_pos += glm::vec3(x*MOVE_SPEED, y*MOVE_SPEED, z*MOVE_SPEED);
-        self.view = glm::translate::<f32>(&self.view, &glm::vec3(x*MOVE_SPEED, y*MOVE_SPEED, z*MOVE_SPEED));
-    }
 }
 
 
 impl Drop for Renderer {
     fn drop(&mut self) {
-        
         unsafe {
             gl::DeleteProgram(self.shader_program);
             gl::DeleteBuffers(1, &self.vbo);
