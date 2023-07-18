@@ -29,6 +29,8 @@ use renderer::Renderer;
 mod camera;
 use camera::Camera;
 
+mod mesh;
+
 
 // ANDROID WILL CURRENTLY PROBABLY CRASH. NOT SURE ABOUT IOS
 

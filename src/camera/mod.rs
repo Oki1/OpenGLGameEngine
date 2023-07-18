@@ -67,7 +67,7 @@ impl Camera {
             let camera_forward = glm::normalize(&glm::vec3(self.yaw.to_radians().sin(), self.pitch.to_radians().sin(), -(self.yaw.to_radians().cos() * self.pitch.to_radians().cos())));
             let camera_up = glm::vec3(0.0, 1.0, 0.0);
             let camera_right = glm::cross(&camera_up, &camera_forward);
-            println!("{} {} {}", self.pos.x+camera_forward.x, self.pos.y+camera_forward.y, self.pos.z+camera_forward.z);
+            //println!("{} {} {}", self.pos.x+camera_forward.x, self.pos.y+camera_forward.y, self.pos.z+camera_forward.z);
             
             // update camera position from queued movements
             self.pos += SPEED * (self.down as i32 - self.up as i32) as f32 * camera_up;

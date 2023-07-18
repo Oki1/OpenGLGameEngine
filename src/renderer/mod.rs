@@ -7,14 +7,15 @@ use glutin::{display::GlDisplay,
     prelude::GlSurface};
 
 use super::camera::Camera;
+use super::mesh::Mesh;
 
 extern crate nalgebra_glm as glm;
 
 pub struct Renderer {
     shader_program: gl::types::GLuint,
-    vao: gl::types::GLuint,
+/*     vao: gl::types::GLuint,
     vbo: gl::types::GLuint,
-    ebo: gl::types::GLuint,
+    ebo: gl::types::GLuint, */
     time_since_last_frame: time::Instant,
     model: glm::Mat4,
     projection: glm::Mat4,
@@ -22,6 +23,8 @@ pub struct Renderer {
     view_uniform: gl::types::GLuint,
     projection_uniform: gl::types::GLuint,
     //cam_pos: glm::vec3;
+
+    mesh: Mesh,
 }
 
 impl Renderer {
@@ -35,7 +38,7 @@ impl Renderer {
        -1.0, -1.0,  1.0,
        1.0, -1.0,  1.0];
        
-       const INDEXES: [u32;36] = [0, 1, 2, // Side 0
+       const INDICES: [i32;36] = [0, 1, 2, // Side 0
        2, 1, 3,
        4, 0, 6, // Side 1
        6, 0, 2,
@@ -52,73 +55,73 @@ impl Renderer {
         layout (location = 0) in vec3 aPos;\n
         uniform mat4 model;\n
         uniform mat4 view;\n
-                                        uniform mat4 projection;\n
-                                        out vec3 vert_pos;
-                                        void main() {\n;
-                                            vert_pos = aPos;
-                                            gl_Position = projection * view * model * vec4(aPos, 1.0f);\n
-                                        }\n
-                                        \0";
-                                        
-                                        const FRAGMENT_SHADER_SOURCE: &[u8] = b"#version 330 core //tells pixel colors
-                                        in vec3 vert_pos;
-
-                                        out vec4 FragColor;
-                                        void main() {
-                                       FragColor = vec4(vert_pos, 1.0f);
-                                    }
-                                    \0";
+        uniform mat4 projection;\n
+        out vec3 vert_pos;
+        void main() {\n;
+            vert_pos = aPos;
+            gl_Position = projection * view * model * vec4(aPos, 1.0f);\n
+        }\n
+        \0";
+        
+        const FRAGMENT_SHADER_SOURCE: &[u8] = b"#version 330 core //tells pixel colors
+        in vec3 vert_pos;
+        
+        out vec4 FragColor;
+        void main() {
+            FragColor = vec4(vert_pos, 1.0f);
+        }
+        \0";
         // setup renderer
         //put vertext positions into vbo
         let shader_program: gl::types::GLuint;
-        let mut vao: gl::types::GLuint;
+        /*         let mut vao: gl::types::GLuint;
         let mut vbo: gl::types::GLuint;
-        let mut ebo: gl::types::GLuint;
+        let mut ebo: gl::types::GLuint; */
         
         let mut model_uniform;
         let mut view_uniform;
         let mut projection_uniform;
         
-        unsafe {
+        unsafe {/* 
             vao = std::mem::zeroed();
             vbo = std::mem::zeroed();
-            ebo = std::mem::zeroed();
+            ebo = std::mem::zeroed(); */
             //bind opengl functions
             gl::load_with(|symbol| {
                 let symbol = CString::new(symbol).unwrap();
                 display.get_proc_address(symbol.as_c_str()).cast()
             });
-
+            
             //MAKE THIS DYNAMIC
             gl::Viewport(0,0, 2560, 1440); // set viewport, currently fixed
-
-
+            
+            
             gl::Enable(gl::DEPTH_TEST);
             //let intsize: gl::types::GLsizeiptr = ;
             
             // GPU STUFF
-            {
+            /* {
                 // gen vbo ebo vao
                 gl::GenVertexArrays(1, &mut vao);
                 gl::GenBuffers(1, &mut vbo);
                 gl::GenBuffers(1, &mut ebo);
-
+                
                 //bind vao
                 gl::BindVertexArray(vao);
                 
                 //bind and set vbo
                 gl::BindBuffer(gl::ARRAY_BUFFER, vbo);
                 gl::BufferData(gl::ARRAY_BUFFER, (VERTS.len() * std::mem::size_of::<f32>()) as gl::types::GLsizeiptr, VERTS.as_ptr() as *const _, gl::STATIC_DRAW);
-
+                
                 //bind and set ebo
                 gl::BindBuffer(gl::ELEMENT_ARRAY_BUFFER, ebo);
                 gl::BufferData(gl::ELEMENT_ARRAY_BUFFER, (INDEXES.len() * std::mem::size_of::<i32>()) as gl::types::GLsizeiptr, INDEXES.as_ptr() as *const _, gl::STATIC_DRAW);
-
+                
                 //configure vao
                 gl::VertexAttribPointer(0, 3, gl::FLOAT, gl::FALSE, (3 * std::mem::size_of::<f32>()) as gl::types::GLsizei, 0 as *const _);
                 gl::EnableVertexAttribArray(0);
-
-            }
+                
+            } */
             
             // compile vertex shader
             let vertex_shader = gl::CreateShader(gl::VERTEX_SHADER);
@@ -145,7 +148,7 @@ impl Renderer {
             gl::DeleteShader(fragment_shader);
             gl::DeleteShader(vertex_shader);
             gl::LinkProgram(shader_program);
-
+            
             let mut s: CString = CString::new("model").unwrap();
             model_uniform = gl::GetUniformLocation(shader_program, s.as_ptr()) as u32;
             s = CString::new("view").unwrap();
@@ -154,17 +157,18 @@ impl Renderer {
             projection_uniform = gl::GetUniformLocation(shader_program, s.as_ptr()) as u32;
             
             
-
+            
         }
         let time_since_last_frame = time::Instant::now();
-
+        
         let model = glm::identity::<f32, 4>();
         let projection = glm::perspective::<f32>(16f32/9f32, 70.0f32.to_radians(), 0.1f32, 100.0f32);
         
         //let cam_pos = glm::vec3(0.0f32, 0.0f32, 0.0f32);
-
+        let mesh = Mesh::new(&VERTS, &INDICES);
+        
         Self {
-            shader_program, vao, vbo, ebo, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection
+            shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, mesh
         }
     }
     pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext, camera: &mut Camera) {
@@ -177,7 +181,7 @@ impl Renderer {
         
         unsafe{
             gl::UseProgram(self.shader_program);
-            gl::BindVertexArray(self.vao);
+            gl::BindVertexArray(self.mesh.vao);
             gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
             gl::UniformMatrix4fv(self.model_uniform as i32, 1, gl::FALSE, self.model.as_ptr());
@@ -193,10 +197,10 @@ impl Renderer {
 impl Drop for Renderer {
     fn drop(&mut self) {
         unsafe {
-            gl::DeleteProgram(self.shader_program);
+            gl::DeleteProgram(self.shader_program);/* 
             gl::DeleteBuffers(1, &self.vbo);
             gl::DeleteBuffers(1, &self.ebo);
-            gl::DeleteVertexArrays(1, &self.vao);
+            gl::DeleteVertexArrays(1, &self.vao); */
         }
     }
 }
