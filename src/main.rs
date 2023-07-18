@@ -94,7 +94,7 @@ fn main() {
     let mut renderer = None;
 
     //create camera
-    let mut camera = Camera::new_from_position(0.0, 0.0, -3.0);
+    let mut camera = Camera::new_from_position(0.0, 0.0, -5.0);
     event_loop.run(move |event, _, control_flow| {
         control_flow.set_poll();
 
@@ -171,6 +171,7 @@ fn main() {
                         _ => {}
                     }
                 },
+                DeviceEvent::MouseMotion { delta } => camera.mouseMove(delta),
                 _=>{}
             }
             Event::RedrawEventsCleared => {
