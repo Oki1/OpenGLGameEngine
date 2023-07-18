@@ -3,7 +3,6 @@ use std::{ptr,time};
 
 use std::ffi::{CStr, CString};
 
-use gl::Viewport;
 use glutin::{display::GlDisplay,
     prelude::GlSurface};
 
@@ -69,16 +68,16 @@ impl Renderer {
                                        FragColor = vec4(vert_pos, 1.0f);
                                     }
                                     \0";
-                                    // setup renderer
-                                    //put vertext positions into vbo
-                                    let shader_program: gl::types::GLuint;
-                                    let mut vao: gl::types::GLuint;
-                                    let mut vbo: gl::types::GLuint;
-                                    let mut ebo: gl::types::GLuint;
-                                    
-                                    let mut model_uniform: gl::types::GLuint = 0;
-        let mut view_uniform: gl::types::GLuint = 0;
-        let mut projection_uniform: gl::types::GLuint = 0;
+        // setup renderer
+        //put vertext positions into vbo
+        let shader_program: gl::types::GLuint;
+        let mut vao: gl::types::GLuint;
+        let mut vbo: gl::types::GLuint;
+        let mut ebo: gl::types::GLuint;
+        
+        let mut model_uniform;
+        let mut view_uniform;
+        let mut projection_uniform;
         
         unsafe {
             vao = std::mem::zeroed();

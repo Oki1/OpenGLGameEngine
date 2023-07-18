@@ -55,7 +55,7 @@ impl Camera {
         self.changed = true;
     } */
     pub fn get_view_matrix(&mut self) -> &glm::Mat4 {
-        if(self.changed) {
+        if self.changed {
             self.view_matrix = glm::translation::<f32>(&self.pos);
         }
         &self.view_matrix
