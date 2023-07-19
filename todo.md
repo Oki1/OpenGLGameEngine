@@ -1,5 +1,7 @@
 # todo
-- model loading
+- textures
+- model loading (KIND OF DONE?)
+
 # small stuffs
 - camera movement should be multiplied by delta_time
 - redo keyboard input to take scancode
