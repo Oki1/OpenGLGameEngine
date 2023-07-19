@@ -30,7 +30,7 @@ mod camera;
 use camera::Camera;
 
 mod mesh;
-
+mod model;
 
 // ANDROID WILL CURRENTLY PROBABLY CRASH. NOT SURE ABOUT IOS
 

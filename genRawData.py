@@ -9,7 +9,7 @@ def gen_raw_data(verts, indices, filename):
         f.write(pack(f"<{numverts}f", *verts)) # write verts
         numindices = len(indices)
         f.write(pack("<I", numindices))
-        f.write(pack(f"<{numindices}I", *indices))
+        f.write(pack(f"<{numindices}i", *indices))
         print("Successfuly written data to file")
         
         

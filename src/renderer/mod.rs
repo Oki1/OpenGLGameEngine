@@ -8,7 +8,7 @@ use glutin::{display::GlDisplay,
 
 use super::camera::Camera;
 use super::mesh::Mesh;
-
+use super::model;
 extern crate nalgebra_glm as glm;
 
 pub struct Renderer {
@@ -166,6 +166,8 @@ impl Renderer {
         
         //let cam_pos = glm::vec3(0.0f32, 0.0f32, 0.0f32);
         let mesh = Mesh::new(&VERTS, &INDICES);
+
+        let modelob = model::Model::new();
         
         Self {
             shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, mesh
