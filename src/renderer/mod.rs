@@ -93,7 +93,7 @@ impl Renderer {
             });
             
             //MAKE THIS DYNAMIC
-            gl::Viewport(0,0, 2560, 1440); // set viewport, currently fixed
+            //gl::Viewport(0,0, 2560, 1440); // set viewport, currently fixed
             
             
             gl::Enable(gl::DEPTH_TEST);
@@ -171,6 +171,14 @@ impl Renderer {
             shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, mesh
         }
     }
+    
+    pub fn resize_window(&mut self, width: i32, height: i32) {
+        self.projection = glm::perspective::<f32>(width as f32/height as f32, 70.0f32.to_radians(), 0.1f32, 100.0f32);
+        unsafe{
+            gl::Viewport(0,0, width, height); // set viewport
+        }
+    }
+
     pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext, camera: &mut Camera) {
         unsafe {
             gl::ClearColor(0.6f32, 0.6f32, 0.6f32, 1.0f32);

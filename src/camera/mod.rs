@@ -69,6 +69,7 @@ impl Camera {
             let camera_right = glm::cross(&camera_up, &camera_forward);
             //println!("{} {} {}", self.pos.x+camera_forward.x, self.pos.y+camera_forward.y, self.pos.z+camera_forward.z);
             
+            
             // update camera position from queued movements
             self.pos += SPEED * (self.down as i32 - self.up as i32) as f32 * camera_up;
             self.pos += SPEED * (self.left as i32 - self.right as i32) as f32 * camera_right;

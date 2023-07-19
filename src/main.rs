@@ -42,7 +42,7 @@ fn main() {
     {
         // window builder
         let mut builder = WindowBuilder::new();
-        builder = builder.with_title("Starting title").with_fullscreen(Some(Fullscreen::Borderless(None)));
+        builder = builder.with_title("Starting title");//.with_fullscreen(Some(Fullscreen::Borderless(None)));
         
         //context template builder -> configuration for the context
         let context_builder = ConfigTemplateBuilder::new();
@@ -136,8 +136,10 @@ fn main() {
                     control_flow.set_exit();
                 }
                 WindowEvent::Resized(size) => {
+                    //println!("resized to {:?}", size);
                     if size.width != 0 && size.height != 0 { // resize by hand, EGL requires it
                         // TO IMPLEMENT
+                        renderer.as_mut().unwrap().resize_window(size.width as i32, size.height as i32);
                     }
                 },
                 WindowEvent::KeyboardInput{input, ..} => match input.virtual_keycode.unwrap() {
