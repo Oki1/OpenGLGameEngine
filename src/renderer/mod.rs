@@ -6,6 +6,8 @@ use std::ffi::{CStr, CString};
 use glutin::{display::GlDisplay,
     prelude::GlSurface};
 
+use crate::model::Model;
+
 use super::camera::Camera;
 use super::mesh::Mesh;
 use super::model;
@@ -24,7 +26,7 @@ pub struct Renderer {
     projection_uniform: gl::types::GLuint,
     //cam_pos: glm::vec3;
 
-    mesh: Mesh,
+    cube_object: Model,
 }
 
 impl Renderer {
@@ -165,12 +167,12 @@ impl Renderer {
         let projection = glm::perspective::<f32>(16f32/9f32, 70.0f32.to_radians(), 0.1f32, 100.0f32);
         
         //let cam_pos = glm::vec3(0.0f32, 0.0f32, 0.0f32);
-        let mesh = Mesh::new(&VERTS, &INDICES);
+        //let mesh = Mesh::new(&VERTS, &INDICES);
 
-        let modelob = model::Model::new();
+        let cube_object = model::Model::new();
         
         Self {
-            shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, mesh
+            shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, cube_object
         }
     }
     
@@ -191,7 +193,7 @@ impl Renderer {
         
         unsafe{
             gl::UseProgram(self.shader_program);
-            gl::BindVertexArray(self.mesh.vao);
+            gl::BindVertexArray(self.cube_object.mesh.vao);
             gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
             gl::UniformMatrix4fv(self.model_uniform as i32, 1, gl::FALSE, self.model.as_ptr());
