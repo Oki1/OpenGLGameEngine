@@ -2,6 +2,7 @@
 - textures
 - model loading (KIND OF DONE?)
 - shader struct
+- create better tools for generating raw model data
 
 # small stuffs
 - camera movement should be multiplied by delta_time
