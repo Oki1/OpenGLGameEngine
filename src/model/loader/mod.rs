@@ -9,7 +9,7 @@ all the values are tightly packed and little endian
 */
 
 use std::fs::File;
-use std::io::Read;
+use std::io::{Read, Error, ErrorKind};
 use byteorder::{ByteOrder, LittleEndian};
 
 /*pub fn load_raw_model_checked(filename: str) {
@@ -42,21 +42,50 @@ fn read_i32_array(f: &mut File, n: &usize) -> std::io::Result<Box<[i32]>> {
 
 //methods
 
-//pub fn load_raw_model_checked(filename: &str) -> 
+pub fn load_raw_model_checked(filename: &str, vertex_size: u32) -> std::io::Result<(Box<[f32]>, Box<[i32]>)> {
+    let mut file = File::open(filename)?;
+
+    // read size of verts
+    let size_of_vertex_array = read_uint(&mut file)?;
+
+    if size_of_vertex_array % vertex_size != 0 {
+        return Err(Error::new(ErrorKind::InvalidData, "Number of floats in vertex data is not divisible by size of vertex!"))
+    }
+
+    let verts = read_f32_array(&mut file, &(size_of_vertex_array as usize))?;
+
+
+    let size_of_index_array = read_uint(&mut file)?; 
+
+    if size_of_index_array % 3 != 0 {
+        return Err(Error::new(ErrorKind::InvalidData, "Number if u32 in elements array is not divisible by 3!"))
+    }
+
+    let indices = read_i32_array(&mut file, &(size_of_index_array as usize))?;
+    // check if indices are in range
+    let n_vertices = size_of_vertex_array / vertex_size;
+    for index in indices.iter() {
+        if *index >= n_vertices as i32  || *index < 0 {
+            return Err(Error::new(ErrorKind::InvalidData, "Index data out of range!"));
+        }
+    }
+
+    Ok((verts, indices))
+}
 
 // unsafe as there is no check if the file is correctly structured. Indices could be out of range
 pub unsafe fn load_raw_model(filename: &str) -> std::io::Result<(Box<[f32]>, Box<[i32]>)>{
     let mut file = File::open(filename)?;
 
     // read size of verts
-    let n_verts = read_uint(&mut file)?;
+    let size_of_vertex_array = read_uint(&mut file)?;
 
 
-    let verts = read_f32_array(&mut file, &(n_verts as usize))?;
+    let verts = read_f32_array(&mut file, &(size_of_vertex_array as usize))?;
 
 
-    let n_indices = read_uint(&mut file)?;
-    let indices = read_i32_array(&mut file, &(n_indices as usize))?;
+    let size_of_index_array = read_uint(&mut file)?;
+    let indices = read_i32_array(&mut file, &(size_of_index_array as usize))?; // there is no check if indices are in range
 
     Ok((verts, indices))
 }
