@@ -1,6 +1,7 @@
 # todo
 - textures
 - model loading (KIND OF DONE?)
+- shader struct
 
 # small stuffs
 - camera movement should be multiplied by delta_time
