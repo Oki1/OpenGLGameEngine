@@ -11,6 +11,7 @@ use crate::model::Model;
 use super::camera::Camera;
 use super::mesh::Mesh;
 use super::model;
+use super::texture::Texture;
 extern crate nalgebra_glm as glm;
 
 pub struct Renderer {
@@ -170,6 +171,7 @@ impl Renderer {
         //let mesh = Mesh::new(&VERTS, &INDICES);
 
         let cube_object = model::Model::new();
+        let test_texture = Texture::new();
         
         Self {
             shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, cube_object

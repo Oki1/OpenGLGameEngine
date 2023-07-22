@@ -1,0 +1,25 @@
+pub struct Texture {
+    texture_id: gl::types::GLuint
+}
+
+mod loader;
+
+impl Texture {
+    pub fn new() -> Self {
+        let mut texture_id = 0;
+        unsafe { // is safe if it is run after the opengl functions have been loaded
+            // gen and bind texture
+            gl::GenTextures(1, &mut texture_id); 
+            gl::BindTexture(gl::TEXTURE_2D, texture_id);
+            // set how texture acts
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_S,       gl::REPEAT as i32);	
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_T,       gl::REPEAT as i32);
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MIN_FILTER,   gl::LINEAR_MIPMAP_LINEAR as i32);
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MAG_FILTER,   gl::LINEAR as i32);
+        }
+        let ((width, height), data) = loader::load_raw_image("test_image.bin").unwrap();
+        println!("{:?}\n{:?}\n{:?}", width, height, data);
+
+        Self {texture_id}
+    }
+}
