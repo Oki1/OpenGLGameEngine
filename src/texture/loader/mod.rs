@@ -23,22 +23,21 @@ fn read_uint(f: &mut File) -> std::io::Result<u32> {
     Ok(u32::from_le_bytes(raw))
 }
 
-fn read_f32_array(f: &mut File, n: &usize) -> std::io::Result<Box<[f32]>> {
-    let mut verts_raw = vec![0u8; *n* std::mem::size_of::<f32>()];
-    let mut verts_vec = vec![0f32; *n];
-    f.read_exact(&mut verts_raw)?;
-    LittleEndian::read_f32_into(&verts_raw, &mut verts_vec);
-    Ok(verts_vec.into_boxed_slice())
+fn read_u8_array(f: &mut File, n: &usize) -> std::io::Result<Box<[u8]>> {
+    let mut data = vec![0u8; *n * std::mem::size_of::<u8>()];
+    f.read_exact(&mut data)?;
+    Ok(data.into_boxed_slice())
 }
+
 
 //methods
 
-pub fn load_raw_image(filename: &str) -> std::io::Result<((u32, u32), Box<[f32]>)> {
+pub fn load_raw_image(filename: &str) -> std::io::Result<((u32, u32), Box<[u8]>)> {
     let mut file = File::open(filename)?;
     let width = read_uint(&mut file)?;
     let height = read_uint(&mut file)?;
     
     // read size of verts
 
-    Ok(( (width, height), read_f32_array(&mut file, &((width*height*4) as usize))? ))
+    Ok(( (width, height), read_u8_array(&mut file, &((width*height*4) as usize))? ))
 }

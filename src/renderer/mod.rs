@@ -67,7 +67,7 @@ impl Renderer {
         out vec2 tex_coord;
         void main() {\n;
             vert_pos = aPos;
-            tex_coord = vec2(aTexCoord.x, aTexCoord.y);
+            tex_coord = aTexCoord;
             gl_Position = projection * view * model * vec4(aPos, 1.0f);\n
         }\n
         \0";
@@ -211,7 +211,7 @@ impl Renderer {
         unsafe{
             // bind texture to TEXTURE0
             gl::ActiveTexture(gl::TEXTURE0);
-            gl::BindTexture(gl::TEXTURE_2D, self.test_texture.texture_id);
+            gl::BindTexture(gl::TEXTURE_2D, self.test_texture.id);
             
             
             gl::UseProgram(self.shader_program);
