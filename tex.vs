@@ -1,11 +1,14 @@
-#version 430 core //tells pixel colors
-in vec3 vert_pos;
-in vec2 tex_coord;
+#version 430 core
 
-uniform sampler2D texture1;
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoord;
 
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
 
-out vec4 FragColor;
+out vec2 tex_coord;
 void main() {
-    FragColor = texture(texture1, tex_coord);
+    tex_coord = aTexCoord;
+    gl_Position = projection * view * model * vec4(aPos, 1.0f);
 }
