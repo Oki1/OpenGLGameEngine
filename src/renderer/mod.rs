@@ -28,6 +28,7 @@ pub struct Renderer {
     //cam_pos: glm::vec3;
 
     cube_object: Model,
+    test_texture: Texture
 }
 
 impl Renderer {
@@ -56,22 +57,31 @@ impl Renderer {
         
         const VERTEX_SHADER_SOURCE: &[u8] = b"#version 330 core\n
         layout (location = 0) in vec3 aPos;\n
+        layout (location = 1) in vec2 aTexCoord;
+
+
         uniform mat4 model;\n
         uniform mat4 view;\n
         uniform mat4 projection;\n
         out vec3 vert_pos;
+        out vec2 tex_coord;
         void main() {\n;
             vert_pos = aPos;
+            tex_coord = vec2(aTexCoord.x, aTexCoord.y);
             gl_Position = projection * view * model * vec4(aPos, 1.0f);\n
         }\n
         \0";
         
         const FRAGMENT_SHADER_SOURCE: &[u8] = b"#version 330 core //tells pixel colors
         in vec3 vert_pos;
+        in vec2 tex_coord;
+
+        uniform sampler2D texture1;
+
         
         out vec4 FragColor;
         void main() {
-            FragColor = vec4(vert_pos, 1.0f);
+            FragColor = texture(texture1, tex_coord);
         }
         \0";
         // setup renderer
@@ -131,13 +141,18 @@ impl Renderer {
             gl::ShaderSource(vertex_shader, 1, [VERTEX_SHADER_SOURCE.as_ptr().cast()].as_ptr(), std::ptr::null());
             gl::CompileShader(vertex_shader);
             
+            let mut log: [u8; 512] = [0;512];
+
+            gl::GetShaderInfoLog(vertex_shader, 512, ptr::null::<i32>() as *mut i32, (&mut log as *mut u8) as *mut i8);
+            
+            println!("{}", std::str::from_utf8(&log as &[u8]).unwrap());
+
             
             //compile fragment shader
             let fragment_shader = gl::CreateShader(gl::FRAGMENT_SHADER);
             gl::ShaderSource(fragment_shader, 1, [FRAGMENT_SHADER_SOURCE.as_ptr().cast()].as_ptr(), std::ptr::null());
             gl::CompileShader(fragment_shader);
             
-            let mut log: [u8; 512] = [0;512];
             
             gl::GetShaderInfoLog(fragment_shader, 512, ptr::null::<i32>() as *mut i32, (&mut log as *mut u8) as *mut i8);
             
@@ -174,7 +189,7 @@ impl Renderer {
         let test_texture = Texture::new();
         
         Self {
-            shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, cube_object
+            shader_program, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, cube_object, test_texture
         }
     }
     
@@ -194,13 +209,25 @@ impl Renderer {
         //self.time_since_last_frame = now;
         
         unsafe{
+            // bind texture to TEXTURE0
+            gl::ActiveTexture(gl::TEXTURE0);
+            gl::BindTexture(gl::TEXTURE_2D, self.test_texture.texture_id);
+            
+            
             gl::UseProgram(self.shader_program);
-            gl::BindVertexArray(self.cube_object.mesh.vao);
-            gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);
+
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
             gl::UniformMatrix4fv(self.model_uniform as i32, 1, gl::FALSE, self.model.as_ptr());
             gl::UniformMatrix4fv(self.view_uniform as i32, 1, gl::FALSE, camera.view_matrix.as_ptr());
             gl::UniformMatrix4fv(self.projection_uniform as i32, 1, gl::FALSE, self.projection.as_ptr());
+
+            gl::BindVertexArray(self.cube_object.mesh.vao);
+
+
+            gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);
+
+
+
 
             window_surface.swap_buffers(&context).expect("Swapping buffers failed!");
         }

@@ -1,5 +1,5 @@
 pub struct Texture {
-    texture_id: gl::types::GLuint
+    pub texture_id: gl::types::GLuint
 }
 
 mod loader;
@@ -14,7 +14,7 @@ impl Texture {
             // set how texture acts
             gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_S,       gl::REPEAT as i32);	
             gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_T,       gl::REPEAT as i32);
-            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MIN_FILTER,   gl::LINEAR_MIPMAP_LINEAR as i32);
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MIN_FILTER,   gl::LINEAR as i32);
             gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MAG_FILTER,   gl::LINEAR as i32);
 
             let ((width, height), data) = loader::load_raw_image("test_image.bin").unwrap();

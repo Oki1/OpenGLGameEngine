@@ -11,11 +11,10 @@ impl Model {
         let verts; 
         let indices;
         unsafe{ // the cube file is safe
-            //(verts, indices) = loader::load_raw_model("cube.bin").unwrap();
-            
+            //(verts, indices) = loader::load_raw_model("cube.bin").unwrap();   
         }
-        (verts, indices) = loader::load_raw_model_checked("cube.bin", 3).unwrap();
-        let mesh = Mesh::new(&verts, &indices);
+        (verts, indices) = loader::load_raw_model_checked("cube.bin", 5).unwrap();
+        let mesh = Mesh::new(&verts, &indices, 5);
         Self{mesh}
     }
 }

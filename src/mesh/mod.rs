@@ -5,7 +5,7 @@ pub struct Mesh {
 }
 
 impl Mesh {
-    pub fn new(verts: &[f32], indices: &[i32]) -> Self {
+    pub fn new(verts: &[f32], indices: &[i32], size_of_vertex: usize) -> Self {
         let mut vao = 0;
         let mut vbo = 0;
         let mut ebo = 0;
@@ -27,10 +27,12 @@ impl Mesh {
             gl::BufferData(gl::ELEMENT_ARRAY_BUFFER, (indices.len() * std::mem::size_of::<i32>()) as gl::types::GLsizeiptr, indices.as_ptr() as *const _, gl::STATIC_DRAW);
 
             //configure vao
-            gl::VertexAttribPointer(0, 3, gl::FLOAT, gl::FALSE, (3 * std::mem::size_of::<f32>()) as gl::types::GLsizei, 0 as *const _);
-
+            // pos
+            gl::VertexAttribPointer(0, 3, gl::FLOAT, gl::FALSE, (size_of_vertex * std::mem::size_of::<f32>()) as gl::types::GLsizei, 0 as *const _);
             gl::EnableVertexAttribArray(0);
-            gl::BindVertexArray(0);
+            // tex coords
+            gl::VertexAttribPointer(1, 2, gl::FLOAT, gl::FALSE, (size_of_vertex * std::mem::size_of::<f32>()) as gl::types::GLsizei, (3 * std::mem::size_of::<f32>()) as *const _);
+            gl::BindVertexArray(1);
         }
         Self {
             vao, vbo, ebo

@@ -10,18 +10,22 @@ def gen_raw_data(verts, indices, filename):
         numindices = len(indices)
         f.write(pack("<I", numindices))
         f.write(pack(f"<{numindices}i", *indices))
-        print("Successfuly written data to file")
+        print(f"Successfuly written data to {filename}")
         
         
 if __name__ == "__main__": # cube
-    gen_raw_data([-1.0,  1.0, -1.0,
-        1.0,  1.0, -1.0,
-       -1.0, -1.0, -1.0,
-        1.0, -1.0, -1.0,
-       -1.0,  1.0,  1.0,
-       1.0,  1.0,  1.0,
-       -1.0, -1.0,  1.0,
-       1.0, -1.0,  1.0], [0, 1, 2,
+    #POS                            TEXTURE COORDS
+    # X Y Z                         TEXX TEXY
+    gen_raw_data(
+        [-1.0,  1.0, -1.0,  0.0, 0.0,
+        1.0,  1.0, -1.0,   1.0, 0.0,
+       -1.0, -1.0, -1.0,    0.0,0.0,
+        1.0, -1.0, -1.0,   1.0, 0.0,
+       -1.0,  1.0,  1.0,   0.0, 1.0,
+       1.0,  1.0,  1.0,    1.0, 1.0,
+       -1.0, -1.0,  1.0,   0.0, 1.0,
+       1.0, -1.0,  1.0,  1.0, 1.0],
+      [0, 1, 2,
        2, 1, 3,
        4, 0, 6,
        6, 0, 2,
