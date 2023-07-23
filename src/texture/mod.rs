@@ -19,6 +19,7 @@ impl Texture {
 
             let ((width, height), data) = loader::load_raw_image("test_image.bin").unwrap();
             gl::TexImage2D(gl::TEXTURE_2D, 0, gl::RGBA as i32, width as i32, height as i32, 0, gl::RGBA, gl::FLOAT, Box::into_raw(data) as *mut std::ffi::c_void);
+            gl::GenerateMipmap(gl::TEXTURE_2D);
         }
         //println!("{:?}\n{:?}\n{:?}", width, height, data);
 
