@@ -15,11 +15,11 @@ def generate_image_data(image_filename, out_filename):
     with Image.open(image_filename) as im:
         data = []
         for rgb in list(im.getdata()): #add alpha
-            data += list(map(lambda x: x, list(rgb))) + [255]
+            data += list(map(lambda x: float(x), list(rgb))) + [255.0]
         
         with open(out_filename, "wb") as f:
             f.write(pack(f"<2I", *im.size))
-            f.write(pack(f"<{len(data)}B", *data))
+            f.write(pack(f"<{len(data)}f", *data))
         print(f"Successfully wrote to {out_filename}")
     
         

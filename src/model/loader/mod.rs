@@ -32,7 +32,7 @@ fn read_f32_array(f: &mut File, n: &usize) -> std::io::Result<Box<[f32]>> {
 }
 
 fn read_i32_array(f: &mut File, n: &usize) -> std::io::Result<Box<[i32]>> {
-    let mut indices_raw = vec![0u8; *n * std::mem::size_of::<i32>()];
+    let mut indices_raw = vec![0u8; *n * std::mem::size_of::<f32>()];
     let mut indices_vec = vec![0i32; *n];
     f.read_exact(&mut indices_raw)?;
     LittleEndian::read_i32_into(&indices_raw, &mut indices_vec);

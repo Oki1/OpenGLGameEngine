@@ -132,7 +132,7 @@ impl Renderer {
         unsafe{
             // bind texture to TEXTURE0
             gl::ActiveTexture(gl::TEXTURE0);
-            gl::BindTexture(gl::TEXTURE_2D, self.test_texture.id);
+            gl::BindTexture(gl::TEXTURE_2D, self.test_texture.texture_id);
             
             
             self.shader.use_program();

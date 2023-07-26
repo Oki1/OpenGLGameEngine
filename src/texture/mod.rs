@@ -1,7 +1,7 @@
 pub struct Texture {
-    pub id: gl::types::GLuint
+    pub texture_id: gl::types::GLuint
 }
-use image::EncodableLayout;
+
 mod loader;
 
 impl Texture {
@@ -17,20 +17,12 @@ impl Texture {
             gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MIN_FILTER,   gl::LINEAR as i32);
             gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MAG_FILTER,   gl::LINEAR as i32);
 
-            let ((width, height), data) = loader::load_raw_image("test_image.bin").unwrap();    
-            println!("{:?}\n{:?}\n{:?}", width, height, data);
-            let img = image::open("test.png").unwrap().into_rgba8();
-            gl::TexImage2D(gl::TEXTURE_2D, 0, gl::RGBA as i32, 100, 100, 0, gl::RGBA, gl::UNSIGNED_BYTE, img.as_bytes().as_ptr() as *const _);//Box::into_raw(data) as *mut std::ffi::c_void);
+            let ((width, height), data) = loader::load_raw_image("test_image.bin").unwrap();
+            gl::TexImage2D(gl::TEXTURE_2D, 0, gl::RGBA as i32, width as i32, height as i32, 0, gl::RGBA, gl::FLOAT, Box::into_raw(data) as *mut std::ffi::c_void);
             gl::GenerateMipmap(gl::TEXTURE_2D);
         }
+        //println!("{:?}\n{:?}\n{:?}", width, height, data);
 
-        Self {id: texture_id}
-    }
-}
-impl Drop for Texture {
-    fn drop(&mut self) {
-        unsafe {
-            gl::DeleteTextures(1, [self.id].as_ptr());
-        }
+        Self {texture_id}
     }
 }
