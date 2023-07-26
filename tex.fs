@@ -1,4 +1,4 @@
-#version 430 core //tells pixel colors
+#version 430 core
 in vec3 vert_pos;
 in vec2 tex_coord;
 

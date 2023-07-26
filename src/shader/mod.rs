@@ -14,10 +14,17 @@ unsafe fn read_and_compile_shader(shader_type: gl::types::GLenum, filename: &str
     gl::CompileShader(shader);
     if check_for_errors {
         let mut log: [u8; 512] = [0;512];
+        let mut read_length: i32 = 0;
+        gl::GetShaderInfoLog(shader, 512, &mut read_length, (&mut log as *mut u8) as *mut i8);
+
         
-        gl::GetShaderInfoLog(shader, 512, null::<i32>() as *mut i32, (&mut log as *mut u8) as *mut i8);
-        
-        println!("Vertex shader:\n{}", std::str::from_utf8(&log as &[u8]).unwrap());
+        if read_length > 0 {
+            match shader_type {
+                gl::VERTEX_SHADER => println!("Vertex shader error:\n{}", std::str::from_utf8(&log as &[u8]).unwrap()),
+                gl::FRAGMENT_SHADER => println!("Fragment shader error:\n{}", std::str::from_utf8(&log as &[u8]).unwrap()),
+                _=>{}
+            }
+        }
     }
     shader
 }
@@ -25,7 +32,7 @@ unsafe fn read_and_compile_shader(shader_type: gl::types::GLenum, filename: &str
 impl Shader {
     pub fn new (vertex_shader_path: &str, fragment_shader_path: &str, check_for_errors: bool) -> Self {
         unsafe {
-            // vertex shader
+            // vertex shaderf
             let vertex = read_and_compile_shader(gl::VERTEX_SHADER, vertex_shader_path, check_for_errors);
             
             // fragment shader

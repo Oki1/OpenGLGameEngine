@@ -12,3 +12,4 @@
 - redo keyboard input to take scancode
 - implement some sort of caching when calculating view matrix, no need to calc it every time
 - fix code duplication in loaders for mesh and texture
+- Make shader error handling rust-like
