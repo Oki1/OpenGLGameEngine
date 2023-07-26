@@ -14,6 +14,9 @@ use super::mesh::Mesh;
 use super::model;
 use super::texture::Texture;
 use super::shader::Shader;
+use image;
+
+use image::EncodableLayout;
 extern crate nalgebra_glm as glm;
 
 pub struct Renderer {
@@ -30,7 +33,7 @@ pub struct Renderer {
     //cam_pos: glm::vec3;
 
     cube_object: Model,
-    test_texture: Texture
+    test_texture: gl::types::GLuint
 }
 
 impl Renderer {
@@ -107,7 +110,37 @@ impl Renderer {
         //let mesh = Mesh::new(&VERTS, &INDICES);
 
         let cube_object = model::Model::new();
-        let test_texture = Texture::new();
+        let mut test_texture = 0;
+
+        unsafe {
+
+            gl::GenTextures(1, &mut test_texture);
+            gl::BindTexture(gl::TEXTURE_2D, test_texture);
+
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_S, gl::CLAMP_TO_EDGE as i32);	
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_T, gl::CLAMP_TO_EDGE as i32);
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MIN_FILTER, gl::NEAREST_MIPMAP_LINEAR as i32);
+            gl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MAG_FILTER, gl::NEAREST as i32);
+
+            let img = image::open("test3.png").unwrap().into_rgba8();
+             gl::TexImage2D(
+            gl::TEXTURE_2D,
+            0,
+            gl::RGBA as i32,
+            img.width() as i32,
+            img.height() as i32,
+            0,
+            gl::RGBA,
+            gl::UNSIGNED_BYTE,
+            img.as_bytes().as_ptr() as *const _,
+           );
+            gl::GenerateMipmap(gl::TEXTURE_2D);
+
+            let mut s: CString = CString::new("texture1").unwrap();
+            gl::Uniform1i(gl::GetUniformLocation(shader.program, s.as_ptr()), 0);
+        }
+
+        //let test_texture = Texture::new();
         
         Self {
             shader, time_since_last_frame, model_uniform, view_uniform, projection_uniform, model, projection, cube_object, test_texture
@@ -122,27 +155,27 @@ impl Renderer {
     }
 
     pub fn draw(&mut self, window_surface: &glutin::surface::Surface<glutin::surface::WindowSurface>, context: &glutin::context::PossiblyCurrentContext, camera: &mut Camera) {
-        unsafe {
-            gl::ClearColor(0.6f32, 0.6f32, 0.6f32, 1.0f32);
-            gl::Clear(gl::COLOR_BUFFER_BIT|gl::DEPTH_BUFFER_BIT);
-        }
         let now = time::Instant::now();
         //self.time_since_last_frame = now;
         
         unsafe{
             // bind texture to TEXTURE0
+            unsafe {
+                gl::ClearColor(0.6f32, 0.6f32, 0.6f32, 1.0f32);
+                gl::Clear(gl::COLOR_BUFFER_BIT|gl::DEPTH_BUFFER_BIT);
+            }
             gl::ActiveTexture(gl::TEXTURE0);
-            gl::BindTexture(gl::TEXTURE_2D, self.test_texture.texture_id);
-            
+            gl::BindTexture(gl::TEXTURE_2D, self.test_texture);
             
             self.shader.use_program();
+            
+            gl::BindVertexArray(self.cube_object.mesh.vao);
 
             //gl::DrawArrays(gl::TRIANGLES, 0, 3);
             gl::UniformMatrix4fv(self.model_uniform as i32, 1, gl::FALSE, self.model.as_ptr());
             gl::UniformMatrix4fv(self.view_uniform as i32, 1, gl::FALSE, camera.view_matrix.as_ptr());
             gl::UniformMatrix4fv(self.projection_uniform as i32, 1, gl::FALSE, self.projection.as_ptr());
 
-            gl::BindVertexArray(self.cube_object.mesh.vao);
 
 
             gl::DrawElements(gl::TRIANGLES, 36, gl::UNSIGNED_INT, 0 as *const _);

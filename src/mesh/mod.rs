@@ -10,6 +10,7 @@ impl Mesh {
         let mut vbo = 0;
         let mut ebo = 0;
         unsafe { // LOAD VERTICES AND IDICES ONTO GPU
+            println!("{:?}", verts);
             // gen vbo ebo vao
             gl::GenVertexArrays(1, &mut vao);
             gl::GenBuffers(1, &mut vbo);
