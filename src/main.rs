@@ -32,6 +32,7 @@ use camera::Camera;
 mod mesh;
 mod model;
 mod texture;
+mod shader;
 
 // ANDROID WILL CURRENTLY PROBABLY CRASH. NOT SURE ABOUT IOS
 

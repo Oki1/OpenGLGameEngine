@@ -4,6 +4,8 @@
 - shader struct
 - create better tools for generating raw model data
 - implement compression for textures
+- create proper destructors for classes
+- move uniform implementation from renderer to shader
 
 # small stuffs
 - camera movement should be multiplied by delta_time
